@@ -322,7 +322,6 @@ class MinigridPolicyNet(nn.Module):
         x = self.feat_extract(x)
 
         x = x.view(T * B, -1)
-        print("shape: ", x.shape)
         core_input = self.fc(x)
 
         core_input = core_input.view(T, B, -1)

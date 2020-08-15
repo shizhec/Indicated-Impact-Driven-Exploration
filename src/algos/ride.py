@@ -73,6 +73,9 @@ def learn(actor_model,
                     .reshape(flags.unroll_length, flags.batch_size, 128)
             next_state_emb = state_embedding_model(batch, next_state=True)\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
+        elif 'procgen' in flags.env:
+            state_emb = state_embedding_model(batch['frame'][:-1].to(device=flags.device))
+            next_state_emb = state_embedding_model(batch['frame'][1:].to(device=flags.device))
         else:
             state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
             next_state_emb = state_embedding_model(batch['partial_obs'][1:].to(device=flags.device))
@@ -227,9 +230,7 @@ def train(flags):
         inverse_dynamics_model = MarioDoomInverseDynamicsNet(env.action_space.n)\
             .to(device=flags.device) 
 
-
     buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
-    
     model.share_memory()
 
     initial_agent_state_buffers = []
