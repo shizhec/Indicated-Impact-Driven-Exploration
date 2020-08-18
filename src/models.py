@@ -697,7 +697,6 @@ class ProcGenStateEmbeddingNet(nn.Module):
     def __init__(self, observation_shape):
         super(ProcGenStateEmbeddingNet, self).__init__()
         self.observation_shape = observation_shape
-
         init_ = lambda m: init(m, nn.init.orthogonal_,
                 lambda x: nn.init.constant_(x, 0),
                 nn.init.calculate_gain('relu'))
@@ -709,14 +708,33 @@ class ProcGenStateEmbeddingNet(nn.Module):
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
             nn.ELU(),
-            init_(nn.Conv2d(in_channels=32, out_channels=128, kernel_size=(3, 3), stride=2,
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
+                            padding=1)),
+            nn.ELU(),
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
+                            padding=1)),
+            nn.ELU(),
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
+                            padding=1)),
+            nn.ELU(),
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
             nn.ELU(),
         )
 
-    def forward(self, inputs):
+        self.fc = nn.Sequential(
+            init_(nn.Linear(32, 128)),
+            nn.ReLU(),
+            init_(nn.Linear(128, 128)),
+            nn.ReLU(),
+        )
+
+    def forward(self, inputs, next_state=False):
         # [unroll_length x batch_size x height x width x channels]
-        x = inputs
+        if next_state:
+            x = inputs["frame"][1:]
+        else:
+            x = inputs["frame"][:-1]
         T, B, *_ = x.shape
 
         # [unroll_length*batch_size x height x width x channels]
@@ -726,9 +744,12 @@ class ProcGenStateEmbeddingNet(nn.Module):
 
         # [unroll_length*batch_size x channels x width x height]
         x = x.transpose(1, 3)
+
         x = self.feat_extract(x)
 
-        state_embedding = x.view(T, B, -1)
+        x = x.view(T * B, -1)
+
+        state_embedding = self.fc(x)
 
         return state_embedding
 
