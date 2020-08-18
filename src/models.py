@@ -638,15 +638,13 @@ class ProgGenPolicyNet(nn.Module):
             nn.ReLU(),
         )
 
-        self.core = nn.LSTM(1024, 1024, 2)
-
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.constant_(x, 0))
 
         self.policy = init_(nn.Linear(1024, self.num_actions))
         self.baseline = init_(nn.Linear(1024, 1))
 
     def initial_state(self, batch_size):
-        return tuple(torch.zeros(self.core.num_layers, batch_size, self.core.hidden_size) for _ in range(2))
+        return tuple()
 
     def forward(self, inputs, core_state=()):
         x = inputs["frame"]
@@ -666,23 +664,14 @@ class ProgGenPolicyNet(nn.Module):
         x = x.view(T*B, -1)
 
         core_input = self.fc(x)
-
-        core_input = core_input.view(T, B, -1)
-        core_output_list = []
-        notdone = (~inputs['done']).float()
-        for input, nd in zip(core_input.unbind(), notdone.unbind()):
-            nd = nd.view(1, -1, 1)
-            core_state = tuple(nd * s for s in core_state)
-            output, core_state = self.core(input.unsqueeze(0), core_state)
-            core_output_list.append(output)
-        core_output = torch.flatten(torch.cat(core_output_list), 0, 1)
+        core_output = core_input
+        core_state = tuple()
 
         policy_logits = self.policy(core_output)
         baseline = self.baseline(core_output)
 
         if self.training:
-            action = torch.multinomial(
-                F.softmax(policy_logits, dim=1), num_samples=1)
+            action = torch.multinomial(F.softmax(policy_logits, dim=1), num_samples=1)
         else:
             action = torch.argmax(policy_logits, dim=1)
 
@@ -740,7 +729,7 @@ class ProcGenStateEmbeddingNet(nn.Module):
         # [unroll_length*batch_size x height x width x channels]
         x = torch.flatten(x, 0, 1)
 
-        x = x.float() / 255.0
+        x = x.float()
 
         # [unroll_length*batch_size x channels x width x height]
         x = x.transpose(1, 3)
