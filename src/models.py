@@ -682,7 +682,7 @@ class ProgGenPolicyNet(nn.Module):
 
         if self.training:
             action = torch.multinomial(
-                F.softmax(policy_logits, dim=1), num_samples=1)
+                F.log_softmax(policy_logits, dim=1), num_samples=1)
         else:
             action = torch.argmax(policy_logits, dim=1)
 
