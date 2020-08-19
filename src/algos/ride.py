@@ -26,7 +26,7 @@ import src.models as models
 import src.losses as losses
 
 from src.env_utils import FrameStack
-from src.utils import get_batch, log, create_env, create_buffers, act
+from src.utils import get_batch, log, create_env, create_buffers, act, save_file
 
 MinigridStateEmbeddingNet = models.MinigridStateEmbeddingNet
 MinigridForwardDynamicsNet = models.MinigridForwardDynamicsNet
@@ -395,6 +395,8 @@ def train(flags):
             log.info('After %i frames: loss %f @ %.1f fps. %sStats:\n%s',
                          frames, total_loss, fps, mean_return,
                          pprint.pformat(stats))
+            if flags.store_plot_data:
+                save_file(frames, stats, flags)
 
     except KeyboardInterrupt:
         return  

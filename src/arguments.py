@@ -114,3 +114,5 @@ parser.add_argument('--num_levels', default=0, type=int,
                     help='The number of unique levels that can be generated. Set to 0 to use unlimited levels.')
 parser.add_argument('--distribution_mode', default='hard',
                     choices=['easy', 'hard', 'extreme', 'memory', 'exploration'])
+parser.add_argument('--store_plot_data', action='store_true',
+                    help="indicate whether store the data for plot or not.")
