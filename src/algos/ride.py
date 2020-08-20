@@ -395,8 +395,6 @@ def train(flags):
             log.info('After %i frames: loss %f @ %.1f fps. %sStats:\n%s',
                          frames, total_loss, fps, mean_return,
                          pprint.pformat(stats))
-            if flags.store_plot_data:
-                save_file(frames, stats, flags)
 
     except KeyboardInterrupt:
         return  

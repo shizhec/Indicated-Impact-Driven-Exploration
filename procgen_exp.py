@@ -8,6 +8,7 @@ def plot_normalized_mean_return(Rmax, Rmin, env):
     while True:
         try:
             obj = pickle.load(open('data/'+env+'.pkl', 'rb'))
+            print(obj)
             frames = obj.get("frames")
             exp = lambda x: x if x is not "nan" else 0
             episode_mean_return = exp(obj.get("mean_episode_return"))
@@ -20,5 +21,6 @@ def plot_normalized_mean_return(Rmax, Rmin, env):
 
     print(output)
 
-plot_normalized_mean_return(0,0,"procgen:procgen-coinrun-v0")
+def load_slurm_output(env_name):
+    pass
 

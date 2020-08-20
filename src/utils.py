@@ -257,10 +257,3 @@ def act(i: int, free_queue: mp.SimpleQueue, full_queue: mp.SimpleQueue,
         traceback.print_exc()
         print()
         raise e
-
-def save_file(frames, stats, flags):
-    stats_copy = dict(stats)
-    stats_copy.update({"frames": frames})
-    file = open('data/'+flags.env+'.pkl', 'ab')
-    pickle.dump(stats_copy, file)
-    file.close()
