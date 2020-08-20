@@ -1,4 +1,4 @@
 OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_actors 1
 OMP_NUM_THREADS=1 python main.py --model ride --env MiniGrid-ObstructedMaze-2Dlh-v0 --num_actors 1
 
-scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/procgen:procgen-coinrun-v0.pkl data
+scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/coinrun.out data
