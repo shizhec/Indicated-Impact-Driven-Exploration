@@ -356,7 +356,7 @@ def act_amigo(
                     goal = generator_output["goal"]
 
                 with torch.no_grad():
-                    agent_output, agent_state = model(env_output, agent_state, goal)
+                    agent_output, agent_state = model(env_output, agent_state)
 
                 timings.time("model")
 
