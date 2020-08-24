@@ -333,20 +333,11 @@ def act_amigo(
                 aux_steps = 0
                 timings.reset()
 
-                if flags.modify:
-                    new_frame = torch.flatten(env_output['frame'], 2, 3)
-                    old_frame = torch.flatten(initial_frame, 2, 3)
-                    ans = new_frame == old_frame
-                    ans = torch.sum(ans, 3) != 3  # Reached if the three elements of the frame are not the same.
-                    reached_condition = torch.squeeze(torch.gather(ans, 2, torch.unsqueeze(goal.long(), 2)))
-
-                else:
-                    agent_location = torch.flatten(env_output['frame'], 2, 3)
-                    agent_location = agent_location[:, :, :, 0]
-                    agent_location = (agent_location == 10).nonzero()  # select object id
-                    agent_location = agent_location[:, 2]
-                    agent_location = agent_location.view(agent_output["action"].shape)
-                    reached_condition = goal == agent_location
+                new_frame = torch.flatten(env_output['frame'], 2, 3)
+                old_frame = torch.flatten(initial_frame, 2, 3)
+                ans = new_frame == old_frame
+                ans = torch.sum(ans, 3) != 3  # Reached if the three elements of the frame are not the same.
+                reached_condition = torch.squeeze(torch.gather(ans, 2, torch.unsqueeze(goal.long(), 2)))
 
                 if reached_condition:  # Generate new goal when reached intrinsic goal
                     if flags.restart_episode:
