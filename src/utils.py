@@ -340,10 +340,7 @@ def act_amigo(
                 reached_condition = torch.squeeze(torch.gather(ans, 2, torch.unsqueeze(goal.long(), 2)))
 
                 if reached_condition:  # Generate new goal when reached intrinsic goal
-                    if flags.restart_episode:
-                        env_output = env.initial()
-                    else:
-                        env.episode_step = 0
+                    env.episode_step = 0
                     initial_frame = env_output['frame']
                     with torch.no_grad():
                         generator_output = generator_model(env_output)
