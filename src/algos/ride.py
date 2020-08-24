@@ -45,7 +45,7 @@ FullObsMinigridPolicyNet = models.FullObsMinigridPolicyNet
 ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
 ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
 ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
-ProgGenPolicyNet = models.ProgGenPolicyNet
+ProcGenPolicyNet = models.ProcGenPolicyNet
 
 def learn(actor_model,
           model,
@@ -211,7 +211,7 @@ def train(flags):
         inverse_dynamics_model = MinigridInverseDynamicsNet(env.action_space.n)\
             .to(device=flags.device)
     elif 'procgen' in flags.env:
-        model = ProgGenPolicyNet(env.observation_space.shape, env.action_space.n)
+        model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
         state_embedding_model = ProcGenStateEmbeddingNet(env.observation_space.shape)\
             .to(device=flags.device)
         forward_dynamics_model = ProcGenForwardDynamicsNet(env.action_space.n)\
@@ -261,7 +261,7 @@ def train(flags):
             learner_model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)\
                 .to(device=flags.device)
     elif 'procgen' in flags.env:
-        learner_model = ProgGenPolicyNet(env.observation_space.shape, env.action_space.n)\
+        learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)\
                 .to(device=flags.device)
     else:
         learner_model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)\

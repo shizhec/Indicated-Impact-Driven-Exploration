@@ -97,7 +97,8 @@ parser.add_argument('--no_reward', action='store_true',
 
 # Training Models.
 parser.add_argument('--model', default='vanilla',
-                    choices=['vanilla', 'count', 'curiosity', 'rnd', 'ride', 'no-episodic-counts', 'only-episodic-counts'],
+                    choices=['vanilla', 'count', 'curiosity', 'rnd', 'ride', 'no-episodic-counts',
+                             'only-episodic-counts', 'amigo'],
                     help='Model used for training the agent.')
 
 # Baselines for AMIGo paper.
@@ -105,6 +106,37 @@ parser.add_argument('--use_fullobs_policy', action='store_true',
                     help='Use a full view of the environment as input to the policy network.')
 parser.add_argument('--use_fullobs_intrinsic', action='store_true',
                     help='Use a full view of the environment for computing the intrinsic reward.')
+
+# Settings for AMIGo paper.
+parser.add_argument('--generator_entropy_cost', default=0.05, type=float,
+                    help='Entropy cost/multiplier.')
+parser.add_argument('--reward_clipping', default='abs_one',
+                    choices=['abs_one', 'soft_asymmetric', 'none'],
+                    help='Reward clipping.')
+parser.add_argument('--generator_learning_rate', default=0.002, type=float,
+                    metavar='LR', help='Learning rate.')
+parser.add_argument('--generator_batch_size', default=32, type=int, metavar='BB',
+                    help='Learner batch size (default: 4).')
+parser.add_argument('--goal_dim', default=10, type=int,
+                    help='Size of Goal Embedding')
+parser.add_argument('--state_embedding_dim', default=256, type=int,
+                    help='Dimension of the state embedding representation used in the student')
+parser.add_argument('--generator_reward_negative', default= -0.1, type=float,
+                    help='Coefficient for the intrinsic reward')
+parser.add_argument('--generator_threshold', default=0.1, type=float,
+                    help='Threshold mean reward for wich scheduler increases difficulty')
+parser.add_argument('--generator_counts', default=10, type=int,
+                    help='Number of time before generator increases difficulty')
+parser.add_argument('--generator_maximum', default=100, type=float,
+                    help='Maximum difficulty')
+parser.add_argument('--generator_reward_coef', default=1.0, type=float,
+                    help='Coefficient for the generator reward')
+parser.add_argument('--generator_loss_form', type=str, default='threshold',
+                    help='[threshold,dummy,gaussian, linear]')
+parser.add_argument('--generator_target', default=5.0, type=float,
+                    help='Mean target for Gassian and Linear Rewards')
+parser.add_argument('--target_variance', default=15.0, type=float,
+                    help='Variance for the Gaussian Reward')
 
 # for ProcGen environment
 parser.add_argument('--start_level', default=0, type=int,

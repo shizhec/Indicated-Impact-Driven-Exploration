@@ -600,9 +600,9 @@ class MarioDoomInverseDynamicsNet(nn.Module):
         return action_logits
 
 
-class ProgGenPolicyNet(nn.Module):
+class ProcGenPolicyNet(nn.Module):
     def __init__(self, observation_shape, num_actions):
-        super(ProgGenPolicyNet, self).__init__()
+        super(ProcGenPolicyNet, self).__init__()
         self.observation_shape = observation_shape
         self.num_actions = num_actions
 
@@ -787,5 +787,77 @@ class ProcGenForwardDynamicsNet(nn.Module):
         next_state_emb = self.fd_out(self.forward_dynamics(inputs))
         return next_state_emb
 
+# 64 x 64 x 3 input frame
+class ProcGenGenerator(nn.Module):
+    """Constructs the Teacher Policy which takes an initial observation and produces a goal."""
+    def __init__(self, observation_shape, width, height, num_input_frames, hidden_dim=256):
+        super(ProcGenGenerator, self).__init__()
+        self.observation_shape = observation_shape
+        self.height = height
+        self.width = width
+        self.env_dim = self.width * self.height
+        self.state_embedding_dim = 256
 
+        self.use_index_select = True
+        self.num_channels = 3 * num_input_frames
 
+        K = self.num_channels  # number of input filters
+        F = 3  # filter dimensions
+        S = 1  # stride
+        P = 1  # padding
+        M = 16  # number of intermediate filters
+        Y = 8  # number of output filters
+        L = 4  # number of convnet layers
+        E = 1 # output of last layer
+
+        in_channels = [K] + [M] * 4
+        out_channels = [M] * 3 + [E]
+
+        conv_extract = [
+            nn.Conv2d(
+                in_channels=in_channels[i],
+                out_channels=out_channels[i],
+                kernel_size=(F, F),
+                stride=S,
+                padding=P,
+            )
+            for i in range(L)
+        ]
+
+        def interleave(xs, ys):
+            return [val for pair in zip(xs, ys) for val in pair]
+
+        self.extract_representation = nn.Sequential(
+            *interleave(conv_extract, [nn.ELU()] * len(conv_extract))
+        )
+
+        self.out_dim = self.env_dim * 16
+
+        init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
+                               constant_(x, 0))
+
+        self.baseline_teacher = init_(nn.Linear(self.env_dim, 1))
+
+    def forward(self, inputs):
+        x = inputs["frame"]
+        T, B, *_ = x.shape
+
+        x = torch.flatten(x, 0, 1)  # Merge time and batch.
+        x = x.float()
+
+        x = x.transpose(1, 3)
+
+        x = self.extract_representation(x)
+        x = x.view(T * B, -1)
+
+        generator_logits = x.view(T*B, -1)
+
+        generator_baseline = self.baseline_teacher(generator_logits)
+
+        goal = torch.multinomial(F.softmax(generator_logits, dim=1), num_samples=1)
+
+        generator_logits = generator_logits.view(T, B, -1)
+        generator_baseline = generator_baseline.view(T, B)
+        goal = goal.view(T, B)
+
+        return dict(goal=goal, generator_logits=generator_logits, generator_baseline=generator_baseline)
