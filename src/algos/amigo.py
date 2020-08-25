@@ -521,7 +521,7 @@ def train(flags):
                 initial_agent_state_buffers, flags, timings)
             stats = learn(model, learner_model, generator_model, learner_generator_model,
                           batch, agent_state, optimizer, generator_model_optimizer, scheduler,
-                          generator_scheduler, flags, env.max_steps)
+                          generator_scheduler, flags)
 
             timings.time("learn")
             with lock:
