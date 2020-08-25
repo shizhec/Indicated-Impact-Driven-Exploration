@@ -2,3 +2,19 @@ OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 -
 OMP_NUM_THREADS=1 python main.py --model ride --env MiniGrid-ObstructedMaze-2Dlh-v0 --num_actors 1
 
 scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/coinrun.out data
+
+parameters
+--learning_rate
+[0.00005, 0.0001, 0.0005, 0.001, 0.005]
+
+--batch size
+[8, 32]
+
+--unroll_length
+[20, 40, 60, 80, 100]
+
+--intrinsic reward coefficient
+[1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001]
+
+--entropy_cost
+[0.01, 0.005, 0.001, 0.0005, 0.0001, 0.00005]

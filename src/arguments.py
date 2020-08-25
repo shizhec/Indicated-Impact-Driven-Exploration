@@ -137,6 +137,26 @@ parser.add_argument('--generator_target', default=5.0, type=float,
                     help='Mean target for Gassian and Linear Rewards')
 parser.add_argument('--target_variance', default=15.0, type=float,
                     help='Variance for the Gaussian Reward')
+parser.add_argument('--inner', action='store_true',
+                    help='Exlucde outer wall')
+parser.add_argument('--disable_use_embedding', action='store_true',
+                    help='Disable embeddings.')
+parser.add_argument('--no_extrinsic_rewards', action='store_true',
+                    help='Only intrinsic rewards.')
+parser.add_argument('--no_generator', action='store_true',
+                    help='Use vanilla policy-deprecated')
+parser.add_argument('--novelty', action='store_true',
+                    help='Discount rewards based on times goal has been proposed.')
+parser.add_argument('--novelty_bonus', default=0.1, type=float,
+                    help='Bonus you get for proposing objects if novelty')
+parser.add_argument('--novelty_coef', default=0.3, type=float,
+                    help='Modulates novelty bonus if novelty')
+parser.add_argument('--restart_episode', action='store_true',
+                    help='Restart Episode when reaching intrinsic goal.')
+parser.add_argument('--modify', action='store_true',
+                    help='Modify Goal instead of having to reach the goal')
+parser.add_argument('--no_boundary_awareness', action='store_true',
+                    help='Remove Episode Boundary Awareness')
 
 # for ProcGen environment
 parser.add_argument('--start_level', default=0, type=int,
