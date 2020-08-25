@@ -79,12 +79,12 @@ def learn(
         done_aux = batch['done'][1:].float().to(device=flags.device)
         reached_goal = reached_goal_func(next_frame, batch['goal'][1:].to(device=flags.device),
                                          initial_frames=initial_frames, done_aux=done_aux)
-        intrinsic_rewards = flags.intrinsic_reward_coef * reached_goal
+        intrinsic_rewards = flags.intrinsic_reward_coef * reached_goal.float()
         reached = reached_goal.type(torch.bool)
         intrinsic_rewards = intrinsic_rewards * (
                     intrinsic_rewards - 0.9 * (batch["episode_step"][1:].float() / max_steps))
 
-        learner_outputs, unused_state = model(batch, initial_agent_state, batch['goal'])
+        learner_outputs, unused_state = model(batch, initial_agent_state)
         bootstrap_value = learner_outputs["baseline"][-1]
         batch = {key: tensor[1:] for key, tensor in batch.items()}
         learner_outputs = {key: tensor[:-1] for key, tensor in learner_outputs.items()}
