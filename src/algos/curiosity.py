@@ -42,6 +42,11 @@ MarioDoomPolicyNet = models.MarioDoomPolicyNet
 FullObsMinigridStateEmbeddingNet = models.FullObsMinigridStateEmbeddingNet
 FullObsMinigridPolicyNet = models.FullObsMinigridPolicyNet
 
+ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
+ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
+ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
+ProcGenPolicyNet = models.ProcGenPolicyNet
+
 def learn(actor_model,
           model,
           state_embedding_model,
@@ -59,7 +64,7 @@ def learn(actor_model,
           lock=threading.Lock()):
     """Performs a learning (optimization) step."""
     with lock:
-        if flags.use_fullobs_intrinsic:
+        if flags.use_fullobs_intrinsic or 'procgen' in flags.env:
             state_emb = state_embedding_model(batch, next_state=False)\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
             next_state_emb = state_embedding_model(batch, next_state=True)\
@@ -68,7 +73,7 @@ def learn(actor_model,
             state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
             next_state_emb = state_embedding_model(batch['partial_obs'][1:].to(device=flags.device))
 
-        pred_next_state_emb = forward_dynamics_model(\
+        pred_next_state_emb = forward_dynamics_model(
             state_emb, batch['action'][1:].to(device=flags.device))
         pred_actions = inverse_dynamics_model(state_emb, next_state_emb) 
         entropy_emb_actions = losses.compute_entropy_loss(pred_actions)
@@ -210,7 +215,15 @@ def train(flags):
         forward_dynamics_model = MinigridForwardDynamicsNet(env.action_space.n)\
             .to(device=flags.device) 
         inverse_dynamics_model = MinigridInverseDynamicsNet(env.action_space.n)\
-            .to(device=flags.device) 
+            .to(device=flags.device)
+    elif 'procgen' in flags.env:
+        model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
+        state_embedding_model = ProcGenStateEmbeddingNet(env.observation_space.shape)\
+            .to(device=flags.device)
+        forward_dynamics_model = ProcGenForwardDynamicsNet(env.action_space.n)\
+            .to(device=flags.device)
+        inverse_dynamics_model = ProcGenInverseDynamicsNet(env.action_space.n)\
+            .to(device=flags.device)
     else:
         model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)
         state_embedding_model = MarioDoomStateEmbeddingNet(env.observation_space.shape)\
@@ -252,6 +265,9 @@ def train(flags):
                 .to(device=flags.device)
         else:
             learner_model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)\
+                .to(device=flags.device)
+    elif 'procgen' in flags.env:
+        learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)\
                 .to(device=flags.device)
     else:
         learner_model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)\

@@ -351,6 +351,7 @@ def train(flags):
             target=batch_and_learn, name='batch-and-learn-%d' % i, args=(i,))
         thread.start()
         threads.append(thread)
+
     
     
     def checkpoint(frames):

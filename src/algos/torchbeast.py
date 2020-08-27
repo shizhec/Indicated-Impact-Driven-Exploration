@@ -31,7 +31,7 @@ from src.utils import get_batch, log, create_env, create_buffers, act
 
 MinigridPolicyNet = models.MinigridPolicyNet
 MarioDoomPolicyNet = models.MarioDoomPolicyNet
-
+ProcGenPolicyNet = models.ProcGenPolicyNet
 
 def learn(actor_model,
           model,
@@ -124,6 +124,8 @@ def train(flags):
 
     if 'MiniGrid' in flags.env: 
         model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)
+    elif 'procgen' in flags.env:
+        model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
     else:
         model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)
 
@@ -156,6 +158,9 @@ def train(flags):
 
     if 'MiniGrid' in flags.env: 
         learner_model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)\
+            .to(device=flags.device)
+    elif 'procgen' in flags.env:
+        learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)\
             .to(device=flags.device)
     else:
         learner_model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)\
