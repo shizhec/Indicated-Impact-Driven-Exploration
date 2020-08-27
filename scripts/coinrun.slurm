@@ -8,4 +8,4 @@
 module load gcccore/8.3.0
 module load python/3.7.4
 
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 8
+OMP_NUM_THREADS=1 python ../main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 8
