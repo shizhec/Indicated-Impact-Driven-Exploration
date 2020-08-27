@@ -7,7 +7,8 @@
 import torch
 from torch import nn 
 from torch.nn import functional as F
-import numpy as np 
+import numpy as np
+from torch.utils.checkpoint import checkpoint, checkpoint_sequential
 
 
 def init(module, weight_init, bias_init, gain=1):
@@ -660,10 +661,12 @@ class ProcGenPolicyNet(nn.Module):
         # [T*B x 3 x 64 x 64]
         x = x.transpose(1, 3)
 
-        x = self.feat_extract(x)
+        x = checkpoint_sequential(self.feat_extract, 2, x)
+        # x = self.feat_extract(x)
         x = x.view(T*B, -1)
 
-        core_input = self.fc(x)
+        core_input = checkpoint_sequential(self.fc, 2, x)
+        # core_input = self.fc(x)
         core_output = core_input
         core_state = tuple()
 
