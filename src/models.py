@@ -869,5 +869,7 @@ class ProcGenGenerator(nn.Module):
     """Construct a teacher which takes a current state embedding and output the target state embedding"""
     def __init__(self):
         super(ProcGenGenerator, self).__init__()
-
-        self.
+        pass
+    
+    def forward(self, inputs):
+        pass
