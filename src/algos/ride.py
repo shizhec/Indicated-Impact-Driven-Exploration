@@ -330,6 +330,12 @@ def train(flags):
         nonlocal frames, stats
         timings = prof.Timings()
         while frames < flags.total_frames:
+            if frames > 1000000 and flags.device is torch.device('cuda'):
+                print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
+                print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
+                torch.cuda.empty_cache()
+                print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
+                print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
             timings.reset()
             batch, agent_state = get_batch(free_queue, full_queue, buffers, 
                 initial_agent_state_buffers, flags, timings)

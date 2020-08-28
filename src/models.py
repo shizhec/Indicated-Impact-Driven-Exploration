@@ -885,8 +885,5 @@ class ProcGenGenerator(nn.Module):
 
         self.baseline_teacher = init_(nn.Linear(128, 1))
 
-
-        pass
-
     def forward(self, inputs):
         pass
