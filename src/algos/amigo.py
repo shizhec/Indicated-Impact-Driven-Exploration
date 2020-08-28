@@ -30,7 +30,7 @@ from src.env_utils import FrameStack
 from src.utils import get_batch, log, create_env, create_buffers_amigo, act_amigo
 
 ProcGenPolicyNet = models.ProcGenPolicyNet
-ProcGenGenerator = models.ProcGenGenerator
+Generator = models.Generator
 
 # Some Global Variables
 # We start t* at 7 steps.
@@ -427,7 +427,7 @@ def train(flags):
     if flags.num_input_frames > 1:
         env = FrameStack(env, flags.num_input_frames)
 
-    generator_model = ProcGenGenerator(env.observation_space.shape, env.observation_space.shape[0],
+    generator_model = Generator(env.observation_space.shape, env.observation_space.shape[0],
                                        env.observation_space.shape[1],
                                 num_input_frames=flags.num_input_frames)
 
@@ -466,7 +466,7 @@ def train(flags):
 
     learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n) \
         .to(device=flags.device)
-    learner_generator_model = ProcGenGenerator(env.observation_space.shape, env.observation_space.shape[0],
+    learner_generator_model = Generator(env.observation_space.shape, env.observation_space.shape[0],
                                                env.observation_space.shape[1],
                                                num_input_frames=flags.num_input_frames).to(device=flags.device)
 

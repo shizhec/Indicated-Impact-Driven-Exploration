@@ -721,12 +721,10 @@ class ProcGenStateEmbeddingNet(nn.Module):
             nn.ReLU(),
         )
 
-    def forward(self, inputs, next_state=False):
+    def forward(self, inputs):
         # [unroll_length x batch_size x height x width x channels]
-        if next_state:
-            x = inputs["frame"][1:]
-        else:
-            x = inputs["frame"][:-1]
+        x = inputs
+
         T, B, *_ = x.shape
 
         # [unroll_length*batch_size x height x width x channels]
@@ -791,10 +789,11 @@ class ProcGenForwardDynamicsNet(nn.Module):
         return next_state_emb
 
 # 64 x 64 x 3 input frame
-class ProcGenGenerator(nn.Module):
+# for amigo
+class Generator(nn.Module):
     """Constructs the Teacher Policy which takes an initial observation and produces a goal."""
     def __init__(self, observation_shape, width, height, num_input_frames, hidden_dim=256):
-        super(ProcGenGenerator, self).__init__()
+        super(Generator, self).__init__()
         self.observation_shape = observation_shape
         self.height = height
         self.width = width
@@ -864,3 +863,11 @@ class ProcGenGenerator(nn.Module):
         goal = goal.view(T, B)
 
         return dict(goal=goal, generator_logits=generator_logits, generator_baseline=generator_baseline)
+
+
+class ProcGenGenerator(nn.Module):
+    """Construct a teacher which takes a current state embedding and output the target state embedding"""
+    def __init__(self):
+        super(ProcGenGenerator, self).__init__()
+
+        self.

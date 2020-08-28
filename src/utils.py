@@ -175,7 +175,7 @@ def act(i: int, free_queue: mp.SimpleQueue, full_queue: mp.SimpleQueue,
         initial_agent_state_buffers, flags):
     try:
         log.info('Actor %i started.', i)
-        timings = prof.Timings()  
+        timings = prof.Timings()
 
         gym_env = create_env(flags)
 
