@@ -142,6 +142,28 @@ def create_buffers(obs_shape, num_actions, flags) -> Buffers:
     return buffers
 
 
+def create_buffers_procgen(obs_shape, num_actions, flags) -> Buffers:
+    T = flags.unroll_length
+    specs = dict(
+        frame=dict(size=(T + 1, *obs_shape), dtype=torch.uint8),
+        reward=dict(size=(T + 1,), dtype=torch.float16),
+        done=dict(size=(T + 1,), dtype=torch.uint8),
+        episode_return=dict(size=(T + 1,), dtype=torch.float16),
+        episode_step=dict(size=(T + 1,), dtype=torch.int16),
+        policy_logits=dict(size=(T + 1, num_actions), dtype=torch.float16),
+        baseline=dict(size=(T + 1,), dtype=torch.float16),
+        action=dict(size=(T + 1,), dtype=torch.int32),
+        episode_win=dict(size=(T + 1,), dtype=torch.int16),
+        episode_state_count=dict(size=(T + 1,), dtype=torch.float16),
+        train_state_count=dict(size=(T + 1,), dtype=torch.float16),
+    )
+    buffers: Buffers = {key: [] for key in specs}
+    for _ in range(flags.num_buffers):
+        for key in buffers:
+            buffers[key].append(torch.empty(**specs[key]).share_memory_())
+    return buffers
+
+
 def create_buffers_amigo(obs_shape, num_actions, flags, logits_size) -> Buffers:
     T = flags.unroll_length
     specs = dict(

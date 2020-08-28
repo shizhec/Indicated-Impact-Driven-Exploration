@@ -876,13 +876,13 @@ class ProcGenGenerator(nn.Module):
         self.target_teacher = nn.Sequential(
             init_(nn.Linear(128, 256)),
             nn.ReLU(),
-            init_(nn.Linear(256, 128)),
-            nn.ReLU()
         )
+
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
                                constant_(x, 0))
 
+        self.policy_teacher = init_(nn.Linear(256, 128))
         self.baseline_teacher = init_(nn.Linear(128, 1))
 
     def forward(self, inputs):

@@ -26,7 +26,7 @@ import src.models as models
 import src.losses as losses
 
 from src.env_utils import FrameStack
-from src.utils import get_batch, log, create_env, create_buffers, act
+from src.utils import get_batch, log, create_env, create_buffers, act, create_buffers_procgen
 
 MinigridStateEmbeddingNet = models.MinigridStateEmbeddingNet
 MinigridForwardDynamicsNet = models.MinigridForwardDynamicsNet
@@ -170,6 +170,9 @@ def learn(actor_model,
         forward_dynamics_optimizer.step()
         inverse_dynamics_optimizer.step()
 
+        # delete loss
+        del total_loss
+
         actor_model.load_state_dict(model.state_dict())
         return stats
 
@@ -192,6 +195,8 @@ def train(flags):
     if not flags.disable_cuda and torch.cuda.is_available():
         log.info('Using CUDA.')
         flags.device = torch.device('cuda')
+        torch.backends.cudnn.enabled = True
+        torch.backends.cudnn.benchmark = True
     else:
         log.info('Not using CUDA.')
         flags.device = torch.device('cpu')
@@ -232,7 +237,10 @@ def train(flags):
         inverse_dynamics_model = MarioDoomInverseDynamicsNet(env.action_space.n)\
             .to(device=flags.device) 
 
-    buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
+    if 'procgen' in flags:
+        buffers = create_buffers_procgen(env.observation_space.shape, model.num_actions, flags)
+    else:
+        buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
     model.share_memory()
 
     initial_agent_state_buffers = []
