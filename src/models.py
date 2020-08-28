@@ -741,6 +741,8 @@ class ProcGenStateEmbeddingNet(nn.Module):
 
         state_embedding = self.fc(x)
 
+        state_embedding = state_embedding.view(T * B, -1)
+
         return state_embedding
 
 class ProcGenInverseDynamicsNet(nn.Module):
@@ -869,7 +871,17 @@ class ProcGenGenerator(nn.Module):
     """Construct a teacher which takes a current state embedding and output the target state embedding"""
     def __init__(self):
         super(ProcGenGenerator, self).__init__()
+
+        init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
+                               constant_(x, 0), nn.init.calculate_gain('relu'))
+
+        self.target_teacher = nn.Sequential(
+            init_(nn.Linear(128, 256)),
+            nn.ReLU(),
+            init_(nn.Linear(256, 128)),
+            nn.ReLU()
+        )
         pass
-    
+
     def forward(self, inputs):
         pass
