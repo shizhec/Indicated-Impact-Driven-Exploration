@@ -614,29 +614,29 @@ class ProcGenPolicyNet(nn.Module):
         self.feat_extract = nn.Sequential(
             init_(nn.Conv2d(in_channels=self.observation_shape[2], out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(),
+            nn.ELU(inplace=True),
         )
 
         self.fc = nn.Sequential(
             init_(nn.Linear(32, 1024)),
-            nn.ReLU(),
+            nn.ReLU(inplace=True),
             init_(nn.Linear(1024, 1024)),
-            nn.ReLU(),
+            nn.ReLU(inplace=True),
         )
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.constant_(x, 0))
@@ -661,12 +661,12 @@ class ProcGenPolicyNet(nn.Module):
         # [T*B x 3 x 64 x 64]
         x = x.transpose(1, 3)
 
-        x = checkpoint_sequential(self.feat_extract, 2, x)
-        # x = self.feat_extract(x)
+        # x = checkpoint_sequential(self.feat_extract, 2, x)
+        x = self.feat_extract(x)
         x = x.view(T*B, -1)
 
-        core_input = checkpoint_sequential(self.fc, 2, x)
-        # core_input = self.fc(x)
+        # core_input = checkpoint_sequential(self.fc, 2, x)
+        core_input = self.fc(x)
         core_output = core_input
         core_state = tuple()
 
