@@ -68,15 +68,10 @@ def learn(actor_model,
             dtype=torch.float32).to(device=flags.device)
         count_rewards = batch['episode_state_count'][1:].float().to(device=flags.device)
 
-        if flags.use_fullobs_intrinsic:
+        if flags.use_fullobs_intrinsic or 'procgen' in flags.env:
             state_emb = state_embedding_model(batch, next_state=False)\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
             next_state_emb = state_embedding_model(batch, next_state=True)\
-                    .reshape(flags.unroll_length, flags.batch_size, 128)
-        elif 'procgen' in flags.env:
-            state_emb = state_embedding_model(batch['frame'][:-1])\
-                    .reshape(flags.unroll_length, flags.batch_size, 128)
-            next_state_emb = state_embedding_model(batch['frame'][1:])\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
         else:
             state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
@@ -339,11 +334,11 @@ def train(flags):
         timings = prof.Timings()
         while frames < flags.total_frames:
             if frames > 1000000 and flags.device is torch.device('cuda'):
-                print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
-                print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
-                torch.cuda.empty_cache()
-                print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
-                print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
+                # print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
+                # print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
+                # torch.cuda.empty_cache()
+                # print("max_memory_allocated: ", torch.cuda.max_memory_allocated(flags.device))
+                # print("max_memory_cached: ", torch.cuda.max_memory_cached(flags.device))
             timings.reset()
             batch, agent_state = get_batch(free_queue, full_queue, buffers, 
                 initial_agent_state_buffers, flags, timings)

@@ -721,9 +721,12 @@ class ProcGenStateEmbeddingNet(nn.Module):
             nn.ReLU(),
         )
 
-    def forward(self, inputs):
+    def forward(self, inputs, next_state=False):
         # [unroll_length x batch_size x height x width x channels]
-        x = inputs
+        if next_state:
+            x = inputs["frame"][1:]
+        else:
+            x = inputs["frame"][:-1]
 
         T, B, *_ = x.shape
 
