@@ -166,6 +166,11 @@ def learn(actor_model,
         inverse_dynamics_optimizer.step()
 
         # delete loss
+        del pg_loss
+        del baseline_loss
+        del entropy_loss
+        del forward_dynamics_loss
+        del inverse_dynamics_loss
         del total_loss
 
         actor_model.load_state_dict(model.state_dict())
@@ -404,6 +409,8 @@ def train(flags):
             log.info('After %i frames: loss %f @ %.1f fps. %sStats:\n%s',
                          frames, total_loss, fps, mean_return,
                          pprint.pformat(stats))
+            if flags.device == torch.device('cuda'):
+                log.info("Memory Summary for Cuda :", pprint.pformat(torch.cuda.memory_stats(flags.device)))
 
     except KeyboardInterrupt:
         return  

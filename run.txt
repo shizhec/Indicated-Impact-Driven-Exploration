@@ -21,4 +21,3 @@ parameters
 
 
 sacct -j 19446329 --format workdir,jobname,maxrss,alloctres,user -p
-WorkDir|JobName|MaxRSS|AllocTRES|User|
