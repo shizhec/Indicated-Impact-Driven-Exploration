@@ -614,29 +614,29 @@ class ProcGenPolicyNet(nn.Module):
         self.feat_extract = nn.Sequential(
             init_(nn.Conv2d(in_channels=self.observation_shape[2], out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
-            nn.ELU(inplace=True),
+            nn.ELU(),
         )
 
         self.fc = nn.Sequential(
             init_(nn.Linear(32, 1024)),
-            nn.ReLU(inplace=True),
+            nn.ReLU(),
             init_(nn.Linear(1024, 1024)),
-            nn.ReLU(inplace=True),
+            nn.ReLU(),
         )
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.constant_(x, 0))

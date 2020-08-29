@@ -74,9 +74,9 @@ def learn(actor_model,
             next_state_emb = state_embedding_model(batch, next_state=True)\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
         elif 'procgen' in flags.env:
-            state_emb = state_embedding_model(batch['frame'][:-1].to(device=flags.device))\
+            state_emb = state_embedding_model(batch['frame'][:-1])\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
-            next_state_emb = state_embedding_model(batch['frame'][1:].to(device=flags.device))\
+            next_state_emb = state_embedding_model(batch['frame'][1:])\
                     .reshape(flags.unroll_length, flags.batch_size, 128)
         else:
             state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
