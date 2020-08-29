@@ -653,7 +653,7 @@ class ProcGenPolicyNet(nn.Module):
         # [T*B x 64 x 64 x 3]
         x = torch.flatten(x, 0, 1)
 
-        x = x.long()
+        x = x.float()
 
         # [T*B x 3 x 64 x 64]
         x = x.transpose(1, 3)
@@ -728,7 +728,7 @@ class ProcGenStateEmbeddingNet(nn.Module):
         # [unroll_length*batch_size x height x width x channels]
         x = torch.flatten(x, 0, 1)
 
-        x = x.long()
+        x = x.float()
 
         # [unroll_length*batch_size x channels x width x height]
         x = x.transpose(1, 3)
