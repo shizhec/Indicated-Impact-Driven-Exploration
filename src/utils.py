@@ -146,16 +146,16 @@ def create_buffers_procgen(obs_shape, num_actions, flags) -> Buffers:
     T = flags.unroll_length
     specs = dict(
         frame=dict(size=(T + 1, *obs_shape), dtype=torch.uint8),
-        reward=dict(size=(T + 1,), dtype=torch.float16),
+        reward=dict(size=(T + 1,), dtype=torch.float32),
         done=dict(size=(T + 1,), dtype=torch.uint8),
-        episode_return=dict(size=(T + 1,), dtype=torch.float16),
-        episode_step=dict(size=(T + 1,), dtype=torch.int16),
-        policy_logits=dict(size=(T + 1, num_actions), dtype=torch.float16),
-        baseline=dict(size=(T + 1,), dtype=torch.float16),
-        action=dict(size=(T + 1,), dtype=torch.int32),
-        episode_win=dict(size=(T + 1,), dtype=torch.int16),
-        episode_state_count=dict(size=(T + 1,), dtype=torch.float16),
-        train_state_count=dict(size=(T + 1,), dtype=torch.float16),
+        episode_return=dict(size=(T + 1,), dtype=torch.float32),
+        episode_step=dict(size=(T + 1,), dtype=torch.int32),
+        policy_logits=dict(size=(T + 1, num_actions), dtype=torch.float32),
+        baseline=dict(size=(T + 1,), dtype=torch.float32),
+        action=dict(size=(T + 1,), dtype=torch.int64),
+        episode_win=dict(size=(T + 1,), dtype=torch.int32),
+        episode_state_count=dict(size=(T + 1,), dtype=torch.float32),
+        train_state_count=dict(size=(T + 1,), dtype=torch.float32),
     )
     buffers: Buffers = {key: [] for key in specs}
     for _ in range(flags.num_buffers):
