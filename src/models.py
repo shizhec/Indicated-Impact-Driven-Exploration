@@ -624,19 +624,22 @@ class ProcGenPolicyNet(nn.Module):
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
             nn.ELU(),
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
+                            padding=1)),
+            nn.ELU(),
         )
 
         self.fc = nn.Sequential(
-            init_(nn.Linear(512, 1024)),
+            init_(nn.Linear(128, 512)),
             nn.ReLU(),
-            init_(nn.Linear(1024, 1024)),
+            init_(nn.Linear(512, 512)),
             nn.ReLU(),
         )
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.constant_(x, 0))
 
-        self.policy = init_(nn.Linear(1024, self.num_actions))
-        self.baseline = init_(nn.Linear(1024, 1))
+        self.policy = init_(nn.Linear(512, self.num_actions))
+        self.baseline = init_(nn.Linear(512, 1))
 
     def initial_state(self, batch_size):
         return tuple()
@@ -701,12 +704,15 @@ class ProcGenStateEmbeddingNet(nn.Module):
             init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
                             padding=1)),
             nn.ELU(),
+            init_(nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3, 3), stride=2,
+                            padding=1)),
+            nn.ELU(),
         )
 
         self.fc = nn.Sequential(
-            init_(nn.Linear(512, 256)),
+            init_(nn.Linear(128, 128)),
             nn.ReLU(),
-            init_(nn.Linear(256, 128)),
+            init_(nn.Linear(128, 128)),
             nn.ReLU(),
         )
 
