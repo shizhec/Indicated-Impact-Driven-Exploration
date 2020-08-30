@@ -26,11 +26,14 @@ import src.models as models
 import src.losses as losses
 
 from src.env_utils import FrameStack
-from src.utils import get_batch, log, create_env, create_buffers, act
+from src.utils import get_batch, log, create_env, create_buffers_clride, act_clride
 
-MinigridPolicyNet = models.MinigridPolicyNet
-MarioDoomPolicyNet = models.MarioDoomPolicyNet
+
+ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
+ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
+ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
+ProcGenGenerator = models.ProcGenGenerator
 
 
 def learn(actor_model,
@@ -122,16 +125,13 @@ def train(flags):
     if flags.num_input_frames > 1:
         env = FrameStack(env, flags.num_input_frames)
 
-    if 'MiniGrid' in flags.env:
-        model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)
-    elif 'procgen' in flags.env:
-        model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
-    else:
-        model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)
+    model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
+    generator_model = ProcGenGenerator()
 
-    buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
+    buffers = create_buffers_clride(env.observation_space.shape, model.num_actions, flags)
 
     model.share_memory()
+    generator_model.share_memory()
 
     initial_agent_state_buffers = []
     for _ in range(flags.num_buffers):
@@ -150,7 +150,7 @@ def train(flags):
     for i in range(flags.num_actors):
         actor = ctx.Process(
             target=act,
-            args=(i, free_queue, full_queue, model, buffers,
+            args=(i, free_queue, full_queue, model, generator_model, buffers,
                   episode_state_count_dict, train_state_count_dict,
                   initial_agent_state_buffers, flags))
         actor.start()
