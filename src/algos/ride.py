@@ -421,12 +421,9 @@ def train(flags):
             log.info('After %i frames: loss %f @ %.1f fps. %sStats:\n%s',
                          frames, total_loss, fps, mean_return,
                          pprint.pformat(stats))
-            #if flags.device == torch.device('cuda'):
-               # log.info("Memory Summary for cuda: ", torch.cuda.memory_summary(device=flags.device))
-               # log.info("Memory Summary for Cuda :", pprint.pformat(torch.cuda.memory_stats(flags.device)))
-               # log,info("Memory allocated: %d", torch.cuda.memory_allocated())
-               # log.info("Memory reserved: %d", torch.cuda.memory_reserved())
-               # print(torch.cuda.memory_allocated()/ 1024**2)
+            if flags.device == torch.device('cuda'):
+                torch.cuda.memory_summary(device=flags.device)
+
     except KeyboardInterrupt:
         return  
     else:
