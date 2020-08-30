@@ -1,9 +1,13 @@
 #!/bin/bash
 
+#SBATCH -q normal
+#SBATCH -p physical
+
+
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --time=0-00:10:00
-#SBATCH --mem=102400
+#SBATCH --time=0-00:20:00
+#SBATCH --mem=100000
 
 module load gcccore/8.3.0
 module load python/3.7.4

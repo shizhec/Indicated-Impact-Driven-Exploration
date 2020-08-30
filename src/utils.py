@@ -56,7 +56,6 @@ log.setLevel(logging.INFO)
 
 Buffers = typing.Dict[str, typing.List[torch.Tensor]]
 
-
 def create_env(flags):
     if 'MiniGrid' in flags.env:
         return Minigrid2Image(wrappers.FullyObsWrapper(gym.make(flags.env)))
@@ -219,6 +218,7 @@ def act(i: int, free_queue: mp.SimpleQueue, full_queue: mp.SimpleQueue,
         model: torch.nn.Module, buffers: Buffers, 
         episode_state_count_dict: dict, train_state_count_dict: dict,
         initial_agent_state_buffers, flags):
+
     try:
         log.info('Actor %i started.', i)
         timings = prof.Timings()
@@ -275,6 +275,9 @@ def act(i: int, free_queue: mp.SimpleQueue, full_queue: mp.SimpleQueue,
                 train_state_count_dict.update({train_state_key: 1})
             buffers['train_state_count'][index][0, ...] = \
                 torch.tensor(1 / np.sqrt(train_state_count_dict.get(train_state_key)))
+
+            # delete output
+            del agent_output
 
             # Do new rollout
             for t in range(flags.unroll_length):
@@ -541,3 +544,4 @@ def act_clride(i: int, free_queue: mp.SimpleQueue, full_queue: mp.SimpleQueue,
         traceback.print_exc()
         print()
         raise e
+
