@@ -1,0 +1,3 @@
+[submodule "src/procgen"]
+	path = src/procgen
+	url = https://github.com/openai/procgen.git
