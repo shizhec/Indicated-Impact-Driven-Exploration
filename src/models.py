@@ -4,6 +4,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import sys
 import torch
 from torch import nn 
 from torch.nn import functional as F
@@ -671,6 +672,8 @@ class ProcGenPolicyNet(nn.Module):
         policy_logits = self.policy(core_output)
         baseline = self.baseline(core_output)
 
+        # print(policy_logits)
+        # sys.stdout.flush()
         if self.training:
             action = torch.multinomial(F.softmax(policy_logits, dim=1), num_samples=1)
         else:
@@ -875,17 +878,24 @@ class ProcGenGenerator(nn.Module):
         self.target_teacher = nn.Sequential(
             init_(nn.Linear(128, 256)),
             nn.ReLU(),
-            init_(nn.Linear(256, 128)),
+            init_(nn.Linear(256, 512)),
             nn.ReLU()
         )
-
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
                                constant_(x, 0))
 
-        self.policy_teacher = init_(nn.Linear(128, 128))
-        self.baseline_teacher = init_(nn.Linear(128, 1))
+        self.generator_logits = init_(nn.Linear(512, 2))
+        self.baseline_teacher = init_(nn.Linear(512, 1))
 
     def forward(self, inputs):
 
-        pass
+        output = self.target_teacher(inputs)
+
+        generator_logits = self.generator_logits(output)
+
+        indicator = torch.multinomial(F.softmax(generator_logits, dim=1), num_samples=1)
+
+        baseline = self.baseline_teacher(output)
+
+        return dict(indicater=indicator, generator_logits=generator_logits, generator_baseline=baseline)

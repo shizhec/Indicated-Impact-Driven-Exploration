@@ -26,11 +26,14 @@ import src.models as models
 import src.losses as losses
 
 from src.env_utils import FrameStack
-from src.utils import get_batch, log, create_env, create_buffers, act
+from src.utils import get_batch, log, create_env, create_buffers_clride, act
 
-MinigridPolicyNet = models.MinigridPolicyNet
-MarioDoomPolicyNet = models.MarioDoomPolicyNet
+
+ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
+ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
+ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
+ProcGenGenerator = models.ProcGenGenerator
 
 
 def learn(actor_model,
@@ -122,14 +125,9 @@ def train(flags):
     if flags.num_input_frames > 1:
         env = FrameStack(env, flags.num_input_frames)
 
-    if 'MiniGrid' in flags.env:
-        model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n)
-    elif 'procgen' in flags.env:
-        model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
-    else:
-        model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)
+    model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n)
 
-    buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
+    buffers = create_buffers_clride(env.observation_space.shape, model.num_actions, flags)
 
     model.share_memory()
 
@@ -156,18 +154,47 @@ def train(flags):
         actor.start()
         actor_processes.append(actor)
 
-    if 'MiniGrid' in flags.env:
-        learner_model = MinigridPolicyNet(env.observation_space.shape, env.action_space.n) \
+    learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n) \
             .to(device=flags.device)
-    elif 'procgen' in flags.env:
-        learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n) \
-            .to(device=flags.device)
-    else:
-        learner_model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n) \
-            .to(device=flags.device)
+    generator_model = ProcGenGenerator().to(device=flags.device)
+    state_embedding_model = ProcGenStateEmbeddingNet(env.observation_space.shape) \
+        .to(device=flags.device)
+    forward_dynamics_model = ProcGenForwardDynamicsNet(env.action_space.n) \
+        .to(device=flags.device)
+    inverse_dynamics_model = ProcGenInverseDynamicsNet(env.action_space.n) \
+        .to(device=flags.device)
 
     optimizer = torch.optim.RMSprop(
         learner_model.parameters(),
+        lr=flags.learning_rate,
+        momentum=flags.momentum,
+        eps=flags.epsilon,
+        alpha=flags.alpha)
+
+    generator_optimizer = torch.optim.RMSprop(
+        generator_model.parameters(),
+        lr=flags.learning_rate,
+        momentum=flags.momentum,
+        eps=flags.epsilon,
+        alpha=flags.alpha
+    )
+
+    state_embedding_optimizer = torch.optim.RMSprop(
+        state_embedding_model.parameters(),
+        lr=flags.learning_rate,
+        momentum=flags.momentum,
+        eps=flags.epsilon,
+        alpha=flags.alpha)
+
+    inverse_dynamics_optimizer = torch.optim.RMSprop(
+        inverse_dynamics_model.parameters(),
+        lr=flags.learning_rate,
+        momentum=flags.momentum,
+        eps=flags.epsilon,
+        alpha=flags.alpha)
+
+    forward_dynamics_optimizer = torch.optim.RMSprop(
+        forward_dynamics_model.parameters(),
         lr=flags.learning_rate,
         momentum=flags.momentum,
         eps=flags.epsilon,
@@ -180,11 +207,21 @@ def train(flags):
 
     logger = logging.getLogger('logfile')
     stat_keys = [
-        'mean_episode_return',
         'total_loss',
+        'mean_episode_return',
         'pg_loss',
         'baseline_loss',
         'entropy_loss',
+        'mean_rewards',
+        'mean_intrinsic_rewards',
+        'mean_total_rewards',
+        'mean_control_rewards',
+        'mean_count_rewards',
+        'forward_dynamics_loss',
+        'inverse_dynamics_loss',
+        'generator_pg_loss',
+        'generator_entropy_loss',
+        'generator_baseline_loss',
     ]
     logger.info('# Step\t%s', '\t'.join(stat_keys))
     frames, stats = 0, {}
