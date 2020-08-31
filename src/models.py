@@ -631,16 +631,16 @@ class ProcGenPolicyNet(nn.Module):
         )
 
         self.fc = nn.Sequential(
-            init_(nn.Linear(128, 512)),
+            init_(nn.Linear(32, 1024)),
             nn.ReLU(),
-            init_(nn.Linear(512, 512)),
+            init_(nn.Linear(1024, 1024)),
             nn.ReLU(),
         )
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.constant_(x, 0))
 
-        self.policy = init_(nn.Linear(512, self.num_actions))
-        self.baseline = init_(nn.Linear(512, 1))
+        self.policy = init_(nn.Linear(1024, self.num_actions))
+        self.baseline = init_(nn.Linear(1024, 1))
 
     def initial_state(self, batch_size):
         return tuple()
@@ -659,11 +659,9 @@ class ProcGenPolicyNet(nn.Module):
         # [T*B x 3 x 64 x 64]
         x = x.transpose(1, 3)
 
-        # x = checkpoint_sequential(self.feat_extract, 2, x)
         x = self.feat_extract(x)
         x = x.view(T*B, -1)
 
-        # core_input = checkpoint_sequential(self.fc, 2, x)
         core_input = self.fc(x)
 
         core_output = core_input
@@ -672,8 +670,6 @@ class ProcGenPolicyNet(nn.Module):
         policy_logits = self.policy(core_output)
         baseline = self.baseline(core_output)
 
-        # print(policy_logits)
-        # sys.stdout.flush()
         if self.training:
             action = torch.multinomial(F.softmax(policy_logits, dim=1), num_samples=1)
         else:
@@ -713,7 +709,7 @@ class ProcGenStateEmbeddingNet(nn.Module):
         )
 
         self.fc = nn.Sequential(
-            init_(nn.Linear(128, 128)),
+            init_(nn.Linear(32, 128)),
             nn.ReLU(),
             init_(nn.Linear(128, 128)),
             nn.ReLU(),
@@ -731,7 +727,7 @@ class ProcGenStateEmbeddingNet(nn.Module):
         # [unroll_length*batch_size x height x width x channels]
         x = torch.flatten(x, 0, 1)
 
-        x = x.float()
+        x = x.float() /255.0
 
         # [unroll_length*batch_size x channels x width x height]
         x = x.transpose(1, 3)
@@ -789,82 +785,6 @@ class ProcGenForwardDynamicsNet(nn.Module):
         inputs = torch.cat((state_embedding, action_one_hot), dim=2)
         next_state_emb = self.fd_out(self.forward_dynamics(inputs))
         return next_state_emb
-
-# 64 x 64 x 3 input frame
-# for amigo
-class Generator(nn.Module):
-    """Constructs the Teacher Policy which takes an initial observation and produces a goal."""
-    def __init__(self, observation_shape, width, height, num_input_frames, hidden_dim=256):
-        super(Generator, self).__init__()
-        self.observation_shape = observation_shape
-        self.height = height
-        self.width = width
-        self.env_dim = self.width * self.height
-        self.state_embedding_dim = 256
-
-        self.use_index_select = True
-        self.num_channels = 3 * num_input_frames
-
-        K = self.num_channels  # number of input filters
-        F = 3  # filter dimensions
-        S = 1  # stride
-        P = 1  # padding
-        M = 16  # number of intermediate filters
-        Y = 8  # number of output filters
-        L = 4  # number of convnet layers
-        E = 1 # output of last layer
-
-        in_channels = [K] + [M] * 4
-        out_channels = [M] * 3 + [E]
-
-        conv_extract = [
-            nn.Conv2d(
-                in_channels=in_channels[i],
-                out_channels=out_channels[i],
-                kernel_size=(F, F),
-                stride=S,
-                padding=P,
-            )
-            for i in range(L)
-        ]
-
-        def interleave(xs, ys):
-            return [val for pair in zip(xs, ys) for val in pair]
-
-        self.extract_representation = nn.Sequential(
-            *interleave(conv_extract, [nn.ELU()] * len(conv_extract))
-        )
-
-        self.out_dim = self.env_dim * 16
-
-        init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
-                               constant_(x, 0))
-
-        self.baseline_teacher = init_(nn.Linear(self.env_dim, 1))
-
-    def forward(self, inputs):
-        x = inputs["frame"]
-        T, B, *_ = x.shape
-
-        x = torch.flatten(x, 0, 1)  # Merge time and batch.
-        x = x.float()
-
-        x = x.transpose(1, 3)
-
-        x = self.extract_representation(x)
-        x = x.view(T * B, -1)
-
-        generator_logits = x.view(T*B, -1)
-
-        generator_baseline = self.baseline_teacher(generator_logits)
-
-        goal = torch.multinomial(F.softmax(generator_logits, dim=1), num_samples=1)
-
-        generator_logits = generator_logits.view(T, B, -1)
-        generator_baseline = generator_baseline.view(T, B)
-        goal = goal.view(T, B)
-
-        return dict(goal=goal, generator_logits=generator_logits, generator_baseline=generator_baseline)
 
 
 class ProcGenGenerator(nn.Module):

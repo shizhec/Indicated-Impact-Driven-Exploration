@@ -249,7 +249,7 @@ def train(flags):
         inverse_dynamics_model = MarioDoomInverseDynamicsNet(env.action_space.n)\
             .to(device=flags.device) 
 
-    if 'procgen' in flags:
+    if 'procgen' in flags.env:
         buffers = create_buffers_procgen(env.observation_space.shape, model.num_actions, flags)
     else:
         buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)

@@ -107,58 +107,9 @@ parser.add_argument('--use_fullobs_policy', action='store_true',
 parser.add_argument('--use_fullobs_intrinsic', action='store_true',
                     help='Use a full view of the environment for computing the intrinsic reward.')
 
-# Settings for AMIGo paper.
-parser.add_argument('--generator_entropy_cost', default=0.05, type=float,
-                    help='Entropy cost/multiplier.')
-parser.add_argument('--reward_clipping', default='abs_one',
-                    choices=['abs_one', 'soft_asymmetric', 'none'],
-                    help='Reward clipping.')
-parser.add_argument('--generator_learning_rate', default=0.002, type=float,
-                    metavar='LR', help='Learning rate.')
-parser.add_argument('--generator_batch_size', default=32, type=int, metavar='BB',
-                    help='Learner batch size (default: 4).')
-parser.add_argument('--goal_dim', default=10, type=int,
-                    help='Size of Goal Embedding')
-parser.add_argument('--state_embedding_dim', default=256, type=int,
-                    help='Dimension of the state embedding representation used in the student')
-parser.add_argument('--generator_reward_negative', default= -0.1, type=float,
-                    help='Coefficient for the intrinsic reward')
-parser.add_argument('--generator_threshold', default=0.1, type=float,
-                    help='Threshold mean reward for wich scheduler increases difficulty')
-parser.add_argument('--generator_counts', default=10, type=int,
-                    help='Number of time before generator increases difficulty')
-parser.add_argument('--generator_maximum', default=100, type=float,
-                    help='Maximum difficulty')
-parser.add_argument('--generator_reward_coef', default=1.0, type=float,
-                    help='Coefficient for the generator reward')
-parser.add_argument('--generator_loss_form', type=str, default='threshold',
-                    help='[threshold,dummy,gaussian, linear]')
-parser.add_argument('--generator_target', default=5.0, type=float,
-                    help='Mean target for Gassian and Linear Rewards')
-parser.add_argument('--target_variance', default=15.0, type=float,
-                    help='Variance for the Gaussian Reward')
-parser.add_argument('--inner', action='store_true',
-                    help='Exlucde outer wall')
-parser.add_argument('--disable_use_embedding', action='store_true',
-                    help='Disable embeddings.')
-parser.add_argument('--no_extrinsic_rewards', action='store_true',
-                    help='Only intrinsic rewards.')
-parser.add_argument('--no_generator', action='store_true',
-                    help='Use vanilla policy-deprecated')
-parser.add_argument('--novelty', action='store_true',
-                    help='Discount rewards based on times goal has been proposed.')
-parser.add_argument('--novelty_bonus', default=0.1, type=float,
-                    help='Bonus you get for proposing objects if novelty')
-parser.add_argument('--novelty_coef', default=0.3, type=float,
-                    help='Modulates novelty bonus if novelty')
-parser.add_argument('--restart_episode', action='store_true',
-                    help='Restart Episode when reaching intrinsic goal.')
-parser.add_argument('--modify', action='store_true',
-                    help='Modify Goal instead of having to reach the goal')
-parser.add_argument('--no_boundary_awareness', action='store_true',
-                    help='Remove Episode Boundary Awareness')
 
 # for ProcGen environment
+parser.add_argument('--game', default='coinrun', type=str)
 parser.add_argument('--start_level', default=0, type=int,
                     help='The lowest seed that will be used to generated levels. '
                          '\'start_level\' and \'num_levels\' fully specify the set of possible levels.')
@@ -166,3 +117,8 @@ parser.add_argument('--num_levels', default=0, type=int,
                     help='The number of unique levels that can be generated. Set to 0 to use unlimited levels.')
 parser.add_argument('--distribution_mode', default='hard',
                     choices=['easy', 'hard', 'extreme', 'memory', 'exploration'])
+parser.add_argument('--use_background', action='store_true',
+                    help='Normally games use human designed backgrounds, if this flag is set to False, \
+                         games will use pure black backgrounds.')
+parser.add_argument('--restrict_themes', action='store_true')
+parser.add_argument('--use_monochrome_assets', action='store_true')

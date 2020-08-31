@@ -4,7 +4,8 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-import gym 
+import gym
+import gym3
 import torch 
 from collections import deque, defaultdict
 from gym import spaces
@@ -15,6 +16,23 @@ from gym_minigrid.minigrid import OBJECT_TO_IDX, COLOR_TO_IDX
 def _format_observation(obs):
     obs = torch.tensor(obs)
     return obs.view((1, 1) + obs.shape) 
+
+
+class Procgen2RGB(gym3.ToGymEnv):
+    def __init__(self, env):
+        gym3.ToGymEnv.__init__(self, env)
+        self.env = gym3.ToGymEnv(env)
+        self.observation_space = self.env.observation_space['rgb']
+
+    def reset(self):
+        obs = self.env.reset()
+        return obs['rgb']
+
+    def step(self, ac):
+        obs, reward, done, info = self.env.step(ac)
+
+        return obs['rgb'], reward, done, info
+
 
 
 class Minigrid2Image(gym.ObservationWrapper):
@@ -126,14 +144,11 @@ class Environment:
         self.gym_env.close()
 
 class ProcGenEnvironment:
-    def __init__(self, gym_env, start_level=0, num_levels=0, distribution_mode="hard"):
+    def __init__(self, gym_env):
         self.gym_env = gym_env
         self.episode_return = None
         self.episode_step = None
         self.episode_win = None
-        self.start_level = start_level
-        self.num_levels = num_levels
-        self.distribution_mode = distribution_mode
 
     def initial(self):
         initial_reward = torch.zeros(1, 1)
