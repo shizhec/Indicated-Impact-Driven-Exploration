@@ -4,6 +4,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import sys
 import torch
 from torch import nn 
 from torch.nn import functional as F
@@ -671,6 +672,8 @@ class ProcGenPolicyNet(nn.Module):
         policy_logits = self.policy(core_output)
         baseline = self.baseline(core_output)
 
+        # print(policy_logits)
+        # sys.stdout.flush()
         if self.training:
             action = torch.multinomial(F.softmax(policy_logits, dim=1), num_samples=1)
         else:

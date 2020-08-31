@@ -41,6 +41,6 @@ module load cuda/10.1.243
 module load cudnn/7.6.4.38
 
 # The job command(s):
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 4 --num_buffers 32 --num_actors 16 --batch_size 8
+# OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 4 --num_buffers 32 --num_actors 16 --batch_size 8
 # OMP_NUM_THREADS=1 python main.py --model ride --env MiniGrid-ObstructedMaze-2Dlh-v0 --num_threads 8 --use_fullobs_policy --use_fullobs_intrinsic
-# OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 8
+OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-climber-v0 --num_threads 8
