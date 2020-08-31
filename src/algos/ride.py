@@ -410,7 +410,7 @@ def train(flags):
                          frames, total_loss, fps, mean_return,
                          pprint.pformat(stats))
             if flags.device == torch.device('cuda'):
-                log.info("Memory Summary for Cuda :", pprint.pformat(torch.cuda.memory_stats(flags.device)))
+                log.info("Memory Summary for Cuda :%s", pprint.pformat(torch.cuda.memory_stats(flags.device)))
 
     except KeyboardInterrupt:
         return  
