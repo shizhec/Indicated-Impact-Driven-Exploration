@@ -46,5 +46,5 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate clride
 
 # The job command(s):
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen --game ninja --num_threads 8 --disable_background \
+OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game ninja --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.00005 --total_frames 5000000 --disable_checkpoint
