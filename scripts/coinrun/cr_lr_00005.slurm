@@ -10,10 +10,7 @@
 #SBATCH --job-name="coinrun_rl-0.00005"
 
 # The name of the output
-#SBATCH --output="./data/coinrun/coinrun_rl_00005.out"
-
-# The working Directory
-#SBATCH --chdir="../,,/"
+#SBATCH --output="coinrun_rl_00005.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
