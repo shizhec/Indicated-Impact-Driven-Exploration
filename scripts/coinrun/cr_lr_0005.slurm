@@ -1,19 +1,16 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=gpgpu
+#SBATCH --partition=shortgpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="coinrun_rl-0.00005"
+#SBATCH --job-name="coinrun_rl-0.0005"
 
 # The name of the output
-#SBATCH --output="./data/coinrun/coinrun_rl_00005.out"
-
-# The working Directory
-#SBATCH --chdir="../,,/"
+#SBATCH --output="coinrun_rl_0005.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -49,5 +46,5 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate clride
 
 # The job command(s):
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen --game coinrun --num_threads 8 --disable_background \
+OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game coinrun --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.0005 --total_frames 5000000 --disable_checkpoint

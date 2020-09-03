@@ -34,13 +34,16 @@ fi
 
 # Run the job from the directory where it was launched (default)
 
-# The modules to load:
+# The modules to load
 module load gcccore/8.3.0
-module load python/3.7.4
+module load foss/2019b anaconda3/2020.07 mesa/19.2.1
 module load cuda/10.1.243
 module load cudnn/7.6.4.38
 
 # The job command(s):
+source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
+conda activate clride
+
 # OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 4 --num_buffers 32 --num_actors 16 --batch_size 8
 # OMP_NUM_THREADS=1 python main.py --model ride --env MiniGrid-ObstructedMaze-2Dlh-v0 --num_threads 8 --use_fullobs_policy --use_fullobs_intrinsic
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-climber-v0 --num_threads 8
+OMP_NUM_THREADS=1 python main.py --model ride --env procgen --game coinrun --num_threads 8 --restrict_themes --use_monochrome_assets
