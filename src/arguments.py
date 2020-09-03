@@ -117,7 +117,7 @@ parser.add_argument('--num_levels', default=0, type=int,
                     help='The number of unique levels that can be generated. Set to 0 to use unlimited levels.')
 parser.add_argument('--distribution_mode', default='hard',
                     choices=['easy', 'hard', 'extreme', 'memory', 'exploration'])
-parser.add_argument('--use_background', action='store_true',
+parser.add_argument('--disable_background', action='store_false',
                     help='Normally games use human designed backgrounds, if this flag is set to False, \
                          games will use pure black backgrounds.')
 parser.add_argument('--restrict_themes', action='store_true')
