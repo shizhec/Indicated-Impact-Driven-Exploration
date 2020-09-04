@@ -21,3 +21,17 @@ parameters
 
 
 sacct -j 19467456 --format workdir,jobname,maxrss,alloctres,user -p
+
+# parameters of env
+caveflyer
+lr-0.0005
+climber
+lr-0.0001
+coinrun
+lr-0.001
+jumper
+lr-0.0001
+leaper
+
+ninja
+lr-0.0005
