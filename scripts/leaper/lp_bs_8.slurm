@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=gpgpu
+#SBATCH --partition=shortgpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1
@@ -22,7 +22,7 @@
 # Number of GPUs requested per node:
 #SBATCH --gres=gpu:1
 # The maximum running time of the job in days-hours:mins:sec
-#SBATCH --time=0-01:00:00
+#SBATCH --time=0-00:40:00
 
 # memory usage
 #SBATCH --mem=113000
