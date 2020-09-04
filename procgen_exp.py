@@ -21,7 +21,7 @@ def plot_normalized_mean_return(Rmax, Rmin, path, filename):
 
     plt.show()
 
-def tune_learning_rate(path, game):
+def tuning_learning_rate(path, game):
     output1 = load_slurm_output(path, game + "_rl_001.out")
     output2 = load_slurm_output(path, game + "_rl_005.out")
     output3 = load_slurm_output(path, game + "_rl_0001.out")
@@ -40,7 +40,8 @@ def tune_learning_rate(path, game):
     print("mean_return_rl_0.0005: ", np.mean(mean_episode_return4))
     print("mean_return_rl_0.00005: ", np.mean(mean_episode_return5))
 
-
+def tuning_batch_size(path, game):
+    pass
 
 def load_slurm_output(path, filename):
     output_dict = OrderedDict()
@@ -68,14 +69,14 @@ def load_slurm_output(path, filename):
 
 # plot_normalized_mean_return(10, 5, "coinrun")
 print("caveflyer:")
-tune_learning_rate("data/caveflyer/", "caveflyer")
+tuning_learning_rate("data/caveflyer/", "caveflyer")
 print("climber:")
-tune_learning_rate("data/climber/", "climber")
+tuning_learning_rate("data/climber/", "climber")
 print("coinrun:")
-tune_learning_rate("data/coinrun/", "coinrun")
+tuning_learning_rate("data/coinrun/", "coinrun")
 print("jumper:")
-tune_learning_rate("data/jumper/", "jumper")
+tuning_learning_rate("data/jumper/", "jumper")
 print("leaper:")
-tune_learning_rate("data/leaper/", "leaper")
+tuning_learning_rate("data/leaper/", "leaper")
 print("ninja")
-tune_learning_rate("scripts/ninja/", "ninja")
+tuning_learning_rate("data/ninja/", "ninja")

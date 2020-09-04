@@ -33,7 +33,7 @@ ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
 ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
 ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
-ProcGenGenerator = models.ProcGenGenerator
+Indicator = models.Indicator
 
 
 def learn(actor_model,
@@ -156,7 +156,7 @@ def train(flags):
 
     learner_model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n) \
             .to(device=flags.device)
-    generator_model = ProcGenGenerator().to(device=flags.device)
+    indicator = Indicator().to(device=flags.device)
     state_embedding_model = ProcGenStateEmbeddingNet(env.observation_space.shape) \
         .to(device=flags.device)
     forward_dynamics_model = ProcGenForwardDynamicsNet(env.action_space.n) \
@@ -172,7 +172,7 @@ def train(flags):
         alpha=flags.alpha)
 
     generator_optimizer = torch.optim.RMSprop(
-        generator_model.parameters(),
+        indicator.parameters(),
         lr=flags.learning_rate,
         momentum=flags.momentum,
         eps=flags.epsilon,
@@ -234,7 +234,8 @@ def train(flags):
             timings.reset()
             batch, agent_state = get_batch(free_queue, full_queue, buffers,
                                            initial_agent_state_buffers, flags, timings)
-            stats = learn(model, learner_model, batch, agent_state,
+            stats = learn(model, learner_model, indicator, state_embedding_model
+                         , inverse_dynamics_model, forward_dynamics_model, batch, agent_state,
                           optimizer, scheduler, flags)
             timings.time('learn')
             with lock:

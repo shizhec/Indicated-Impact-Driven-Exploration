@@ -762,6 +762,7 @@ class ProcGenInverseDynamicsNet(nn.Module):
         action_logits = self.id_out(self.inverse_dynamics(inputs))
         return action_logits
 
+
 class ProcGenForwardDynamicsNet(nn.Module):
     def __init__(self, num_actions):
         super(ProcGenForwardDynamicsNet, self).__init__()
@@ -787,35 +788,33 @@ class ProcGenForwardDynamicsNet(nn.Module):
         return next_state_emb
 
 
-class ProcGenGenerator(nn.Module):
+class Indicator(nn.Module):
     """Construct a teacher which takes a current state embedding and output the target state embedding"""
     def __init__(self):
-        super(ProcGenGenerator, self).__init__()
+        super(Indicator, self).__init__()
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
                                constant_(x, 0), nn.init.calculate_gain('relu'))
 
-        self.target_teacher = nn.Sequential(
-            init_(nn.Linear(128, 256)),
+        self.fc = nn.Sequential(
+            init_(nn.Linear(128*2, 1024)),
             nn.ReLU(),
-            init_(nn.Linear(256, 512)),
+            init_(nn.Linear(1024, 1024)),
             nn.ReLU()
         )
 
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
                                constant_(x, 0))
 
-        self.generator_logits = init_(nn.Linear(512, 2))
-        self.baseline_teacher = init_(nn.Linear(512, 1))
+        self.output_logits = init_(nn.Linear(1024, 1))
 
-    def forward(self, inputs):
+    def forward(self, state_embedding, next_state_embedding):
+        inputs = torch.cat((state_embedding, next_state_embedding), dim=2)
 
-        output = self.target_teacher(inputs)
+        output = self.fc(inputs)
 
-        generator_logits = self.generator_logits(output)
+        logits = self.output_logits(output)
 
-        indicator = torch.multinomial(F.softmax(generator_logits, dim=1), num_samples=1)
+        prediction = F.sigmoid(logits)
 
-        baseline = self.baseline_teacher(output)
-
-        return dict(indicater=indicator, generator_logits=generator_logits, generator_baseline=baseline)
+        return prediction

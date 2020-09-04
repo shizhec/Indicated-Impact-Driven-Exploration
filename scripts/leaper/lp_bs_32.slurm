@@ -47,4 +47,4 @@ conda activate clride
 
 # The job command(s):
 OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game leaper --num_threads 8 --disable_background \
---restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --total_frames 4000000 --disable_checkpoint
+--restrict_themes --use_monochrome_assets --learning_rate 0.005 --batch_size 32 --total_frames 4000000 --disable_checkpoint
