@@ -7,10 +7,10 @@
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="coinrun_bs_8"
+#SBATCH --job-name="coinrun_ul"
 
 # The name of the output
-#SBATCH --output="coinrun_bs_8.out"
+#SBATCH --output="coinrun_ul_80.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -47,4 +47,5 @@ conda activate clride
 
 # The job command(s):
 OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game coinrun --num_threads 8 --disable_background \
---restrict_themes --use_monochrome_assets --learning_rate 0.001 --batch_size 8 --total_frames 4000000 --disable_checkpoint
+--restrict_themes --use_monochrome_assets --learning_rate 0.001 --batch_size 32 --unroll_length 80 \
+--total_frames 4000000 --disable_checkpoint

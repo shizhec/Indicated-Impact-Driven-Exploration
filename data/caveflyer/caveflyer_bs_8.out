@@ -5159,14 +5159,6 @@ Updated log fields: ['_tick', '_time', 'frames', 'total_loss', 'mean_episode_ret
  'mean_total_rewards': 3.0447712560999207e-05,
  'pg_loss': -6.683423042297363,
  'total_loss': 27.846630096435547}
-[INFO:1421 ride:368 2020-09-04 17:23:17,004] Batch and learn: 
-    lock: 2656.431607ms +- 179.084897ms (84.38%) 
-    dequeue: 391.678883ms +- 126.786572ms (12.44%) 
-    learn: 98.140171ms +- 36.013504ms (3.12%) 
-    batch: 1.253420ms +- 0.626270ms (0.04%) 
-    device: 0.541627ms +- 0.560443ms (0.02%) 
-    enqueue: 0.128026ms +- 0.004747ms (0.00%) 
-Total: 3148.173734ms
 [INFO:1421 ride:423 2020-09-04 17:23:18,081] After 4002400 frames: loss 19.691782 @ 2078.1 fps. Stats:
 {'baseline_loss': 0.034080326557159424,
  'entropy_loss': -0.25661125779151917,
@@ -5180,9 +5172,3 @@ Total: 3148.173734ms
  'mean_total_rewards': 1.655396044952795e-05,
  'pg_loss': -7.995490074157715,
  'total_loss': 19.691781997680664}
-[INFO:1421 ride:430 2020-09-04 17:23:19,422] Learning finished after 4005600 frames.
-[INFO:2369 utils:308 2020-09-04 17:23:22,381] Actor 0: 
-    step: 15.663521ms +- 27.578482ms (79.92%) 
-    model: 3.501599ms +- 5.198131ms (17.87%) 
-    write: 0.432766ms +- 0.857194ms (2.21%) 
-Total: 19.597886ms

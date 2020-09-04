@@ -24,14 +24,14 @@ sacct -j 19467456 --format workdir,jobname,maxrss,alloctres,user -p
 
 # parameters of env
 caveflyer
-lr-0.0005
+lr-0.0005 batch_size-32
 climber
-lr-0.0001
+lr-0.0001 batch_size-8
 coinrun
-lr-0.001
+lr-0.001 batch_size-32
 jumper
-lr-0.0001
+lr-0.0001 batch_size-32
 leaper
-lr-0.005
+lr-0.005 batch_size-8
 ninja
-lr-0.0005
+lr-0.0005 batch_size-32

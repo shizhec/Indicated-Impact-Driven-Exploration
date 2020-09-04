@@ -7,10 +7,10 @@
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="jumper_bs_8"
+#SBATCH --job-name="climber_ul"
 
 # The name of the output
-#SBATCH --output="jumper_bs_8.out"
+#SBATCH --output="climber_ul_80.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -46,5 +46,6 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate clride
 
 # The job command(s):
-OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game jumper --num_threads 8 --disable_background \
---restrict_themes --use_monochrome_assets --learning_rate 0.0001 --batch_size 8 --total_frames 4000000 --disable_checkpoint
+OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game climber --num_threads 8 --disable_background \
+--restrict_themes --use_monochrome_assets --learning_rate 0.0001 --batch_size 8 --unroll_length 80 \
+--total_frames 4000000 --disable_checkpoint

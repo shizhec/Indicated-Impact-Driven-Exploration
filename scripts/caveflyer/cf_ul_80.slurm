@@ -7,10 +7,10 @@
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="leaper_bs_8"
+#SBATCH --job-name="caveflyer_ul"
 
 # The name of the output
-#SBATCH --output="leaper_bs_8.out"
+#SBATCH --output="caveflyer_ul_80.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -22,7 +22,7 @@
 # Number of GPUs requested per node:
 #SBATCH --gres=gpu:1
 # The maximum running time of the job in days-hours:mins:sec
-#SBATCH --time=0-00:40:00
+#SBATCH --time=0-01:00:00
 
 # memory usage
 #SBATCH --mem=113000
@@ -46,5 +46,6 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate clride
 
 # The job command(s):
-OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game leaper --num_threads 8 --disable_background \
---restrict_themes --use_monochrome_assets --learning_rate 0.005 --batch_size 8 --total_frames 4000000 --disable_checkpoint
+OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game caveflyer --num_threads 8 --disable_background \
+--restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --unroll_length 80 \
+--total_frames 4000000 --disable_checkpoint

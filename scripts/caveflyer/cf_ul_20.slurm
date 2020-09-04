@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=gpgpu
+#SBATCH --partition=shortgpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="climber_bs_8"
+#SBATCH --job-name="caveflyer_ul"
 
 # The name of the output
-#SBATCH --output="climber_bs_8.out"
+#SBATCH --output="caveflyer_ul_20.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -46,5 +46,6 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate clride
 
 # The job command(s):
-OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game climber --num_threads 8 --disable_background \
---restrict_themes --use_monochrome_assets --learning_rate 0.0001 --batch_size 8 --total_frames 4000000 --disable_checkpoint
+OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game caveflyer --num_threads 8 --disable_background \
+--restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --unroll_length 20 \
+--total_frames 4000000 --disable_checkpoint

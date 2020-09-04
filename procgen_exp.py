@@ -41,11 +41,24 @@ def tuning_learning_rate(path, game):
     print("mean_return_rl_0.00005: ", np.mean(mean_episode_return5))
 
 def tuning_batch_size(path, game):
-    pass
+    output1 = load_slurm_output(path, game + "_bs_8.out", 51)
+    output2 = load_slurm_output(path, game + "_bs_32.out", 51)
 
-def load_slurm_output(path, filename):
+    mean_episode_return1 = np.array([x.get("mean_episode_return", 0.0) for x in output1.values()])
+    mean_episode_return2 = np.array([x.get("mean_episode_return", 0.0) for x in output2.values()])
+
+    print("mean_return_bs_8: ", np.mean(mean_episode_return1))
+    print("mean_return_bs_32: ", np.mean(mean_episode_return2))
+
+def load_slurm_output(path, filename, skip_num=0):
     output_dict = OrderedDict()
     with open(path+filename, "r") as file:
+        # skip lines
+        num=0
+        for _ in file:
+            if num == skip_num:
+                break
+            num += 1
         for line in file:
             if line.startswith('[') and "frames" in line:
                 frames = [int(s) for s in line.split() if s.isdigit()][0]
@@ -69,14 +82,20 @@ def load_slurm_output(path, filename):
 
 # plot_normalized_mean_return(10, 5, "coinrun")
 print("caveflyer:")
-tuning_learning_rate("data/caveflyer/", "caveflyer")
+# tuning_learning_rate("data/caveflyer/", "caveflyer")
+tuning_batch_size("data/caveflyer/", "caveflyer")
 print("climber:")
-tuning_learning_rate("data/climber/", "climber")
+# tuning_learning_rate("data/climber/", "climber")
+tuning_batch_size("data/climber/", "climber")
 print("coinrun:")
-tuning_learning_rate("data/coinrun/", "coinrun")
+# tuning_learning_rate("data/coinrun/", "coinrun")
+tuning_batch_size("data/coinrun/", "coinrun")
 print("jumper:")
-tuning_learning_rate("data/jumper/", "jumper")
+# tuning_learning_rate("data/jumper/", "jumper")
+tuning_batch_size("data/jumper/", "jumper")
 print("leaper:")
-tuning_learning_rate("data/leaper/", "leaper")
+# tuning_learning_rate("data/leaper/", "leaper")
+tuning_batch_size("data/leaper/", "leaper")
 print("ninja")
-tuning_learning_rate("data/ninja/", "ninja")
+# tuning_learning_rate("data/ninja/", "ninja")
+tuning_batch_size("data/ninja/", "ninja")
