@@ -1,0 +1,44 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) fftw/3.3.8     2) openmpi/3.1.4     3) scalapack/2.0.2
+
+Found log directory: ./torchbeast-20200903-224612
+Saving arguments to ./torchbeast-20200903-224612/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20200903-224612/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20200903-224612/logs.csv
+Saving logs' fields to ./torchbeast-20200903-224612/fields.csv
+[INFO:900 ride:208 2020-09-03 22:46:12,835] Using CUDA.
+building procgen...RUN FAILED ['cmake', '--build', '.', '--config', 'relwithdebinfo']:
+Scanning dependencies of target env
+[  3%] Linking CXX shared library libenv.so
+collect2: fatal error: ld terminated with signal 7 [Bus error]
+compilation terminated.
+gmake[2]: *** [libenv.so] Error 1
+gmake[2]: *** Deleting file `libenv.so'
+gmake[1]: *** [CMakeFiles/env.dir/all] Error 2
+gmake: *** [all] Error 2
+
+Traceback (most recent call last):
+  File "../../main.py", line 39, in <module>
+    main(flags)
+  File "../../main.py", line 27, in main
+    train_ride(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/ride.py", line 216, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 96, in __init__
+    lib_dir = build(debug=debug)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 135, in build
+    check(run(build_cmd), verbose=package)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 47, in check
+    raise RunFailure("failed to build procgen from source")
+procgen.build.RunFailure: failed to build procgen from source

@@ -1,0 +1,31 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) fftw/3.3.8     2) openmpi/3.1.4     3) scalapack/2.0.2
+
+Creating log directory: ./torchbeast-20200903-224612
+Saving arguments to ./torchbeast-20200903-224612/meta.json
+Saving messages to ./torchbeast-20200903-224612/out.log
+Saving logs data to ./torchbeast-20200903-224612/logs.csv
+Saving logs' fields to ./torchbeast-20200903-224612/fields.csv
+[INFO:6771 ride:208 2020-09-03 22:46:12,831] Using CUDA.
+building procgen...done
+Traceback (most recent call last):
+  File "../../main.py", line 39, in <module>
+    main(flags)
+  File "../../main.py", line 27, in main
+    train_ride(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/ride.py", line 216, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 134, in __init__
+    "void set_state(libenv_env *, int, char *, int);",
+  File "/home/shizhec/.local/lib/python3.7/site-packages/gym3/libenv.py", line 104, in __init__
+    assert os.path.exists(self._lib_path), f"lib not found at {self._lib_path}"
+AssertionError: lib not found at /data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/.build/relwithdebinfo/libenv.so
