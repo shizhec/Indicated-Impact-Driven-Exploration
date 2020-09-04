@@ -1,1 +1,0 @@
-_tick,_time,frames,total_loss,mean_episode_return,pg_loss,baseline_loss,entropy_loss,mean_rewards,mean_intrinsic_rewards,mean_total_rewards,mean_control_rewards,mean_count_rewards,forward_dynamics_loss,inverse_dynamics_loss
