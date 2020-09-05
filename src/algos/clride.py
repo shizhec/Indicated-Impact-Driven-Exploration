@@ -59,14 +59,8 @@ def learn(actor_model,
     with lock:
         count_rewards = batch['episode_state_count'][1:].float().to(device=flags.device)
 
-        if flags.use_fullobs_intrinsic or 'procgen' in flags.env:
-            state_emb = state_embedding_model(batch, next_state=False) \
-                .reshape(flags.unroll_length, flags.batch_size, 128)
-            next_state_emb = state_embedding_model(batch, next_state=True) \
-                .reshape(flags.unroll_length, flags.batch_size, 128)
-        else:
-            state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
-            next_state_emb = state_embedding_model(batch['partial_obs'][1:].to(device=flags.device))
+        state_emb = state_embedding_model(batch, next_state=False).reshape(flags.unroll_length, flags.batch_size, 128)
+        next_state_emb = state_embedding_model(batch, next_state=True).reshape(flags.unroll_length, flags.batch_size, 128)
 
         pred_next_state_emb = forward_dynamics_model(
             state_emb, batch['action'][1:].to(device=flags.device))
@@ -79,7 +73,9 @@ def learn(actor_model,
         intrinsic_reward_coef = flags.intrinsic_reward_coef
         intrinsic_rewards *= intrinsic_reward_coef
 
-        print(intrinsic_rewards.shape)
+        print("intrinsic reward: ", intrinsic_rewards.shape)
+        print("state embedding: ", state_emb.shape)
+        print("action: ", batch['action'][1:].shape)
         state_indicates = indicator(state_emb, next_state_emb)
 
         forward_dynamics_loss = flags.forward_loss_coef * \
