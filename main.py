@@ -13,6 +13,7 @@ from src.algos.rnd import train as train_rnd
 from src.algos.ride import train as train_ride
 from src.algos.no_episodic_counts import train as train_no_episodic_counts
 from src.algos.only_episodic_counts import train as train_only_episodic_counts
+from src.algos.clride import train as train_clride
 
 def main(flags):
     if flags.model == 'vanilla':
@@ -29,6 +30,8 @@ def main(flags):
         train_no_episodic_counts(flags)
     elif flags.model == 'only-episodic-counts':
         train_only_episodic_counts(flags)
+    elif flags.model == "clride":
+        train_clride(flags)
     else:
         raise NotImplementedError("This model has not been implemented. "\
         "The available options are: vanilla, count, curiosity, rnd, ride, \

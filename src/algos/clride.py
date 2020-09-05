@@ -35,17 +35,59 @@ ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
 Indicator = models.Indicator
 
+def hand_encode():
+    pass
 
 def learn(actor_model,
           model,
+          indicator,
+          state_embedding_model,
+          forward_dynamics_model,
+          inverse_dynamics_model,
           batch,
           initial_agent_state,
           optimizer,
+          indicator_optimizer,
+          state_embedding_optimizer,
+          forward_dynamics_optimizer,
+          inverse_dynamics_optimizer,
           scheduler,
+          indicator_scheduler,
           flags,
           lock=threading.Lock()):
     """Performs a learning (optimization) step."""
     with lock:
+        count_rewards = batch['episode_state_count'][1:].float().to(device=flags.device)
+
+        if flags.use_fullobs_intrinsic or 'procgen' in flags.env:
+            state_emb = state_embedding_model(batch, next_state=False) \
+                .reshape(flags.unroll_length, flags.batch_size, 128)
+            next_state_emb = state_embedding_model(batch, next_state=True) \
+                .reshape(flags.unroll_length, flags.batch_size, 128)
+        else:
+            state_emb = state_embedding_model(batch['partial_obs'][:-1].to(device=flags.device))
+            next_state_emb = state_embedding_model(batch['partial_obs'][1:].to(device=flags.device))
+
+        pred_next_state_emb = forward_dynamics_model(
+            state_emb, batch['action'][1:].to(device=flags.device))
+        pred_actions = inverse_dynamics_model(state_emb, next_state_emb)
+
+        control_rewards = torch.norm(next_state_emb - state_emb, dim=2, p=2)
+
+        intrinsic_rewards = count_rewards * control_rewards
+
+        intrinsic_reward_coef = flags.intrinsic_reward_coef
+        intrinsic_rewards *= intrinsic_reward_coef
+
+        print(intrinsic_rewards.shape)
+        state_indicates = indicator(state_emb, next_state_emb)
+
+        forward_dynamics_loss = flags.forward_loss_coef * \
+                                losses.compute_forward_dynamics_loss(pred_next_state_emb, next_state_emb)
+
+        inverse_dynamics_loss = flags.inverse_loss_coef * \
+                                losses.compute_inverse_dynamics_loss(pred_actions, batch['action'][1:])
+
         learner_outputs, unused_state = model(batch, initial_agent_state)
 
         bootstrap_value = learner_outputs['baseline'][-1]
@@ -57,7 +99,11 @@ def learn(actor_model,
         }
 
         rewards = batch['reward']
-        clipped_rewards = torch.clamp(rewards, -1, 1)
+        if flags.no_reward:
+            total_rewards = intrinsic_rewards
+        else:
+            total_rewards = rewards + intrinsic_rewards
+        clipped_rewards = torch.clamp(total_rewards, -1, 1)
 
         discounts = (~batch['done']).float() * flags.discounting
 
@@ -78,7 +124,8 @@ def learn(actor_model,
         entropy_loss = flags.entropy_cost * losses.compute_entropy_loss(
             learner_outputs['policy_logits'])
 
-        total_loss = pg_loss + baseline_loss + entropy_loss
+        total_loss = pg_loss + baseline_loss + entropy_loss + \
+                     forward_dynamics_loss + inverse_dynamics_loss
 
         episode_returns = batch['episode_return'][batch['done']]
         stats = {
@@ -87,13 +134,49 @@ def learn(actor_model,
             'pg_loss': pg_loss.item(),
             'baseline_loss': baseline_loss.item(),
             'entropy_loss': entropy_loss.item(),
+            'mean_rewards': torch.mean(rewards).item(),
+            'mean_intrinsic_rewards': torch.mean(intrinsic_rewards).item(),
+            'mean_total_rewards': torch.mean(total_rewards).item(),
+            'mean_control_rewards': torch.mean(control_rewards).item(),
+            'mean_count_rewards': torch.mean(count_rewards).item(),
+            'forward_dynamics_loss': forward_dynamics_loss.item(),
+            'inverse_dynamics_loss': inverse_dynamics_loss.item(),
         }
 
         scheduler.step()
         optimizer.zero_grad()
+        state_embedding_optimizer.zero_grad()
+        forward_dynamics_optimizer.zero_grad()
+        inverse_dynamics_optimizer.zero_grad()
         total_loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm)
+        nn.utils.clip_grad_norm_(state_embedding_model.parameters(), flags.max_grad_norm)
+        nn.utils.clip_grad_norm_(forward_dynamics_model.parameters(), flags.max_grad_norm)
+        nn.utils.clip_grad_norm_(inverse_dynamics_model.parameters(), flags.max_grad_norm)
         optimizer.step()
+        state_embedding_optimizer.step()
+        forward_dynamics_optimizer.step()
+        inverse_dynamics_optimizer.step()
+
+        # delete loss
+        del pg_loss
+        del baseline_loss
+        del entropy_loss
+        del forward_dynamics_loss
+        del inverse_dynamics_loss
+        del total_loss
+
+        # delete model output
+        del learner_outputs
+        del unused_state
+        del state_emb
+        del next_state_emb
+        del pred_next_state_emb
+        del pred_actions
+        del vtrace_returns
+
+        # delete batch
+        del batch
 
         actor_model.load_state_dict(model.state_dict())
         return stats
@@ -171,7 +254,7 @@ def train(flags):
         eps=flags.epsilon,
         alpha=flags.alpha)
 
-    generator_optimizer = torch.optim.RMSprop(
+    indicator_optimizer = torch.optim.RMSprop(
         indicator.parameters(),
         lr=flags.learning_rate,
         momentum=flags.momentum,
@@ -204,6 +287,7 @@ def train(flags):
         return 1 - min(epoch * T * B, flags.total_frames) / flags.total_frames
 
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+    indicator_scheduler = torch.optim.lr_scheduler.LambdaLR(indicator_optimizer, lr_lambda)
 
     logger = logging.getLogger('logfile')
     stat_keys = [
@@ -234,9 +318,10 @@ def train(flags):
             timings.reset()
             batch, agent_state = get_batch(free_queue, full_queue, buffers,
                                            initial_agent_state_buffers, flags, timings)
-            stats = learn(model, learner_model, indicator, state_embedding_model
-                         , inverse_dynamics_model, forward_dynamics_model, batch, agent_state,
-                          optimizer, scheduler, flags)
+            stats = learn(model, learner_model, indicator, state_embedding_model,
+                          forward_dynamics_model, inverse_dynamics_model, batch, agent_state,
+                          optimizer, state_embedding_optimizer, forward_dynamics_optimizer,
+                          inverse_dynamics_optimizer, scheduler, indicator_scheduler, flags)
             timings.time('learn')
             with lock:
                 to_log = dict(frames=frames)
