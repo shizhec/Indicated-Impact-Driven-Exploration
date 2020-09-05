@@ -73,11 +73,13 @@ def learn(actor_model,
         intrinsic_reward_coef = flags.intrinsic_reward_coef
         intrinsic_rewards *= intrinsic_reward_coef
 
-        print("intrinsic reward: ", intrinsic_rewards.shape)
+        print("intrinsic reward: ", intrinsic_rewards[0][0])
         print("state embedding: ", state_emb.shape)
-        print("action: ", batch['action'][1:].shape)
+        print("action: ", batch['action'][1:][0][0])
+        print("done: ", batch['done'][1:][0][0])
+        print("reward: ", batch['reward'][1:][0][0])
         state_indicates = indicator(state_emb, next_state_emb)
-
+        print("state indicates: ", state_indicates[0][0])
         forward_dynamics_loss = flags.forward_loss_coef * \
                                 losses.compute_forward_dynamics_loss(pred_next_state_emb, next_state_emb)
 
@@ -299,9 +301,6 @@ def train(flags):
         'mean_count_rewards',
         'forward_dynamics_loss',
         'inverse_dynamics_loss',
-        'generator_pg_loss',
-        'generator_entropy_loss',
-        'generator_baseline_loss',
     ]
     logger.info('# Step\t%s', '\t'.join(stat_keys))
     frames, stats = 0, {}
@@ -316,7 +315,7 @@ def train(flags):
                                            initial_agent_state_buffers, flags, timings)
             stats = learn(model, learner_model, indicator, state_embedding_model,
                           forward_dynamics_model, inverse_dynamics_model, batch, agent_state,
-                          optimizer, state_embedding_optimizer, forward_dynamics_optimizer,
+                          optimizer, indicator_optimizer, state_embedding_optimizer, forward_dynamics_optimizer,
                           inverse_dynamics_optimizer, scheduler, indicator_scheduler, flags)
             timings.time('learn')
             with lock:
