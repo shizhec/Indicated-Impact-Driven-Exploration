@@ -808,12 +808,14 @@ class Indicator(nn.Module):
 
         self.output_logits = init_(nn.Linear(1024, 1))
 
-    def forward(self, state_embedding, next_state_embedding):
+    def forward(self, state_embedding, next_state_embedding, T, B):
         inputs = torch.cat((state_embedding, next_state_embedding), dim=2)
 
         output = self.fc(inputs)
 
         logits = self.output_logits(output)
+
+        logits = logits.view(T, B)
 
         prediction = F.sigmoid(logits)
 

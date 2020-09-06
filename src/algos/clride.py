@@ -35,7 +35,29 @@ ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
 Indicator = models.Indicator
 
-def hand_encode():
+def encode(T, B, state_embedding, next_state_embedding, batch):
+    dones = batch['done'][1:]
+    rewards = batch['reward'][1:]
+
+    dones = torch.flatten(dones)
+    rewards = torch.flatten(rewards)
+
+    state_embedding = state_embedding.view(T*B, -1)
+    next_state_embedding = next_state_embedding.view(T*B, -1)
+
+    # concatinate state embedding with next_state_embedding
+    concat = torch.cat([state_embedding, next_state_embedding], dim=1)
+
+    current_done_index = None
+    current_rewarded_index = None
+    for index in range(T*B):
+
+        if dones[index] == 1:
+            current_done_index = index
+        if rewards[index] > 0:
+            current_rewarded_index = index
+
+
     pass
 
 def learn(actor_model,
@@ -78,7 +100,7 @@ def learn(actor_model,
         print("action: ", batch['action'][1:][0][0])
         print("done: ", batch['done'][1:][0][0])
         print("reward: ", batch['reward'][1:][0][0])
-        state_indicates = indicator(state_emb, next_state_emb)
+        state_indicates = indicator(state_emb, next_state_emb, flags.unroll_length, flags.batch_size)
         print("state indicates: ", state_indicates[0][0])
         forward_dynamics_loss = flags.forward_loss_coef * \
                                 losses.compute_forward_dynamics_loss(pred_next_state_emb, next_state_emb)
