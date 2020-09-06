@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=shortgpgpu
+#SBATCH --partition=gpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1
@@ -10,7 +10,7 @@
 #SBATCH --job-name="caveflyer_irc"
 
 # The name of the output
-#SBATCH --output="caveflyer_irc_01.out"
+#SBATCH --output="caveflyer_irc_01_1.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"

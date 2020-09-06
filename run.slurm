@@ -6,11 +6,16 @@
 #SBATCH --constraint=physg5
 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --time=0-03:00:00
-#SBATCH --mem=500000
+#SBATCH --cpus-per-task=8
+#SBATCH --time=0-10:00:00
+#SBATCH --mem=400000
 
 module load gcccore/8.3.0
-module load python/3.7.4
+module load foss/2019b anaconda3/2020.07 mesa/19.2.1
 
-OMP_NUM_THREADS=1 python main.py --model ride --env procgen:procgen-coinrun-v0 --num_threads 16
+source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
+conda activate clride
+
+OMP_NUM_THREADS=1 python main.py --model ride --env procgen --game coinrun --num_threads 8 --disable_background \
+--restrict_themes --use_monochrome_assets --learning_rate 0.001 --batch_size 32 --unroll_length 60 --intrinsic_reward_coef 0.5 \
+--total_frames 10000000 --disable_checkpoint
