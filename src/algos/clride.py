@@ -71,7 +71,7 @@ def encode(T, B, state_embedding, next_state_embedding, batch):
             current_index = []
             
     encoded = encoded.view(T, B)
-    print(encoded.shape)
+    return encoded
 
 
 
@@ -121,26 +121,28 @@ def learn(actor_model,
         state_emb = state_embedding_model(batch, next_state=False).reshape(flags.unroll_length, flags.batch_size, 128)
         next_state_emb = state_embedding_model(batch, next_state=True).reshape(flags.unroll_length, flags.batch_size, 128)
 
+        state_indicates = indicator(state_emb, next_state_emb, flags.unroll_length, flags.batch_size)
+
         pred_next_state_emb = forward_dynamics_model(
             state_emb, batch['action'][1:].to(device=flags.device))
         pred_actions = inverse_dynamics_model(state_emb, next_state_emb)
 
         control_rewards = torch.norm(next_state_emb - state_emb, dim=2, p=2)
 
-        intrinsic_rewards = count_rewards * control_rewards
+        corrected_rewards = control_rewards * state_indicates
+
+        intrinsic_rewards = count_rewards * corrected_rewards
 
         intrinsic_reward_coef = flags.intrinsic_reward_coef
         intrinsic_rewards *= intrinsic_reward_coef
-
-        encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch)
-
-        state_indicates = indicator(state_emb, next_state_emb, flags.unroll_length, flags.batch_size)
 
         forward_dynamics_loss = flags.forward_loss_coef * \
                                 losses.compute_forward_dynamics_loss(pred_next_state_emb, next_state_emb)
 
         inverse_dynamics_loss = flags.inverse_loss_coef * \
                                 losses.compute_inverse_dynamics_loss(pred_actions, batch['action'][1:])
+
+        encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch)
 
         learner_outputs, unused_state = model(batch, initial_agent_state)
 
