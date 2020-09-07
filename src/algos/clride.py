@@ -46,19 +46,57 @@ def encode(T, B, state_embedding, next_state_embedding, batch):
     next_state_embedding = next_state_embedding.view(T*B, -1)
 
     # concatinate state embedding with next_state_embedding
-    concat = torch.cat([state_embedding, next_state_embedding], dim=1)
+    # concat = torch.cat([state_embedding, next_state_embedding], dim=1)
 
-    current_done_index = None
-    current_rewarded_index = None
-    for index in range(T*B):
+    # encoded = torch.tensor([], dtype=torch.float32)
+    # current_index = []
 
-        if dones[index] == 1:
-            current_done_index = index
-        if rewards[index] > 0:
-            current_rewarded_index = index
+    print(len(dones))
+    print(len(rewards))
+    print(len(state_embedding))
+    print(len(next_state_embedding))
+
+    # for index in range(T*B):
+    #     current_index.append(index)
+    #
+    #     # if done and haven't receive any rewards yet
+    #     if dones[index] == 1 and rewards[index] == 0:
+    #
+    #         # encode 0.501 probability of getting rewards to encourage exploration
+    #         partial = torch.full([len(current_index)], 0.501, dtype=torch.float32)
+    #         encoded = torch.cat([encoded, partial])
+    #
+    #         # reset current index list
+    #         current_index = []
+    #
+    #     # if receiving rewards, no matter whether done or not
+    #     # encode the probability by measure the L2 norm between the concat states
+    #     if rewards[index] > 0:
+    #         # if not done:
+    #         partial = encode_partial(current_index, concat)
 
 
-    pass
+
+def encode_partial(index_list, concat):
+    # find the state that getting rewarded
+    rewarded_state = concat[index_list[-1]]
+
+    # for every state except the last rewarded state,
+    output = []
+    for index in index_list[:-2]:
+        current_state = concat[index]
+
+        # calculate the distance by L2 norm
+        distance = torch.norm(rewarded_state - current_state, dim=1, p=2)
+        score = 1.0 / distance
+
+        output.append(score)
+
+    return output
+
+
+
+
 
 def learn(actor_model,
           model,
@@ -95,13 +133,10 @@ def learn(actor_model,
         intrinsic_reward_coef = flags.intrinsic_reward_coef
         intrinsic_rewards *= intrinsic_reward_coef
 
-        print("intrinsic reward: ", intrinsic_rewards[0][0])
-        print("state embedding: ", state_emb.shape)
-        print("action: ", batch['action'][1:][0][0])
-        print("done: ", batch['done'][1:][0][0])
-        print("reward: ", batch['reward'][1:][0][0])
+        encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch)
+
         state_indicates = indicator(state_emb, next_state_emb, flags.unroll_length, flags.batch_size)
-        print("state indicates: ", state_indicates[0][0])
+
         forward_dynamics_loss = flags.forward_loss_coef * \
                                 losses.compute_forward_dynamics_loss(pred_next_state_emb, next_state_emb)
 

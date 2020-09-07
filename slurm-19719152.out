@@ -1,53 +1,4 @@
-Creating log directory: ./torchbeast-20200906-164531
-Saving arguments to ./torchbeast-20200906-164531/meta.json
-Saving messages to ./torchbeast-20200906-164531/out.log
-Saving logs data to ./torchbeast-20200906-164531/logs.csv
-Saving logs' fields to ./torchbeast-20200906-164531/fields.csv
-[INFO:272427 ride:213 2020-09-06 16:45:31,643] Not using CUDA.
-building procgen...done
-[INFO:272641 utils:204 2020-09-06 16:45:37,566] Actor 0 started.
-[INFO:272646 utils:204 2020-09-06 16:45:37,572] Actor 1 started.
-[INFO:272651 utils:204 2020-09-06 16:45:37,579] Actor 2 started.
-[INFO:272656 utils:204 2020-09-06 16:45:37,586] Actor 3 started.
-[INFO:272661 utils:204 2020-09-06 16:45:37,593] Actor 4 started.
-[INFO:272666 utils:204 2020-09-06 16:45:37,600] Actor 5 started.
-[INFO:272671 utils:204 2020-09-06 16:45:37,608] Actor 6 started.
-[INFO:272676 utils:204 2020-09-06 16:45:37,615] Actor 7 started.
-[INFO:272681 utils:204 2020-09-06 16:45:37,622] Actor 8 started.
-[INFO:272686 utils:204 2020-09-06 16:45:37,629] Actor 9 started.
-[INFO:272691 utils:204 2020-09-06 16:45:37,636] Actor 10 started.
-[INFO:272696 utils:204 2020-09-06 16:45:37,644] Actor 11 started.
-[INFO:272701 utils:204 2020-09-06 16:45:37,651] Actor 12 started.
-[INFO:272706 utils:204 2020-09-06 16:45:37,658] Actor 13 started.
-[INFO:272711 utils:204 2020-09-06 16:45:37,665] Actor 14 started.
-[INFO:272716 utils:204 2020-09-06 16:45:37,672] Actor 15 started.
-[INFO:272721 utils:204 2020-09-06 16:45:37,680] Actor 16 started.
-[INFO:272726 utils:204 2020-09-06 16:45:37,687] Actor 17 started.
-[INFO:272731 utils:204 2020-09-06 16:45:37,694] Actor 18 started.
-[INFO:272736 utils:204 2020-09-06 16:45:37,701] Actor 19 started.
-[INFO:272741 utils:204 2020-09-06 16:45:37,709] Actor 20 started.
-[INFO:272746 utils:204 2020-09-06 16:45:37,716] Actor 21 started.
-[INFO:272752 utils:204 2020-09-06 16:45:37,723] Actor 22 started.
-[INFO:272757 utils:204 2020-09-06 16:45:37,731] Actor 23 started.
-[INFO:272764 utils:204 2020-09-06 16:45:37,738] Actor 24 started.
-[INFO:272770 utils:204 2020-09-06 16:45:37,745] Actor 25 started.
-[INFO:272775 utils:204 2020-09-06 16:45:37,753] Actor 26 started.
-[INFO:272780 utils:204 2020-09-06 16:45:37,760] Actor 27 started.
-[INFO:272785 utils:204 2020-09-06 16:45:37,767] Actor 28 started.
-[INFO:272790 utils:204 2020-09-06 16:45:37,775] Actor 29 started.
-[INFO:272796 utils:204 2020-09-06 16:45:37,782] Actor 30 started.
-[INFO:272802 utils:204 2020-09-06 16:45:37,790] Actor 31 started.
-[INFO:272808 utils:204 2020-09-06 16:45:37,797] Actor 32 started.
-[INFO:272813 utils:204 2020-09-06 16:45:37,805] Actor 33 started.
-[INFO:272819 utils:204 2020-09-06 16:45:37,812] Actor 34 started.
-[INFO:272825 utils:204 2020-09-06 16:45:37,820] Actor 35 started.
-[INFO:272832 utils:204 2020-09-06 16:45:37,828] Actor 36 started.
-[INFO:272838 utils:204 2020-09-06 16:45:37,835] Actor 37 started.
-[INFO:272845 utils:204 2020-09-06 16:45:37,843] Actor 38 started.
-[INFO:272858 utils:204 2020-09-06 16:45:37,850] Actor 39 started.
-[INFO:272427 ride:423 2020-09-06 16:45:42,950] After 0 frames: loss inf @ 0.0 fps. Stats:
-{}
-Updated log fields: ['_tick', '_time', 'frames', 'total_loss', 'mean_episode_return', 'pg_loss', 'baseline_loss', 'entropy_loss', 'mean_rewards', 'mean_intrinsic_rewards', 'mean_total_rewards', 'mean_control_rewards', 'mean_count_rewards', 'forward_dynamics_loss', 'inverse_dynamics_loss']
+
 [INFO:272427 ride:423 2020-09-06 16:45:47,956] After 1920 frames: loss 1263.889160 @ 383.6 fps. Stats:
 {'baseline_loss': 2.2297747135162354,
  'entropy_loss': -0.0514889694750309,
@@ -41110,9 +41061,3 @@ Total: 24253.871027ms
  'mean_total_rewards': 0.1666666716337204,
  'pg_loss': 3.8893730640411377,
  'total_loss': 18.360193252563477}
-[INFO:272427 ride:430 2020-09-06 21:09:34,436] Learning finished after 10014720 frames.
-[INFO:272641 utils:308 2020-09-06 21:09:34,440] Actor 0: 
-    step: 8.447251ms +- 13.457117ms (72.83%) 
-    model: 2.813961ms +- 3.392413ms (24.26%) 
-    write: 0.337133ms +- 0.501582ms (2.91%) 
-Total: 11.598345ms
