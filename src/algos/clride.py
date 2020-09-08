@@ -94,9 +94,6 @@ def encode_partial(index_list, concat):
     return output
 
 
-
-
-
 def learn(actor_model,
           model,
           indicator,
@@ -143,6 +140,9 @@ def learn(actor_model,
                                 losses.compute_inverse_dynamics_loss(pred_actions, batch['action'][1:])
 
         encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch)
+
+        indicator_loss = flags.indicator_loss_coef * \
+                         losses.compute_indicator_loss(state_indicates, encoded_state_indicates)
 
         learner_outputs, unused_state = model(batch, initial_agent_state)
 
@@ -197,22 +197,28 @@ def learn(actor_model,
             'mean_count_rewards': torch.mean(count_rewards).item(),
             'forward_dynamics_loss': forward_dynamics_loss.item(),
             'inverse_dynamics_loss': inverse_dynamics_loss.item(),
+            'indicator_loss': indicator_loss.item(),
         }
 
         scheduler.step()
+        indicator_scheduler.step()
         optimizer.zero_grad()
         state_embedding_optimizer.zero_grad()
         forward_dynamics_optimizer.zero_grad()
         inverse_dynamics_optimizer.zero_grad()
+        indicator_optimizer.zero_grad()
         total_loss.backward()
+        indicator_loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm)
         nn.utils.clip_grad_norm_(state_embedding_model.parameters(), flags.max_grad_norm)
         nn.utils.clip_grad_norm_(forward_dynamics_model.parameters(), flags.max_grad_norm)
         nn.utils.clip_grad_norm_(inverse_dynamics_model.parameters(), flags.max_grad_norm)
+        nn.utils.clip_grad_norm_(indicator.parameters(), flags.max_grad_norm)
         optimizer.step()
         state_embedding_optimizer.step()
         forward_dynamics_optimizer.step()
         inverse_dynamics_optimizer.step()
+        indicator_optimizer.step()
 
         # delete loss
         del pg_loss
@@ -221,6 +227,7 @@ def learn(actor_model,
         del forward_dynamics_loss
         del inverse_dynamics_loss
         del total_loss
+        del indicator_loss
 
         # delete model output
         del learner_outputs
@@ -230,6 +237,7 @@ def learn(actor_model,
         del pred_next_state_emb
         del pred_actions
         del vtrace_returns
+        del state_indicates
 
         # delete batch
         del batch

@@ -122,3 +122,6 @@ parser.add_argument('--disable_background', action='store_false',
                          games will use pure black backgrounds.')
 parser.add_argument('--restrict_themes', action='store_true')
 parser.add_argument('--use_monochrome_assets', action='store_true')
+
+# for iride
+parser.add_argument('--indicator_loss_coef', default=0.5, type=float)
