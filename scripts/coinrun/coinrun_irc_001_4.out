@@ -1,0 +1,66 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7     2) fftw/3.3.8     3) openmpi/3.1.4     4) scalapack/2.0.2
+
+Creating log directory: ./torchbeast-20200908-163724
+Saving arguments to ./torchbeast-20200908-163724/meta.json
+Saving messages to ./torchbeast-20200908-163724/out.log
+Saving logs data to ./torchbeast-20200908-163724/logs.csv
+Saving logs' fields to ./torchbeast-20200908-163724/fields.csv
+[INFO:4319 ride:208 2020-09-08 16:37:24,617] Using CUDA.
+building procgen...RUN FAILED ['cmake', '--build', '.', '--config', 'relwithdebinfo']:
+[  3%] Building CXX object CMakeFiles/env.dir/src/cpp-utils.cpp.o
+[  6%] Building CXX object CMakeFiles/env.dir/src/game-registry.cpp.o
+[ 10%] Building CXX object CMakeFiles/env.dir/src/assetgen.cpp.o
+[ 16%] Building CXX object CMakeFiles/env.dir/src/entity.cpp.o
+[ 16%] Building CXX object CMakeFiles/env.dir/src/games/bigfish.cpp.o
+[ 20%] Building CXX object CMakeFiles/env.dir/src/basic-abstract-game.cpp.o
+[ 23%] Building CXX object CMakeFiles/env.dir/src/game.cpp.o
+[ 26%] Building CXX object CMakeFiles/env.dir/src/games/dodgeball.cpp.o
+[ 33%] Building CXX object CMakeFiles/env.dir/src/games/climber.cpp.o
+[ 33%] Building CXX object CMakeFiles/env.dir/src/games/bossfight.cpp.o
+[ 43%] Building CXX object CMakeFiles/env.dir/src/games/leaper.cpp.o
+[ 43%] Building CXX object CMakeFiles/env.dir/src/games/heist.cpp.o
+[ 46%] Building CXX object CMakeFiles/env.dir/src/games/caveflyer.cpp.o
+[ 50%] Building CXX object CMakeFiles/env.dir/src/games/coinrun_old.cpp.o
+[ 50%] Building CXX object CMakeFiles/env.dir/src/games/fruitbot.cpp.o
+[ 60%] Building CXX object CMakeFiles/env.dir/src/games/ninja.cpp.o
+[ 60%] Building CXX object CMakeFiles/env.dir/src/games/jumper.cpp.o
+[ 60%] Building CXX object CMakeFiles/env.dir/src/games/chaser.cpp.o
+[ 63%] Building CXX object CMakeFiles/env.dir/src/games/plunder.cpp.o
+[ 76%] Building CXX object CMakeFiles/env.dir/src/mazegen.cpp.o
+[ 76%] Building CXX object CMakeFiles/env.dir/src/games/starpilot.cpp.o
+[ 76%] Building CXX object CMakeFiles/env.dir/src/games/maze.cpp.o
+[ 76%] Building CXX object CMakeFiles/env.dir/src/games/coinrun.cpp.o
+[ 80%] Building CXX object CMakeFiles/env.dir/src/games/miner.cpp.o
+Building CXX object CMakeFiles/env.dir/src/randgen.cpp.o
+[ 83%] Building CXX object CMakeFiles/env.dir/src/roomgen.cpp.o
+[ 86%] Building CXX object CMakeFiles/env.dir/src/resources.cpp.o
+[ 90%] Building CXX object CMakeFiles/env.dir/src/vecgame.cpp.o
+[ 93%] Building CXX object CMakeFiles/env.dir/src/vecoptions.cpp.o
+[ 60%] Linking CXX shared library libenv.so
+collect2: fatal error: ld terminated with signal 7 [Bus error]
+compilation terminated.
+gmake[2]: *** [libenv.so] Error 1
+gmake[2]: *** Deleting file `libenv.so'
+gmake[1]: *** [CMakeFiles/env.dir/all] Error 2
+gmake: *** [all] Error 2
+
+Traceback (most recent call last):
+  File "../../main.py", line 42, in <module>
+    main(flags)
+  File "../../main.py", line 28, in main
+    train_ride(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/ride.py", line 216, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 96, in __init__
+    lib_dir = build(debug=debug)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 135, in build
+    check(run(build_cmd), verbose=package)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 47, in check
+    raise RunFailure("failed to build procgen from source")
+procgen.build.RunFailure: failed to build procgen from source
