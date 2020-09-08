@@ -10,7 +10,7 @@
 #SBATCH --job-name="caveflyer_irc"
 
 # The name of the output
-#SBATCH --output="caveflyer_irc_5_3.out"
+#SBATCH --output="caveflyer_irc_5_4.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"

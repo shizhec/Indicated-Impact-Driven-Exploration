@@ -367,6 +367,7 @@ def train(flags):
         'mean_count_rewards',
         'forward_dynamics_loss',
         'inverse_dynamics_loss',
+        'indicator_loss',
     ]
     logger.info('# Step\t%s', '\t'.join(stat_keys))
     frames, stats = 0, {}
