@@ -817,6 +817,6 @@ class Indicator(nn.Module):
 
         logits = logits.view(T, B)
 
-        prediction = F.sigmoid(logits)
+        prediction = torch.sigmoid(logits)
 
         return prediction

@@ -139,7 +139,8 @@ def learn(actor_model,
         inverse_dynamics_loss = flags.inverse_loss_coef * \
                                 losses.compute_inverse_dynamics_loss(pred_actions, batch['action'][1:])
 
-        encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch)
+        encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch) \
+                                  .to(device=flags.device)
 
         indicator_loss = flags.indicator_loss_coef * \
                          losses.compute_indicator_loss(state_indicates, encoded_state_indicates)
@@ -181,7 +182,7 @@ def learn(actor_model,
             learner_outputs['policy_logits'])
 
         total_loss = pg_loss + baseline_loss + entropy_loss + \
-                     forward_dynamics_loss + inverse_dynamics_loss
+                     forward_dynamics_loss + inverse_dynamics_loss + indicator_loss
 
         episode_returns = batch['episode_return'][batch['done']]
         stats = {
@@ -208,7 +209,6 @@ def learn(actor_model,
         inverse_dynamics_optimizer.zero_grad()
         indicator_optimizer.zero_grad()
         total_loss.backward()
-        indicator_loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), flags.max_grad_norm)
         nn.utils.clip_grad_norm_(state_embedding_model.parameters(), flags.max_grad_norm)
         nn.utils.clip_grad_norm_(forward_dynamics_model.parameters(), flags.max_grad_norm)
