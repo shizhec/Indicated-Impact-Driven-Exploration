@@ -46,3 +46,7 @@ def compute_inverse_dynamics_loss(pred_actions, true_actions):
     return torch.sum(torch.mean(inverse_dynamics_loss, dim=1))
 
 
+def compute_indicator_loss(pre_indicates, encoded_indicates):
+    loss = nn.BCELoss(pre_indicates, encoded_indicates)
+    print(loss)
+    return loss
