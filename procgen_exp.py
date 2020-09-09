@@ -69,6 +69,32 @@ def tuning_unroll_length(path, game):
     print("mean_return_ul_80: ", np.mean(mean_episode_return4))
     print("mean_return_ul_100: ", np.mean(mean_episode_return5))
 
+def tuning_irc(path, game):
+    output1 = [load_slurm_output(path, game + "_irc_10_"+str(i)+".out", 51) for i in range(1,6)]
+    output2 = [load_slurm_output(path, game + "_irc_1_"+str(i)+".out", 51) for i in range(1,6)]
+    output3 = [load_slurm_output(path, game + "_irc_5_"+str(i)+".out", 51) for i in range(1,6)]
+    output4 = [load_slurm_output(path, game + "_irc_01_"+str(i)+".out", 51) for i in range(1,6)]
+    output5 = [load_slurm_output(path, game + "_irc_05_"+str(i)+".out", 51) for i in range(1,6)]
+    output6 = [load_slurm_output(path, game + "_irc_001_"+str(i)+".out", 51) for i in range(1,6)]
+    output7 = [load_slurm_output(path, game + "_irc_005_"+str(i)+".out", 51) for i in range(1,6)]
+
+
+    mean_episode_return1 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output1]
+    mean_episode_return2 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output2]
+    mean_episode_return3 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output3]
+    mean_episode_return4 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output4]
+    mean_episode_return5 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output5]
+    mean_episode_return6 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output6]
+    mean_episode_return7 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output7]
+
+    print("mean_return_irc_10: ", np.mean(mean_episode_return1))
+    print("mean_return_irc_1: ", np.mean(mean_episode_return2))
+    print("mean_return_irc_5: ", np.mean(mean_episode_return3))
+    print("mean_return_irc_01: ", np.mean(mean_episode_return4))
+    print("mean_return_irc_05: ", np.mean(mean_episode_return5))
+    print("mean_return_irc_001: ", np.mean(mean_episode_return6))
+    print("mean_return_irc_005: ", np.mean(mean_episode_return7))
+
 def load_slurm_output(path, filename, skip_num=0):
     output_dict = OrderedDict()
     with open(path+filename, "r") as file:
@@ -99,28 +125,34 @@ def load_slurm_output(path, filename, skip_num=0):
     return output_dict
 
 
-plot_normalized_mean_return(10, 5, "./", "slurm-19719152.out")
-# print("caveflyer:")
+# plot_normalized_mean_return(10, 5, "./", "slurm-19719152.out")
+print("caveflyer:")
 # tuning_learning_rate("data/caveflyer/", "caveflyer")
 # tuning_batch_size("data/caveflyer/", "caveflyer")
 # tuning_unroll_length("data/caveflyer/", "caveflyer")
-# print("climber:")
+tuning_irc("data/caveflyer/", "caveflyer")
+print("climber:")
 # tuning_learning_rate("data/climber/", "climber")
 # tuning_batch_size("data/climber/", "climber")
 # tuning_unroll_length("data/climber/", "climber")
-# print("coinrun:")
+tuning_irc("data/climber/", "climber")
+print("coinrun:")
 # tuning_learning_rate("data/coinrun/", "coinrun")
 # tuning_batch_size("data/coinrun/", "coinrun")
 # tuning_unroll_length("data/coinrun/", "coinrun")
-# print("jumper:")
+tuning_irc("data/coinrun/", "coinrun")
+print("jumper:")
 # tuning_learning_rate("data/jumper/", "jumper")
 # tuning_batch_size("data/jumper/", "jumper")
 # tuning_unroll_length("data/jumper/", "jumper")
-# print("leaper:")
+tuning_irc("data/jumper/", "jumper")
+print("leaper:")
 # tuning_learning_rate("data/leaper/", "leaper")
 # tuning_batch_size("data/leaper/", "leaper")
 # tuning_unroll_length("data/leaper/", "leaper")
-# print("ninja")
+tuning_irc("data/leaper/", "leaper")
+print("ninja")
 # tuning_learning_rate("data/ninja/", "ninja")
 # tuning_batch_size("data/ninja/", "ninja")
 # tuning_unroll_length("data/ninja/", "ninja")
+tuning_irc("data/ninja/", "ninja")
