@@ -10,7 +10,7 @@
 #SBATCH --job-name="leaper_ec"
 
 # The name of the output
-#SBATCH --output="leaper_ec_01_1.out"
+#SBATCH --output="leaper_ec_01_2.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"

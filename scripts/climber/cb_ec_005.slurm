@@ -10,7 +10,7 @@
 #SBATCH --job-name="climber_ec"
 
 # The name of the output
-#SBATCH --output="climber_ec_005_1.out"
+#SBATCH --output="climber_ec_005_2.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
