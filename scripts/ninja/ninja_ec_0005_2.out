@@ -1,0 +1,13 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7     2) fftw/3.3.8     3) openmpi/3.1.4     4) scalapack/2.0.2
+
+Found log directory: ./torchbeast-20200910-155912
+Saving arguments to ./torchbeast-20200910-155912/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20200910-155912/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20200910-155912/logs.csv
+Saving logs' fields to ./torchbeast-20200910-155912/fields.csv
+[INFO:4748 ride:208 2020-09-10 15:59:12,766] Using CUDA.
+building procgen.../var/spool/slurm/job19816779/slurm_script: line 51:  4748 Segmentation fault      OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game ninja --num_threads 8 --disable_background --restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --unroll_length 100 --intrinsic_reward_coef 0.001 --entropy_cost 0.0005 --total_frames 4000000 --disable_checkpoint
