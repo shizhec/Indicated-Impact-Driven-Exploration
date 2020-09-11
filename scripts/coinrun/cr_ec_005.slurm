@@ -10,7 +10,7 @@
 #SBATCH --job-name="coinrun_ec"
 
 # The name of the output
-#SBATCH --output="coinrun_ec_005_2.out"
+#SBATCH --output="coinrun_ec_005_3.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"

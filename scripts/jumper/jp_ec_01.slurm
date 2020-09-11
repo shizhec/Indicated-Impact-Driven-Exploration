@@ -10,7 +10,7 @@
 #SBATCH --job-name="jumper_ec"
 
 # The name of the output
-#SBATCH --output="jumper_ec_01_2.out"
+#SBATCH --output="jumper_ec_01_3.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
