@@ -10,7 +10,7 @@
 #SBATCH --job-name="ninja_ec"
 
 # The name of the output
-#SBATCH --output="ninja_ec_0005_3.out"
+#SBATCH --output="ninja_ec_0005_4.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
