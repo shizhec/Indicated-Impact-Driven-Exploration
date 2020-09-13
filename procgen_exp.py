@@ -95,6 +95,26 @@ def tuning_irc(path, game):
     print("mean_return_irc_001: ", np.mean(mean_episode_return6))
     print("mean_return_irc_005: ", np.mean(mean_episode_return7))
 
+def tuning_ec(path, game):
+    output1 = [load_slurm_output(path, game + "_ec_01_"+str(i)+".out", 51) for i in range(1,6)]
+    output2 = [load_slurm_output(path, game + "_ec_001_"+str(i)+".out", 51) for i in range(1,6)]
+    output3 = [load_slurm_output(path, game + "_ec_005_"+str(i)+".out", 51) for i in range(1,6)]
+    output4 = [load_slurm_output(path, game + "_ec_0001_"+str(i)+".out", 51) for i in range(1,6)]
+    output5 = [load_slurm_output(path, game + "_ec_0005_"+str(i)+".out", 51) for i in range(1,6)]
+
+
+    mean_episode_return1 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output1]
+    mean_episode_return2 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output2]
+    mean_episode_return3 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output3]
+    mean_episode_return4 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output4]
+    mean_episode_return5 = [np.mean(np.array([x.get("mean_episode_return", 0.0) for x in output.values()])) for output in output5]
+
+    print("mean_return_ec_01: ", np.mean(mean_episode_return1))
+    print("mean_return_ec_001: ", np.mean(mean_episode_return2))
+    print("mean_return_ec_005: ", np.mean(mean_episode_return3))
+    print("mean_return_ec_0001: ", np.mean(mean_episode_return4))
+    print("mean_return_ec_0005: ", np.mean(mean_episode_return5))
+
 def load_slurm_output(path, filename, skip_num=0):
     output_dict = OrderedDict()
     with open(path+filename, "r") as file:
@@ -130,29 +150,35 @@ print("caveflyer:")
 # tuning_learning_rate("data/caveflyer/", "caveflyer")
 # tuning_batch_size("data/caveflyer/", "caveflyer")
 # tuning_unroll_length("data/caveflyer/", "caveflyer")
-tuning_irc("data/caveflyer/", "caveflyer")
+# tuning_irc("data/caveflyer/", "caveflyer")
+tuning_ec("data/caveflyer/", "caveflyer")
 print("climber:")
 # tuning_learning_rate("data/climber/", "climber")
 # tuning_batch_size("data/climber/", "climber")
 # tuning_unroll_length("data/climber/", "climber")
-tuning_irc("data/climber/", "climber")
+# tuning_irc("data/climber/", "climber")
+tuning_ec("data/climber/", "climber")
 print("coinrun:")
 # tuning_learning_rate("data/coinrun/", "coinrun")
 # tuning_batch_size("data/coinrun/", "coinrun")
 # tuning_unroll_length("data/coinrun/", "coinrun")
-tuning_irc("data/coinrun/", "coinrun")
+# tuning_irc("data/coinrun/", "coinrun")
+tuning_ec("data/coinrun/", "coinrun")
 print("jumper:")
 # tuning_learning_rate("data/jumper/", "jumper")
 # tuning_batch_size("data/jumper/", "jumper")
 # tuning_unroll_length("data/jumper/", "jumper")
-tuning_irc("data/jumper/", "jumper")
+# tuning_irc("data/jumper/", "jumper")
+tuning_ec("data/jumper/", "jumper")
 print("leaper:")
 # tuning_learning_rate("data/leaper/", "leaper")
 # tuning_batch_size("data/leaper/", "leaper")
 # tuning_unroll_length("data/leaper/", "leaper")
-tuning_irc("data/leaper/", "leaper")
+# tuning_irc("data/leaper/", "leaper")
+tuning_ec("data/leaper/", "leaper")
 print("ninja")
 # tuning_learning_rate("data/ninja/", "ninja")
 # tuning_batch_size("data/ninja/", "ninja")
 # tuning_unroll_length("data/ninja/", "ninja")
-tuning_irc("data/ninja/", "ninja")
+# tuning_irc("data/ninja/", "ninja")
+tuning_ec("data/ninja/", "ninja")
