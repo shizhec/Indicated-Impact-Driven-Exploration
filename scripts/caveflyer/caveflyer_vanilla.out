@@ -1,0 +1,2424 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) fftw/3.3.8     2) openmpi/3.1.4     3) scalapack/2.0.2
+
+Found log directory: ./torchbeast-20200915-223341
+Saving arguments to ./torchbeast-20200915-223341/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20200915-223341/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20200915-223341/logs.csv
+Saving logs' fields to ./torchbeast-20200915-223341/fields.csv
+[INFO:28871 torchbeast:116 2020-09-15 22:33:41,902] Using CUDA.
+building procgen...done
+[INFO:29402 utils:204 2020-09-15 22:33:46,109] Actor 0 started.
+[INFO:29403 utils:204 2020-09-15 22:33:46,114] Actor 1 started.
+[INFO:29409 utils:204 2020-09-15 22:33:46,120] Actor 2 started.
+[INFO:29417 utils:204 2020-09-15 22:33:46,127] Actor 3 started.
+[INFO:29422 utils:204 2020-09-15 22:33:46,133] Actor 4 started.
+[INFO:29427 utils:204 2020-09-15 22:33:46,140] Actor 5 started.
+[INFO:29432 utils:204 2020-09-15 22:33:46,147] Actor 6 started.
+[INFO:29437 utils:204 2020-09-15 22:33:46,153] Actor 7 started.
+[INFO:29442 utils:204 2020-09-15 22:33:46,160] Actor 8 started.
+[INFO:29447 utils:204 2020-09-15 22:33:46,166] Actor 9 started.
+[INFO:29452 utils:204 2020-09-15 22:33:46,173] Actor 10 started.
+[INFO:29457 utils:204 2020-09-15 22:33:46,180] Actor 11 started.
+[INFO:29462 utils:204 2020-09-15 22:33:46,188] Actor 12 started.
+[INFO:29467 utils:204 2020-09-15 22:33:46,194] Actor 13 started.
+[INFO:29472 utils:204 2020-09-15 22:33:46,202] Actor 14 started.
+[INFO:29477 utils:204 2020-09-15 22:33:46,208] Actor 15 started.
+[INFO:29482 utils:204 2020-09-15 22:33:46,215] Actor 16 started.
+[INFO:29487 utils:204 2020-09-15 22:33:46,222] Actor 17 started.
+[INFO:29492 utils:204 2020-09-15 22:33:46,229] Actor 18 started.
+[INFO:29497 utils:204 2020-09-15 22:33:46,236] Actor 19 started.
+[INFO:29502 utils:204 2020-09-15 22:33:46,243] Actor 20 started.
+[INFO:29507 utils:204 2020-09-15 22:33:46,250] Actor 21 started.
+[INFO:29512 utils:204 2020-09-15 22:33:46,257] Actor 22 started.
+[INFO:29517 utils:204 2020-09-15 22:33:46,264] Actor 23 started.
+[INFO:29522 utils:204 2020-09-15 22:33:46,272] Actor 24 started.
+[INFO:29527 utils:204 2020-09-15 22:33:46,278] Actor 25 started.
+[INFO:29532 utils:204 2020-09-15 22:33:46,286] Actor 26 started.
+[INFO:29537 utils:204 2020-09-15 22:33:46,293] Actor 27 started.
+[INFO:29542 utils:204 2020-09-15 22:33:46,300] Actor 28 started.
+[INFO:29547 utils:204 2020-09-15 22:33:46,307] Actor 29 started.
+[INFO:29552 utils:204 2020-09-15 22:33:46,314] Actor 30 started.
+[INFO:29557 utils:204 2020-09-15 22:33:46,321] Actor 31 started.
+[INFO:29562 utils:204 2020-09-15 22:33:46,329] Actor 32 started.
+[INFO:29567 utils:204 2020-09-15 22:33:46,336] Actor 33 started.
+[INFO:29572 utils:204 2020-09-15 22:33:46,343] Actor 34 started.
+[INFO:29577 utils:204 2020-09-15 22:33:46,350] Actor 35 started.
+[INFO:29582 utils:204 2020-09-15 22:33:46,358] Actor 36 started.
+[INFO:29587 utils:204 2020-09-15 22:33:46,365] Actor 37 started.
+[INFO:29592 utils:204 2020-09-15 22:33:46,372] Actor 38 started.
+[INFO:29597 utils:204 2020-09-15 22:33:46,380] Actor 39 started.
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return', 'total_loss', 'pg_loss', 'baseline_loss', 'entropy_loss']
+[INFO:28871 torchbeast:258 2020-09-15 22:33:55,245] After 7680 frames: loss 25.370493 @ 1534.6 fps. Stats:
+{'baseline_loss': 34.843833923339844,
+ 'entropy_loss': -0.024692866951227188,
+ 'mean_episode_return': nan,
+ 'pg_loss': -9.448648452758789,
+ 'total_loss': 25.370492935180664}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:00,250] After 19200 frames: loss 3.349804 @ 2301.9 fps. Stats:
+{'baseline_loss': 6.067668914794922,
+ 'entropy_loss': -0.0980122983455658,
+ 'mean_episode_return': 1.875,
+ 'pg_loss': -2.6198525428771973,
+ 'total_loss': 3.349804162979126}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:05,258] After 28800 frames: loss -1.518390 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.2288837879896164,
+ 'entropy_loss': -0.15103629231452942,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -1.5962377786636353,
+ 'total_loss': -1.5183902978897095}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:10,269] After 40320 frames: loss 5.278334 @ 2301.1 fps. Stats:
+{'baseline_loss': 0.3993683457374573,
+ 'entropy_loss': -0.1476084291934967,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 5.02657413482666,
+ 'total_loss': 5.278334140777588}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:15,274] After 49920 frames: loss 8.103344 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.39216548204421997,
+ 'entropy_loss': -0.15650683641433716,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': 7.867685317993164,
+ 'total_loss': 8.103343963623047}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:20,279] After 59520 frames: loss -0.171038 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.07291330397129059,
+ 'entropy_loss': -0.157984659075737,
+ 'mean_episode_return': 0.9090909361839294,
+ 'pg_loss': -0.08596625924110413,
+ 'total_loss': -0.17103761434555054}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:25,284] After 69120 frames: loss -0.146525 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.007508683018386364,
+ 'entropy_loss': -0.15801943838596344,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': 0.003985695540904999,
+ 'total_loss': -0.1465250551700592}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:30,311] After 80640 frames: loss -2.580283 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.05237707495689392,
+ 'entropy_loss': -0.15758560597896576,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -2.4750747680664062,
+ 'total_loss': -2.5802834033966064}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:35,316] After 90240 frames: loss -0.741986 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.007987238466739655,
+ 'entropy_loss': -0.15943537652492523,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.590537965297699,
+ 'total_loss': -0.741986095905304}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:40,321] After 99840 frames: loss -1.122775 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.09107273817062378,
+ 'entropy_loss': -0.16010677814483643,
+ 'mean_episode_return': 10.0,
+ 'pg_loss': -1.0537409782409668,
+ 'total_loss': -1.1227750778198242}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:45,327] After 111360 frames: loss -0.033174 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.012627077288925648,
+ 'entropy_loss': -0.15984320640563965,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': 0.11404254287481308,
+ 'total_loss': -0.033173590898513794}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:50,332] After 120960 frames: loss -4.404740 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.03454739972949028,
+ 'entropy_loss': -0.1600530743598938,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -4.279234409332275,
+ 'total_loss': -4.404740333557129}
+[INFO:28871 torchbeast:258 2020-09-15 22:34:55,340] After 130560 frames: loss -0.434330 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.011183877475559711,
+ 'entropy_loss': -0.1597227305173874,
+ 'mean_episode_return': nan,
+ 'pg_loss': -0.2857913374900818,
+ 'total_loss': -0.43433016538619995}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:00,345] After 142080 frames: loss -0.154162 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.17870190739631653,
+ 'entropy_loss': -0.15985147655010223,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.17301273345947266,
+ 'total_loss': -0.15416230261325836}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:05,350] After 151680 frames: loss 2.496728 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.20371191203594208,
+ 'entropy_loss': -0.15856577455997467,
+ 'mean_episode_return': 6.6666669845581055,
+ 'pg_loss': 2.4515819549560547,
+ 'total_loss': 2.4967281818389893}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:10,357] After 161280 frames: loss -1.569900 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.006438009440898895,
+ 'entropy_loss': -0.1586645245552063,
+ 'mean_episode_return': nan,
+ 'pg_loss': -1.417673110961914,
+ 'total_loss': -1.569899559020996}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:15,364] After 172800 frames: loss -2.921563 @ 2300.9 fps. Stats:
+{'baseline_loss': 0.012761468067765236,
+ 'entropy_loss': -0.1565065234899521,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.777817726135254,
+ 'total_loss': -2.921562910079956}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:20,369] After 182400 frames: loss -0.317337 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.007668406702578068,
+ 'entropy_loss': -0.15643903613090515,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.1685662567615509,
+ 'total_loss': -0.31733688712120056}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:25,377] After 192000 frames: loss 0.125858 @ 1917.0 fps. Stats:
+{'baseline_loss': 0.13761579990386963,
+ 'entropy_loss': -0.1542971283197403,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.14253975450992584,
+ 'total_loss': 0.12585841119289398}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:30,382] After 203520 frames: loss -0.485134 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.10634943842887878,
+ 'entropy_loss': -0.15522059798240662,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.43626320362091064,
+ 'total_loss': -0.4851343631744385}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:35,389] After 213120 frames: loss -1.237221 @ 1917.6 fps. Stats:
+{'baseline_loss': 0.012317714281380177,
+ 'entropy_loss': -0.1551634967327118,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.0943747758865356,
+ 'total_loss': -1.2372206449508667}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:40,395] After 222720 frames: loss -3.621751 @ 1917.6 fps. Stats:
+{'baseline_loss': 0.04875823110342026,
+ 'entropy_loss': -0.1543041169643402,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -3.516204833984375,
+ 'total_loss': -3.621750593185425}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:45,401] After 234240 frames: loss -1.873692 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.010052928701043129,
+ 'entropy_loss': -0.15315024554729462,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.7305951118469238,
+ 'total_loss': -1.8736923933029175}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:50,408] After 243840 frames: loss -0.902276 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.04407409578561783,
+ 'entropy_loss': -0.15343879163265228,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.7929112911224365,
+ 'total_loss': -0.9022759795188904}
+[INFO:28871 torchbeast:258 2020-09-15 22:35:55,413] After 253440 frames: loss 1.658091 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.21800604462623596,
+ 'entropy_loss': -0.1438966542482376,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 1.583981990814209,
+ 'total_loss': 1.6580913066864014}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:00,420] After 264960 frames: loss 1.081188 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.20547190308570862,
+ 'entropy_loss': -0.15294864773750305,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 1.0286650657653809,
+ 'total_loss': 1.0811883211135864}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:05,426] After 274560 frames: loss -0.671528 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.12674367427825928,
+ 'entropy_loss': -0.15532907843589783,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.6429430246353149,
+ 'total_loss': -0.6715284585952759}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:10,431] After 284160 frames: loss -3.048289 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.029640324413776398,
+ 'entropy_loss': -0.15245792269706726,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -2.925471544265747,
+ 'total_loss': -3.0482890605926514}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:15,436] After 295680 frames: loss 2.285576 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.33865785598754883,
+ 'entropy_loss': -0.14396414160728455,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 2.090881824493408,
+ 'total_loss': 2.2855756282806396}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:20,444] After 305280 frames: loss 0.077641 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.23977030813694,
+ 'entropy_loss': -0.1501542180776596,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.011975400149822235,
+ 'total_loss': 0.07764069736003876}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:25,451] After 314880 frames: loss -2.753346 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.10085149854421616,
+ 'entropy_loss': -0.14739905297756195,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': -2.7067983150482178,
+ 'total_loss': -2.7533457279205322}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:30,458] After 326400 frames: loss 0.301280 @ 2301.0 fps. Stats:
+{'baseline_loss': 0.2187018096446991,
+ 'entropy_loss': -0.15034259855747223,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.2329210638999939,
+ 'total_loss': 0.30128026008605957}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:35,466] After 336000 frames: loss 2.024606 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.2508942186832428,
+ 'entropy_loss': -0.14584504067897797,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 1.9195563793182373,
+ 'total_loss': 2.0246057510375977}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:40,471] After 345600 frames: loss -1.356167 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.1189187690615654,
+ 'entropy_loss': -0.14483056962490082,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': -1.3302547931671143,
+ 'total_loss': -1.3561666011810303}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:45,476] After 357120 frames: loss 0.131978 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.11230446398258209,
+ 'entropy_loss': -0.145003080368042,
+ 'mean_episode_return': 0.9090909361839294,
+ 'pg_loss': 0.16467708349227905,
+ 'total_loss': 0.13197845220565796}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:50,481] After 366720 frames: loss -0.259796 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.08055615425109863,
+ 'entropy_loss': -0.14200808107852936,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': -0.19834387302398682,
+ 'total_loss': -0.25979578495025635}
+[INFO:28871 torchbeast:258 2020-09-15 22:36:55,487] After 376320 frames: loss 5.552907 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.47524309158325195,
+ 'entropy_loss': -0.15281392633914948,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 5.230478286743164,
+ 'total_loss': 5.552907466888428}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:00,493] After 387840 frames: loss 1.713432 @ 2301.6 fps. Stats:
+{'baseline_loss': 0.18726278841495514,
+ 'entropy_loss': -0.15112414956092834,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': 1.6772935390472412,
+ 'total_loss': 1.7134321928024292}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:05,501] After 397440 frames: loss 1.472077 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.2534737288951874,
+ 'entropy_loss': -0.13634449243545532,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 1.3549473285675049,
+ 'total_loss': 1.472076654434204}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:10,505] After 407040 frames: loss -1.186611 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.07751388847827911,
+ 'entropy_loss': -0.13530704379081726,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': -1.1288176774978638,
+ 'total_loss': -1.1866108179092407}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:15,510] After 418560 frames: loss -2.796007 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.01129025686532259,
+ 'entropy_loss': -0.14677487313747406,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.6605224609375,
+ 'total_loss': -2.796006917953491}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:20,517] After 428160 frames: loss -1.172386 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.19393470883369446,
+ 'entropy_loss': -0.1403404027223587,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -1.225980520248413,
+ 'total_loss': -1.1723862886428833}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:25,523] After 437760 frames: loss 0.829189 @ 1917.7 fps. Stats:
+{'baseline_loss': 0.16568496823310852,
+ 'entropy_loss': -0.12331303209066391,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': 0.7868167161941528,
+ 'total_loss': 0.8291886448860168}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:30,528] After 449280 frames: loss -3.090925 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.010371748358011246,
+ 'entropy_loss': -0.14586332440376282,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.9554333686828613,
+ 'total_loss': -3.0909249782562256}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:35,533] After 458880 frames: loss 1.317135 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.18368618190288544,
+ 'entropy_loss': -0.14886486530303955,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 1.2823134660720825,
+ 'total_loss': 1.3171347379684448}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:40,538] After 470400 frames: loss -1.025393 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.12012656033039093,
+ 'entropy_loss': -0.144724503159523,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -1.0007948875427246,
+ 'total_loss': -1.0253928899765015}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:45,543] After 480000 frames: loss 1.949817 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.27560558915138245,
+ 'entropy_loss': -0.14824704825878143,
+ 'mean_episode_return': 3.3333332538604736,
+ 'pg_loss': 1.8224587440490723,
+ 'total_loss': 1.949817419052124}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:50,548] After 491520 frames: loss 1.740322 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.3081855773925781,
+ 'entropy_loss': -0.147999107837677,
+ 'mean_episode_return': 4.615384578704834,
+ 'pg_loss': 1.5801353454589844,
+ 'total_loss': 1.7403218746185303}
+[INFO:28871 torchbeast:258 2020-09-15 22:37:55,553] After 501120 frames: loss -2.633483 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0709204450249672,
+ 'entropy_loss': -0.1524660736322403,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -2.5519375801086426,
+ 'total_loss': -2.6334831714630127}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:00,558] After 510720 frames: loss -2.860462 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.013889997266232967,
+ 'entropy_loss': -0.15163744986057281,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.72271466255188,
+ 'total_loss': -2.860462188720703}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:05,563] After 520320 frames: loss -2.970590 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.014723739586770535,
+ 'entropy_loss': -0.14759813249111176,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.8377156257629395,
+ 'total_loss': -2.9705898761749268}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:10,570] After 531840 frames: loss -0.124616 @ 2300.9 fps. Stats:
+{'baseline_loss': 0.10603939741849899,
+ 'entropy_loss': -0.14200900495052338,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -0.08864596486091614,
+ 'total_loss': -0.12461557239294052}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:15,575] After 541440 frames: loss -1.294688 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.17405492067337036,
+ 'entropy_loss': -0.1499154269695282,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': -1.3188272714614868,
+ 'total_loss': -1.2946877479553223}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:20,582] After 551040 frames: loss -1.011955 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.05686754360795021,
+ 'entropy_loss': -0.15349610149860382,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.9153268337249756,
+ 'total_loss': -1.0119553804397583}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:25,587] After 562560 frames: loss -0.660215 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.004359428305178881,
+ 'entropy_loss': -0.15396082401275635,
+ 'mean_episode_return': nan,
+ 'pg_loss': -0.5106138586997986,
+ 'total_loss': -0.6602152585983276}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:30,593] After 572160 frames: loss 2.369400 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.33581727743148804,
+ 'entropy_loss': -0.153647318482399,
+ 'mean_episode_return': 3.076923131942749,
+ 'pg_loss': 2.187229633331299,
+ 'total_loss': 2.3693995475769043}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:35,599] After 583680 frames: loss -0.438238 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.004056086763739586,
+ 'entropy_loss': -0.14705537259578705,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.2952384948730469,
+ 'total_loss': -0.4382377862930298}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:40,604] After 593280 frames: loss -0.824080 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.09529198706150055,
+ 'entropy_loss': -0.15192799270153046,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.7674440741539001,
+ 'total_loss': -0.8240801095962524}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:45,613] After 602880 frames: loss -1.580366 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.0061332471668720245,
+ 'entropy_loss': -0.15180902183055878,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.434690237045288,
+ 'total_loss': -1.5803660154342651}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:50,618] After 614400 frames: loss -0.910961 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.01810391992330551,
+ 'entropy_loss': -0.1505836546421051,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.7784807682037354,
+ 'total_loss': -0.9109605550765991}
+[INFO:28871 torchbeast:258 2020-09-15 22:38:55,623] After 624000 frames: loss 2.253728 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.19500938057899475,
+ 'entropy_loss': -0.15307733416557312,
+ 'mean_episode_return': 3.3333332538604736,
+ 'pg_loss': 2.2117958068847656,
+ 'total_loss': 2.253727912902832}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:00,631] After 633600 frames: loss -0.482519 @ 1917.0 fps. Stats:
+{'baseline_loss': 0.11069786548614502,
+ 'entropy_loss': -0.15559369325637817,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.437623530626297,
+ 'total_loss': -0.48251935839653015}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:05,638] After 645120 frames: loss -0.137002 @ 2301.1 fps. Stats:
+{'baseline_loss': 0.13868831098079681,
+ 'entropy_loss': -0.1510290950536728,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.12466078996658325,
+ 'total_loss': -0.13700157403945923}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:10,644] After 654720 frames: loss -1.030201 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.08504285663366318,
+ 'entropy_loss': -0.15332013368606567,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.961924135684967,
+ 'total_loss': -1.0302014350891113}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:15,649] After 664320 frames: loss -1.939357 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.005085233133286238,
+ 'entropy_loss': -0.15031245350837708,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.794129729270935,
+ 'total_loss': -1.9393569231033325}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:20,654] After 673920 frames: loss -5.070636 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.09496070444583893,
+ 'entropy_loss': -0.14414288103580475,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -5.021453857421875,
+ 'total_loss': -5.07063627243042}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:25,664] After 685440 frames: loss 3.757310 @ 2299.7 fps. Stats:
+{'baseline_loss': 0.3197491765022278,
+ 'entropy_loss': -0.14362329244613647,
+ 'mean_episode_return': 3.846153974533081,
+ 'pg_loss': 3.581183910369873,
+ 'total_loss': 3.757309675216675}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:30,670] After 695040 frames: loss 2.142556 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.25751200318336487,
+ 'entropy_loss': -0.15229332447052002,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 2.0373375415802,
+ 'total_loss': 2.1425561904907227}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:35,675] After 704640 frames: loss -1.141353 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0037671616300940514,
+ 'entropy_loss': -0.15498705208301544,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.9901328682899475,
+ 'total_loss': -1.1413527727127075}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:40,680] After 716160 frames: loss 1.011964 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.14016419649124146,
+ 'entropy_loss': -0.15328989923000336,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 1.025090217590332,
+ 'total_loss': 1.0119644403457642}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:45,688] After 725760 frames: loss -3.700686 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.0533076673746109,
+ 'entropy_loss': -0.1554703414440155,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -3.5985236167907715,
+ 'total_loss': -3.70068621635437}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:50,695] After 735360 frames: loss 3.443502 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.3292061686515808,
+ 'entropy_loss': -0.15824677050113678,
+ 'mean_episode_return': 2.7272727489471436,
+ 'pg_loss': 3.272542953491211,
+ 'total_loss': 3.443502426147461}
+[INFO:28871 torchbeast:258 2020-09-15 22:39:55,700] After 746880 frames: loss -0.639057 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.08136020600795746,
+ 'entropy_loss': -0.15448103845119476,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.5659359693527222,
+ 'total_loss': -0.6390568017959595}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:00,705] After 756480 frames: loss -0.210363 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.17828941345214844,
+ 'entropy_loss': -0.15458065271377563,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.23407180607318878,
+ 'total_loss': -0.21036304533481598}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:05,710] After 766080 frames: loss -0.022380 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.07560830563306808,
+ 'entropy_loss': -0.15313071012496948,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 0.05514252185821533,
+ 'total_loss': -0.02237987518310547}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:10,715] After 777600 frames: loss -4.205700 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.024409055709838867,
+ 'entropy_loss': -0.1518331915140152,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -4.07827615737915,
+ 'total_loss': -4.205700397491455}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:15,720] After 787200 frames: loss 0.460880 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.129377543926239,
+ 'entropy_loss': -0.15361760556697845,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': 0.48512035608291626,
+ 'total_loss': 0.4608802795410156}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:20,725] After 796800 frames: loss 1.388142 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.26560962200164795,
+ 'entropy_loss': -0.14868052303791046,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 1.2712130546569824,
+ 'total_loss': 1.3881421089172363}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:25,730] After 808320 frames: loss 0.106955 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.18557262420654297,
+ 'entropy_loss': -0.14297382533550262,
+ 'mean_episode_return': 2.142857313156128,
+ 'pg_loss': 0.06435626745223999,
+ 'total_loss': 0.10695506632328033}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:30,738] After 817920 frames: loss 2.236587 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.2947286367416382,
+ 'entropy_loss': -0.1416293829679489,
+ 'mean_episode_return': 2.7272727489471436,
+ 'pg_loss': 2.0834875106811523,
+ 'total_loss': 2.236586809158325}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:35,744] After 829440 frames: loss 1.848109 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.2556748390197754,
+ 'entropy_loss': -0.14967215061187744,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 1.742106556892395,
+ 'total_loss': 1.848109245300293}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:40,749] After 839040 frames: loss -1.478736 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.10472966730594635,
+ 'entropy_loss': -0.1497507393360138,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -1.4337151050567627,
+ 'total_loss': -1.478736162185669}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:45,756] After 848640 frames: loss -0.895312 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.10897979140281677,
+ 'entropy_loss': -0.14287817478179932,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': -0.8614137768745422,
+ 'total_loss': -0.8953121900558472}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:50,761] After 860160 frames: loss -1.406032 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.03563455864787102,
+ 'entropy_loss': -0.14848603308200836,
+ 'mean_episode_return': 0.8333333730697632,
+ 'pg_loss': -1.2931801080703735,
+ 'total_loss': -1.406031608581543}
+[INFO:28871 torchbeast:258 2020-09-15 22:40:55,767] After 869760 frames: loss -1.244085 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.04357125610113144,
+ 'entropy_loss': -0.14907020330429077,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -1.1385858058929443,
+ 'total_loss': -1.2440848350524902}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:00,772] After 879360 frames: loss -0.244089 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.09278933703899384,
+ 'entropy_loss': -0.15182408690452576,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -0.18505442142486572,
+ 'total_loss': -0.24408917129039764}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:05,780] After 890880 frames: loss -0.271396 @ 2300.4 fps. Stats:
+{'baseline_loss': 0.11348319798707962,
+ 'entropy_loss': -0.15504801273345947,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.229831263422966,
+ 'total_loss': -0.27139607071876526}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:10,785] After 900480 frames: loss 2.785553 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.2653999328613281,
+ 'entropy_loss': -0.15454328060150146,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 2.674696445465088,
+ 'total_loss': 2.785552978515625}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:15,791] After 910080 frames: loss 3.203139 @ 1917.7 fps. Stats:
+{'baseline_loss': 0.3774758577346802,
+ 'entropy_loss': -0.15684974193572998,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 2.982513427734375,
+ 'total_loss': 3.203139305114746}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:20,799] After 921600 frames: loss 0.554459 @ 2300.6 fps. Stats:
+{'baseline_loss': 0.14701318740844727,
+ 'entropy_loss': -0.15104395151138306,
+ 'mean_episode_return': 0.9090909361839294,
+ 'pg_loss': 0.5584899187088013,
+ 'total_loss': 0.5544591546058655}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:25,804] After 931200 frames: loss -1.575834 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.09387346357107162,
+ 'entropy_loss': -0.15580371022224426,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -1.5139039754867554,
+ 'total_loss': -1.5758341550827026}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:30,809] After 942720 frames: loss -0.702163 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.12283425033092499,
+ 'entropy_loss': -0.13886749744415283,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.6861296892166138,
+ 'total_loss': -0.7021629214286804}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:35,814] After 952320 frames: loss 3.531631 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3811224699020386,
+ 'entropy_loss': -0.15258577466011047,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 3.3030941486358643,
+ 'total_loss': 3.531630754470825}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:40,819] After 961920 frames: loss 1.702503 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.29427415132522583,
+ 'entropy_loss': -0.15390384197235107,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.5621328353881836,
+ 'total_loss': 1.7025030851364136}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:45,826] After 973440 frames: loss -1.154165 @ 2301.0 fps. Stats:
+{'baseline_loss': 0.04689442738890648,
+ 'entropy_loss': -0.1556139588356018,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -1.0454456806182861,
+ 'total_loss': -1.154165267944336}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:50,832] After 983040 frames: loss -1.247543 @ 1917.6 fps. Stats:
+{'baseline_loss': 0.0018453785451129079,
+ 'entropy_loss': -0.15550310909748077,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.093885064125061,
+ 'total_loss': -1.2475428581237793}
+[INFO:28871 torchbeast:258 2020-09-15 22:41:55,838] After 992640 frames: loss 0.888654 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.1725386530160904,
+ 'entropy_loss': -0.15207713842391968,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 0.8681920766830444,
+ 'total_loss': 0.888653576374054}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:00,845] After 1004160 frames: loss -0.481286 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.1215241551399231,
+ 'entropy_loss': -0.15646035969257355,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.4463493525981903,
+ 'total_loss': -0.48128557205200195}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:05,851] After 1013760 frames: loss -1.458983 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.10587124526500702,
+ 'entropy_loss': -0.155866801738739,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -1.408987283706665,
+ 'total_loss': -1.4589829444885254}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:10,859] After 1023360 frames: loss 1.391432 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.16509483754634857,
+ 'entropy_loss': -0.15659886598587036,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 1.3829355239868164,
+ 'total_loss': 1.3914315700531006}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:15,864] After 1034880 frames: loss 7.656592 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.5927823185920715,
+ 'entropy_loss': -0.15726184844970703,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 7.221071243286133,
+ 'total_loss': 7.656591892242432}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:20,869] After 1044480 frames: loss 1.286253 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.17057593166828156,
+ 'entropy_loss': -0.15456070005893707,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 1.270237922668457,
+ 'total_loss': 1.2862532138824463}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:25,874] After 1054080 frames: loss 0.896831 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2064993977546692,
+ 'entropy_loss': -0.15429329872131348,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 0.8446251153945923,
+ 'total_loss': 0.8968312740325928}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:30,879] After 1065600 frames: loss -0.221360 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.07523975521326065,
+ 'entropy_loss': -0.15467903017997742,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -0.1419210582971573,
+ 'total_loss': -0.22136032581329346}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:35,884] After 1075200 frames: loss 1.971914 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.276054322719574,
+ 'entropy_loss': -0.15128372609615326,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 1.8471429347991943,
+ 'total_loss': 1.9719135761260986}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:40,889] After 1086720 frames: loss -1.795665 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.00501561164855957,
+ 'entropy_loss': -0.1567305028438568,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.6439499855041504,
+ 'total_loss': -1.79566490650177}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:45,894] After 1096320 frames: loss -0.764184 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0012510879896581173,
+ 'entropy_loss': -0.15791338682174683,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.6075212955474854,
+ 'total_loss': -0.7641835808753967}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:50,899] After 1105920 frames: loss 3.328137 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2727014720439911,
+ 'entropy_loss': -0.15736939013004303,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 3.2128052711486816,
+ 'total_loss': 3.3281373977661133}
+[INFO:28871 torchbeast:258 2020-09-15 22:42:55,904] After 1115520 frames: loss -1.415585 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.05777009576559067,
+ 'entropy_loss': -0.15662966668605804,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -1.316725492477417,
+ 'total_loss': -1.4155850410461426}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:00,910] After 1127040 frames: loss 1.669650 @ 2301.5 fps. Stats:
+{'baseline_loss': 0.23283708095550537,
+ 'entropy_loss': -0.15874825417995453,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.5955613851547241,
+ 'total_loss': 1.6696501970291138}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:05,917] After 1136640 frames: loss 0.177701 @ 1917.2 fps. Stats:
+{'baseline_loss': 0.009285660460591316,
+ 'entropy_loss': -0.1587338000535965,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': 0.32714956998825073,
+ 'total_loss': 0.1777014285326004}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:10,922] After 1146240 frames: loss -1.594368 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.009424040094017982,
+ 'entropy_loss': -0.15785515308380127,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.4459364414215088,
+ 'total_loss': -1.594367504119873}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:15,927] After 1157760 frames: loss 1.025340 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.13367770612239838,
+ 'entropy_loss': -0.1583908498287201,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.0500528812408447,
+ 'total_loss': 1.0253397226333618}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:20,934] After 1167360 frames: loss -3.127631 @ 1917.3 fps. Stats:
+{'baseline_loss': 0.008902957662940025,
+ 'entropy_loss': -0.1582658290863037,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.9782681465148926,
+ 'total_loss': -3.1276309490203857}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:25,941] After 1176960 frames: loss 1.860225 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.16835862398147583,
+ 'entropy_loss': -0.15827576816082,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': 1.8501417636871338,
+ 'total_loss': 1.8602246046066284}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:30,946] After 1188480 frames: loss -2.981272 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.009961182251572609,
+ 'entropy_loss': -0.1585124284029007,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.83272123336792,
+ 'total_loss': -2.9812724590301514}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:35,951] After 1198080 frames: loss 1.595997 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.26975271105766296,
+ 'entropy_loss': -0.1582627147436142,
+ 'mean_episode_return': 10.0,
+ 'pg_loss': 1.4845067262649536,
+ 'total_loss': 1.5959967374801636}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:40,956] After 1207680 frames: loss 3.461714 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.36726146936416626,
+ 'entropy_loss': -0.15583536028862,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 3.2502875328063965,
+ 'total_loss': 3.4617135524749756}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:45,961] After 1217280 frames: loss -2.252065 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.004699403885751963,
+ 'entropy_loss': -0.15625479817390442,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.1005098819732666,
+ 'total_loss': -2.2520651817321777}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:50,968] After 1228800 frames: loss 1.136952 @ 2301.1 fps. Stats:
+{'baseline_loss': 0.15639331936836243,
+ 'entropy_loss': -0.15472230315208435,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.1352810859680176,
+ 'total_loss': 1.1369520425796509}
+[INFO:28871 torchbeast:258 2020-09-15 22:43:55,973] After 1238400 frames: loss -3.179650 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.03006705269217491,
+ 'entropy_loss': -0.15544544160366058,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -3.054271697998047,
+ 'total_loss': -3.179650068283081}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:00,980] After 1249920 frames: loss -2.777961 @ 2300.9 fps. Stats:
+{'baseline_loss': 0.006768517196178436,
+ 'entropy_loss': -0.15622395277023315,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.6285059452056885,
+ 'total_loss': -2.777961492538452}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:05,985] After 1259520 frames: loss -1.295070 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.003395507112145424,
+ 'entropy_loss': -0.15771062672138214,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.1407549381256104,
+ 'total_loss': -1.2950700521469116}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:10,994] After 1269120 frames: loss 0.293237 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.10833626985549927,
+ 'entropy_loss': -0.15769928693771362,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.3425995409488678,
+ 'total_loss': 0.29323652386665344}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:15,999] After 1280640 frames: loss -1.757086 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.0029190918430685997,
+ 'entropy_loss': -0.15658381581306458,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.6034213304519653,
+ 'total_loss': -1.7570860385894775}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:21,007] After 1290240 frames: loss 4.271958 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.36423832178115845,
+ 'entropy_loss': -0.15702082216739655,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': 4.0647406578063965,
+ 'total_loss': 4.271957874298096}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:26,016] After 1299840 frames: loss -0.602035 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.1727927029132843,
+ 'entropy_loss': -0.15905451774597168,
+ 'mean_episode_return': 2.875,
+ 'pg_loss': -0.6157734990119934,
+ 'total_loss': -0.6020352840423584}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:31,021] After 1311360 frames: loss -0.444956 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.14304691553115845,
+ 'entropy_loss': -0.1591772884130478,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': -0.42882609367370605,
+ 'total_loss': -0.4449564814567566}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:36,026] After 1320960 frames: loss -2.498094 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.005370143800973892,
+ 'entropy_loss': -0.15915295481681824,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.344310998916626,
+ 'total_loss': -2.498093843460083}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:41,031] After 1330560 frames: loss 0.912950 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.17312894761562347,
+ 'entropy_loss': -0.15947602689266205,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 0.8992974758148193,
+ 'total_loss': 0.9129503965377808}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:46,038] After 1342080 frames: loss 8.145576 @ 2300.8 fps. Stats:
+{'baseline_loss': 0.5683237314224243,
+ 'entropy_loss': -0.1599290817975998,
+ 'mean_episode_return': 3.846153974533081,
+ 'pg_loss': 7.737180709838867,
+ 'total_loss': 8.145575523376465}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:51,043] After 1351680 frames: loss 0.542592 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.19417543709278107,
+ 'entropy_loss': -0.16055022180080414,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.508966863155365,
+ 'total_loss': 0.5425920486450195}
+[INFO:28871 torchbeast:258 2020-09-15 22:44:56,048] After 1361280 frames: loss 3.997802 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.3738498091697693,
+ 'entropy_loss': -0.16006967425346375,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 3.7840218544006348,
+ 'total_loss': 3.9978020191192627}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:01,053] After 1372800 frames: loss 2.107434 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.2302210032939911,
+ 'entropy_loss': -0.15996640920639038,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 2.037179708480835,
+ 'total_loss': 2.1074342727661133}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:06,058] After 1382400 frames: loss 2.492234 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.23712238669395447,
+ 'entropy_loss': -0.16042236983776093,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 2.415534496307373,
+ 'total_loss': 2.492234468460083}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:11,063] After 1392000 frames: loss 0.593266 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2555822432041168,
+ 'entropy_loss': -0.16027428209781647,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.4979585111141205,
+ 'total_loss': 0.593266487121582}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:16,068] After 1403520 frames: loss 8.232563 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.7431763410568237,
+ 'entropy_loss': -0.15848562121391296,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 7.647872447967529,
+ 'total_loss': 8.232563018798828}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:21,073] After 1413120 frames: loss 2.926484 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.4038134217262268,
+ 'entropy_loss': -0.15445752441883087,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 2.6771278381347656,
+ 'total_loss': 2.926483631134033}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:26,078] After 1424640 frames: loss -2.181413 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.03152463585138321,
+ 'entropy_loss': -0.15337853133678436,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -2.0595593452453613,
+ 'total_loss': -2.181413173675537}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:31,085] After 1434240 frames: loss 0.767949 @ 1917.2 fps. Stats:
+{'baseline_loss': 0.1597004234790802,
+ 'entropy_loss': -0.15518374741077423,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.763432502746582,
+ 'total_loss': 0.7679491639137268}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:36,090] After 1443840 frames: loss 2.278767 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.2501879930496216,
+ 'entropy_loss': -0.15604335069656372,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 2.1846227645874023,
+ 'total_loss': 2.2787673473358154}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:41,095] After 1453440 frames: loss -1.717269 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.045088991522789,
+ 'entropy_loss': -0.15466462075710297,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -1.6076931953430176,
+ 'total_loss': -1.7172688245773315}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:46,103] After 1464960 frames: loss -1.047666 @ 2300.5 fps. Stats:
+{'baseline_loss': 0.09399865567684174,
+ 'entropy_loss': -0.15449415147304535,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -0.9871706366539001,
+ 'total_loss': -1.047666072845459}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:51,108] After 1474560 frames: loss 1.640234 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.30949878692626953,
+ 'entropy_loss': -0.15392853319644928,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.484663963317871,
+ 'total_loss': 1.6402342319488525}
+[INFO:28871 torchbeast:258 2020-09-15 22:45:56,113] After 1486080 frames: loss -0.786766 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.14396625757217407,
+ 'entropy_loss': -0.15052902698516846,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.7802035808563232,
+ 'total_loss': -0.7867663502693176}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:01,118] After 1495680 frames: loss -0.684415 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.06299842894077301,
+ 'entropy_loss': -0.14033502340316772,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -0.6070783138275146,
+ 'total_loss': -0.6844149231910706}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:06,127] After 1505280 frames: loss -1.679595 @ 1916.7 fps. Stats:
+{'baseline_loss': 0.07943551242351532,
+ 'entropy_loss': -0.13864365220069885,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -1.6203866004943848,
+ 'total_loss': -1.6795947551727295}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:11,132] After 1516800 frames: loss 3.005192 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.2776871919631958,
+ 'entropy_loss': -0.14117905497550964,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 2.8686842918395996,
+ 'total_loss': 3.005192279815674}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:16,137] After 1526400 frames: loss -1.747660 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.017653530463576317,
+ 'entropy_loss': -0.1497267186641693,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -1.615586757659912,
+ 'total_loss': -1.7476599216461182}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:21,144] After 1536000 frames: loss 0.982837 @ 1917.3 fps. Stats:
+{'baseline_loss': 0.18020515143871307,
+ 'entropy_loss': -0.15224377810955048,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 0.9548759460449219,
+ 'total_loss': 0.9828372597694397}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:26,149] After 1547520 frames: loss -1.733457 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.0021612343844026327,
+ 'entropy_loss': -0.1560395359992981,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.5795785188674927,
+ 'total_loss': -1.7334568500518799}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:31,154] After 1557120 frames: loss 0.598792 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.20024661719799042,
+ 'entropy_loss': -0.15681102871894836,
+ 'mean_episode_return': 10.0,
+ 'pg_loss': 0.5553566813468933,
+ 'total_loss': 0.598792314529419}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:36,159] After 1566720 frames: loss -0.746992 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.22524727880954742,
+ 'entropy_loss': -0.15654605627059937,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.8156930804252625,
+ 'total_loss': -0.7469918727874756}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:41,166] After 1578240 frames: loss 2.414718 @ 2301.1 fps. Stats:
+{'baseline_loss': 0.2551628351211548,
+ 'entropy_loss': -0.1589781939983368,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 2.318533420562744,
+ 'total_loss': 2.41471791267395}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:46,171] After 1587840 frames: loss 0.895604 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.12191599607467651,
+ 'entropy_loss': -0.15936899185180664,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.9330570697784424,
+ 'total_loss': 0.895604133605957}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:51,176] After 1597440 frames: loss 1.519985 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.14428937435150146,
+ 'entropy_loss': -0.15946438908576965,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.5351598262786865,
+ 'total_loss': 1.5199848413467407}
+[INFO:28871 torchbeast:258 2020-09-15 22:46:56,181] After 1608960 frames: loss -0.818747 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.12716475129127502,
+ 'entropy_loss': -0.15895815193653107,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.7869540452957153,
+ 'total_loss': -0.8187474608421326}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:01,187] After 1618560 frames: loss 1.597875 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.23640818893909454,
+ 'entropy_loss': -0.15958136320114136,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.5210483074188232,
+ 'total_loss': 1.5978751182556152}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:06,192] After 1628160 frames: loss 6.582237 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.5890381336212158,
+ 'entropy_loss': -0.15997299551963806,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 6.153172492980957,
+ 'total_loss': 6.582237243652344}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:11,197] After 1639680 frames: loss -2.099099 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.004109421744942665,
+ 'entropy_loss': -0.15820975601673126,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.9449986219406128,
+ 'total_loss': -2.0990989208221436}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:16,202] After 1649280 frames: loss -2.114737 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.004021650645881891,
+ 'entropy_loss': -0.15784509479999542,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.9609133005142212,
+ 'total_loss': -2.114736795425415}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:21,210] After 1658880 frames: loss -0.202497 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.12366967648267746,
+ 'entropy_loss': -0.15867719054222107,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.16748948395252228,
+ 'total_loss': -0.20249700546264648}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:26,215] After 1670400 frames: loss 1.033017 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.2552480399608612,
+ 'entropy_loss': -0.15911737084388733,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': 0.9368860721588135,
+ 'total_loss': 1.0330168008804321}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:31,220] After 1680000 frames: loss -2.212565 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0051501477137207985,
+ 'entropy_loss': -0.15926240384578705,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.058452606201172,
+ 'total_loss': -2.2125649452209473}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:36,226] After 1689600 frames: loss -1.104823 @ 1917.7 fps. Stats:
+{'baseline_loss': 0.001404748298227787,
+ 'entropy_loss': -0.15942831337451935,
+ 'mean_episode_return': nan,
+ 'pg_loss': -0.9467989802360535,
+ 'total_loss': -1.1048225164413452}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:41,231] After 1699200 frames: loss -1.144793 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.05610941722989082,
+ 'entropy_loss': -0.15817101299762726,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.0427309274673462,
+ 'total_loss': -1.1447925567626953}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:46,239] After 1710720 frames: loss 1.145961 @ 2300.6 fps. Stats:
+{'baseline_loss': 0.17940592765808105,
+ 'entropy_loss': -0.15876498818397522,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.125320315361023,
+ 'total_loss': 1.1459612846374512}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:51,247] After 1720320 frames: loss 1.288111 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.24051746726036072,
+ 'entropy_loss': -0.15607528388500214,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': 1.2036689519882202,
+ 'total_loss': 1.2881112098693848}
+[INFO:28871 torchbeast:258 2020-09-15 22:47:56,254] After 1729920 frames: loss -1.110263 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.0322725810110569,
+ 'entropy_loss': -0.1257064938545227,
+ 'mean_episode_return': 0.7142857313156128,
+ 'pg_loss': -1.016829490661621,
+ 'total_loss': -1.1102633476257324}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:01,261] After 1741440 frames: loss -3.249523 @ 2300.9 fps. Stats:
+{'baseline_loss': 0.011797561310231686,
+ 'entropy_loss': -0.1587245911359787,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.102595806121826,
+ 'total_loss': -3.2495226860046387}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:06,266] After 1751040 frames: loss -0.271267 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.12172209471464157,
+ 'entropy_loss': -0.16016440093517303,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': -0.23282432556152344,
+ 'total_loss': -0.2712666392326355}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:11,272] After 1760640 frames: loss -1.270596 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.07913804054260254,
+ 'entropy_loss': -0.15999194979667664,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.1897417306900024,
+ 'total_loss': -1.270595669746399}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:16,278] After 1772160 frames: loss 2.941484 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.3057519197463989,
+ 'entropy_loss': -0.1599423885345459,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 2.7956743240356445,
+ 'total_loss': 2.941483736038208}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:21,285] After 1781760 frames: loss 0.106553 @ 1917.7 fps. Stats:
+{'baseline_loss': 0.06757543236017227,
+ 'entropy_loss': -0.16000154614448547,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': 0.19897961616516113,
+ 'total_loss': 0.10655349493026733}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:26,290] After 1791360 frames: loss 5.196604 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.41253048181533813,
+ 'entropy_loss': -0.15953706204891205,
+ 'mean_episode_return': 3.0,
+ 'pg_loss': 4.943610191345215,
+ 'total_loss': 5.196603775024414}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:31,296] After 1802880 frames: loss -2.193332 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.01597997173666954,
+ 'entropy_loss': -0.1593988686800003,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -2.049912929534912,
+ 'total_loss': -2.193331718444824}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:36,301] After 1812480 frames: loss -1.427554 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0018523101462051272,
+ 'entropy_loss': -0.1601424366235733,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.269263744354248,
+ 'total_loss': -1.4275538921356201}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:41,306] After 1822080 frames: loss 0.649637 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.25817403197288513,
+ 'entropy_loss': -0.15788522362709045,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.5493485331535339,
+ 'total_loss': 0.6496373414993286}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:46,314] After 1833600 frames: loss -2.343182 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.005910215899348259,
+ 'entropy_loss': -0.15801098942756653,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.1910810470581055,
+ 'total_loss': -2.343181848526001}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:51,318] After 1843200 frames: loss 4.472025 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.4320688843727112,
+ 'entropy_loss': -0.15807324647903442,
+ 'mean_episode_return': 8.0,
+ 'pg_loss': 4.198029518127441,
+ 'total_loss': 4.472024917602539}
+[INFO:28871 torchbeast:258 2020-09-15 22:48:56,323] After 1854720 frames: loss 0.745216 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.18242144584655762,
+ 'entropy_loss': -0.1569366306066513,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.7197316884994507,
+ 'total_loss': 0.7452164888381958}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:01,330] After 1864320 frames: loss -0.668041 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.15236687660217285,
+ 'entropy_loss': -0.1567305028438568,
+ 'mean_episode_return': 0.7142857313156128,
+ 'pg_loss': -0.663676917552948,
+ 'total_loss': -0.6680405139923096}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:06,335] After 1873920 frames: loss 1.007681 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.1511717438697815,
+ 'entropy_loss': -0.15755243599414825,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': 1.0140619277954102,
+ 'total_loss': 1.007681131362915}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:11,341] After 1883520 frames: loss -0.974383 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.0012038897257298231,
+ 'entropy_loss': -0.158209428191185,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.8173770308494568,
+ 'total_loss': -0.9743825793266296}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:16,349] After 1895040 frames: loss 2.563310 @ 2300.6 fps. Stats:
+{'baseline_loss': 0.2603399455547333,
+ 'entropy_loss': -0.15858228504657745,
+ 'mean_episode_return': 6.0,
+ 'pg_loss': 2.461552619934082,
+ 'total_loss': 2.563310384750366}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:21,356] After 1904640 frames: loss 0.401696 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.1039353609085083,
+ 'entropy_loss': -0.1588708609342575,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 0.45663195848464966,
+ 'total_loss': 0.40169644355773926}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:26,361] After 1914240 frames: loss -1.636178 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.029507778584957123,
+ 'entropy_loss': -0.15907980501651764,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -1.506605625152588,
+ 'total_loss': -1.636177659034729}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:31,366] After 1925760 frames: loss -0.830591 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.000968124542851001,
+ 'entropy_loss': -0.1599254012107849,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.6716333031654358,
+ 'total_loss': -0.8305906057357788}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:36,372] After 1935360 frames: loss 2.337068 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.24175190925598145,
+ 'entropy_loss': -0.16044403612613678,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': 2.2557599544525146,
+ 'total_loss': 2.3370678424835205}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:41,377] After 1944960 frames: loss -0.937592 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.0007832994451746345,
+ 'entropy_loss': -0.15997757017612457,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -0.7783973217010498,
+ 'total_loss': -0.937591552734375}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:46,384] After 1956480 frames: loss 4.073328 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.3664129972457886,
+ 'entropy_loss': -0.1603027880191803,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 3.867217540740967,
+ 'total_loss': 4.073328018188477}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:51,390] After 1966080 frames: loss 4.682528 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.4068670868873596,
+ 'entropy_loss': -0.1602303832769394,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': 4.435891628265381,
+ 'total_loss': 4.682528495788574}
+[INFO:28871 torchbeast:258 2020-09-15 22:49:56,395] After 1975680 frames: loss -0.310378 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.05334044247865677,
+ 'entropy_loss': -0.15993143618106842,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.2037872076034546,
+ 'total_loss': -0.31037819385528564}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:01,400] After 1987200 frames: loss -1.798964 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.024798136204481125,
+ 'entropy_loss': -0.1607578545808792,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.663003921508789,
+ 'total_loss': -1.7989636659622192}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:06,405] After 1996800 frames: loss -3.656108 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.012139808386564255,
+ 'entropy_loss': -0.1599184274673462,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.508329391479492,
+ 'total_loss': -3.6561079025268555}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:11,411] After 2006400 frames: loss -1.973427 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.00315761286765337,
+ 'entropy_loss': -0.1596878170967102,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.8168970346450806,
+ 'total_loss': -1.9734272956848145}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:16,416] After 2017920 frames: loss -1.159007 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.0010424999054521322,
+ 'entropy_loss': -0.15991996228694916,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.0001295804977417,
+ 'total_loss': -1.1590070724487305}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:21,425] After 2027520 frames: loss 3.544306 @ 1916.7 fps. Stats:
+{'baseline_loss': 0.3400288224220276,
+ 'entropy_loss': -0.158962681889534,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 3.3632402420043945,
+ 'total_loss': 3.5443062782287598}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:26,434] After 2039040 frames: loss 4.107229 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.4480323791503906,
+ 'entropy_loss': -0.15862184762954712,
+ 'mean_episode_return': 4.1666669845581055,
+ 'pg_loss': 3.8178186416625977,
+ 'total_loss': 4.107229232788086}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:31,439] After 2048640 frames: loss 0.894731 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.23623627424240112,
+ 'entropy_loss': -0.15825559198856354,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.8167505264282227,
+ 'total_loss': 0.8947312831878662}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:36,444] After 2058240 frames: loss 0.698359 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.19131582975387573,
+ 'entropy_loss': -0.15846775472164154,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': 0.6655110716819763,
+ 'total_loss': 0.6983591318130493}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:41,449] After 2069760 frames: loss 1.212860 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.17230606079101562,
+ 'entropy_loss': -0.15948128700256348,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': 1.200035572052002,
+ 'total_loss': 1.212860345840454}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:46,456] After 2079360 frames: loss -3.065283 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.009166102856397629,
+ 'entropy_loss': -0.15939515829086304,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.915053606033325,
+ 'total_loss': -3.0652828216552734}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:51,461] After 2088960 frames: loss -0.525689 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.106504887342453,
+ 'entropy_loss': -0.1591377854347229,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.47305625677108765,
+ 'total_loss': -0.5256891250610352}
+[INFO:28871 torchbeast:258 2020-09-15 22:50:56,469] After 2100480 frames: loss 1.150018 @ 2300.6 fps. Stats:
+{'baseline_loss': 0.23643901944160461,
+ 'entropy_loss': -0.1579003781080246,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.071479082107544,
+ 'total_loss': 1.1500177383422852}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:01,475] After 2110080 frames: loss -1.294701 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.001376985339447856,
+ 'entropy_loss': -0.15799589455127716,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.1380820274353027,
+ 'total_loss': -1.2947009801864624}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:06,480] After 2119680 frames: loss 9.984753 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.7701619863510132,
+ 'entropy_loss': -0.15742506086826324,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 9.372015953063965,
+ 'total_loss': 9.984752655029297}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:11,485] After 2129280 frames: loss -2.186662 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.004462930373847485,
+ 'entropy_loss': -0.15627409517765045,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.034851312637329,
+ 'total_loss': -2.186662435531616}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:16,491] After 2140800 frames: loss -2.361828 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.005296320654451847,
+ 'entropy_loss': -0.15675215423107147,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.210371971130371,
+ 'total_loss': -2.361827850341797}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:21,496] After 2150400 frames: loss -2.840215 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.006758106406778097,
+ 'entropy_loss': -0.15718954801559448,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.689783811569214,
+ 'total_loss': -2.8402152061462402}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:26,504] After 2160000 frames: loss -2.538290 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.004967946093529463,
+ 'entropy_loss': -0.15897272527217865,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.384284734725952,
+ 'total_loss': -2.5382895469665527}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:31,509] After 2171520 frames: loss -1.899695 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.09916184097528458,
+ 'entropy_loss': -0.1600092202425003,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.8388476371765137,
+ 'total_loss': -1.8996950387954712}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:36,516] After 2181120 frames: loss 2.704678 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.3103314936161041,
+ 'entropy_loss': -0.16011536121368408,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 2.5544614791870117,
+ 'total_loss': 2.7046775817871094}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:41,523] After 2190720 frames: loss -1.005973 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.029371295124292374,
+ 'entropy_loss': -0.16033099591732025,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.8750128746032715,
+ 'total_loss': -1.0059725046157837}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:46,528] After 2202240 frames: loss 4.262834 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.4006004333496094,
+ 'entropy_loss': -0.16021311283111572,
+ 'mean_episode_return': 3.0,
+ 'pg_loss': 4.022446632385254,
+ 'total_loss': 4.262834072113037}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:51,533] After 2211840 frames: loss -0.347732 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.10013946145772934,
+ 'entropy_loss': -0.15971900522708893,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.2881529629230499,
+ 'total_loss': -0.3477324843406677}
+[INFO:28871 torchbeast:258 2020-09-15 22:51:56,539] After 2221440 frames: loss -2.990998 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.014961608685553074,
+ 'entropy_loss': -0.15920160710811615,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -2.8467583656311035,
+ 'total_loss': -2.9909982681274414}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:01,545] After 2232960 frames: loss -2.221575 @ 2301.2 fps. Stats:
+{'baseline_loss': 0.004230065271258354,
+ 'entropy_loss': -0.15901096165180206,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.066793918609619,
+ 'total_loss': -2.2215747833251953}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:06,550] After 2242560 frames: loss -2.100430 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.0034277676604688168,
+ 'entropy_loss': -0.159041628241539,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.9448158740997314,
+ 'total_loss': -2.1004297733306885}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:11,555] After 2252160 frames: loss 2.291414 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2546299695968628,
+ 'entropy_loss': -0.15865160524845123,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 2.1954355239868164,
+ 'total_loss': 2.2914140224456787}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:16,560] After 2263680 frames: loss 0.393111 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.18748298287391663,
+ 'entropy_loss': -0.15793779492378235,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': 0.36356624960899353,
+ 'total_loss': 0.3931114375591278}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:21,567] After 2273280 frames: loss -3.716817 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.013228916563093662,
+ 'entropy_loss': -0.15662094950675964,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.57342529296875,
+ 'total_loss': -3.7168173789978027}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:26,575] After 2282880 frames: loss 1.277317 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.2875905930995941,
+ 'entropy_loss': -0.15722617506980896,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': 1.1469529867172241,
+ 'total_loss': 1.2773174047470093}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:31,582] After 2294400 frames: loss 2.617523 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.2592923641204834,
+ 'entropy_loss': -0.15727578103542328,
+ 'mean_episode_return': 6.5,
+ 'pg_loss': 2.5155067443847656,
+ 'total_loss': 2.617523431777954}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:36,586] After 2304000 frames: loss 0.445183 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.19181647896766663,
+ 'entropy_loss': -0.15722663700580597,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 0.4105933904647827,
+ 'total_loss': 0.4451832175254822}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:41,591] After 2313600 frames: loss 3.814686 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.4137672185897827,
+ 'entropy_loss': -0.1563851535320282,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 3.5573039054870605,
+ 'total_loss': 3.8146860599517822}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:46,597] After 2325120 frames: loss 3.031886 @ 2301.6 fps. Stats:
+{'baseline_loss': 0.3486475944519043,
+ 'entropy_loss': -0.1566048413515091,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 2.839843273162842,
+ 'total_loss': 3.031886100769043}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:51,601] After 2334720 frames: loss 0.632212 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.29391083121299744,
+ 'entropy_loss': -0.15494216978549957,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.4932432770729065,
+ 'total_loss': 0.6322119235992432}
+[INFO:28871 torchbeast:258 2020-09-15 22:52:56,606] After 2344320 frames: loss -3.037800 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0076802922412753105,
+ 'entropy_loss': -0.15316259860992432,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.8923180103302,
+ 'total_loss': -3.0378003120422363}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:01,611] After 2355840 frames: loss 2.051364 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.3249339163303375,
+ 'entropy_loss': -0.1547441929578781,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 1.8811743259429932,
+ 'total_loss': 2.0513641834259033}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:06,618] After 2365440 frames: loss 4.269498 @ 1917.6 fps. Stats:
+{'baseline_loss': 0.47879543900489807,
+ 'entropy_loss': -0.1552906632423401,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 3.945992946624756,
+ 'total_loss': 4.269497871398926}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:11,622] After 2375040 frames: loss -2.210253 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.01952620968222618,
+ 'entropy_loss': -0.15473954379558563,
+ 'mean_episode_return': 0.7692307829856873,
+ 'pg_loss': -2.0750396251678467,
+ 'total_loss': -2.2102530002593994}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:16,627] After 2386560 frames: loss -3.224896 @ 2302.1 fps. Stats:
+{'baseline_loss': 0.010485929436981678,
+ 'entropy_loss': -0.15323632955551147,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.0821456909179688,
+ 'total_loss': -3.224896192550659}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:21,632] After 2396160 frames: loss 0.474560 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.3233562111854553,
+ 'entropy_loss': -0.15224921703338623,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.303452730178833,
+ 'total_loss': 0.4745597243309021}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:26,639] After 2405760 frames: loss -1.730162 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.10004454106092453,
+ 'entropy_loss': -0.15350866317749023,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -1.6766973733901978,
+ 'total_loss': -1.7301615476608276}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:31,644] After 2417280 frames: loss 0.224297 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.21313221752643585,
+ 'entropy_loss': -0.1537579894065857,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.16492299735546112,
+ 'total_loss': 0.22429722547531128}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:36,649] After 2426880 frames: loss -1.713112 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.04445499926805496,
+ 'entropy_loss': -0.15286298096179962,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.6047039031982422,
+ 'total_loss': -1.7131118774414062}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:41,655] After 2436480 frames: loss 0.928510 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.1938042938709259,
+ 'entropy_loss': -0.1539134532213211,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 0.8886194229125977,
+ 'total_loss': 0.9285102486610413}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:46,660] After 2448000 frames: loss 2.284303 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.34679746627807617,
+ 'entropy_loss': -0.15443569421768188,
+ 'mean_episode_return': 3.076923131942749,
+ 'pg_loss': 2.0919415950775146,
+ 'total_loss': 2.2843034267425537}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:51,668] After 2457600 frames: loss 3.380677 @ 1917.2 fps. Stats:
+{'baseline_loss': 0.416118323802948,
+ 'entropy_loss': -0.15422406792640686,
+ 'mean_episode_return': 2.7272727489471436,
+ 'pg_loss': 3.1187822818756104,
+ 'total_loss': 3.380676507949829}
+[INFO:28871 torchbeast:258 2020-09-15 22:53:56,676] After 2467200 frames: loss 2.038597 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.2628079652786255,
+ 'entropy_loss': -0.15355342626571655,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.92934250831604,
+ 'total_loss': 2.0385971069335938}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:01,691] After 2478720 frames: loss 2.211484 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.27414584159851074,
+ 'entropy_loss': -0.15199916064739227,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 2.0893373489379883,
+ 'total_loss': 2.211483955383301}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:06,699] After 2488320 frames: loss -2.482778 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.05366837605834007,
+ 'entropy_loss': -0.15339899063110352,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -2.383047342300415,
+ 'total_loss': -2.4827780723571777}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:11,704] After 2499840 frames: loss 3.946654 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.4050837755203247,
+ 'entropy_loss': -0.15358318388462067,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 3.695152997970581,
+ 'total_loss': 3.9466536045074463}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:16,709] After 2509440 frames: loss -2.753292 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.006060726009309292,
+ 'entropy_loss': -0.15479132533073425,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.6045615673065186,
+ 'total_loss': -2.7532920837402344}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:21,714] After 2519040 frames: loss 5.421093 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.5342407822608948,
+ 'entropy_loss': -0.15424858033657074,
+ 'mean_episode_return': 3.3333332538604736,
+ 'pg_loss': 5.04110050201416,
+ 'total_loss': 5.421092510223389}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:26,722] After 2530560 frames: loss 0.576914 @ 2300.5 fps. Stats:
+{'baseline_loss': 0.22790953516960144,
+ 'entropy_loss': -0.15347573161125183,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.5024802088737488,
+ 'total_loss': 0.5769139528274536}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:31,727] After 2540160 frames: loss -0.682629 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.16803431510925293,
+ 'entropy_loss': -0.1514093279838562,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -0.6992543339729309,
+ 'total_loss': -0.6826293468475342}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:36,736] After 2549760 frames: loss 1.689088 @ 1916.6 fps. Stats:
+{'baseline_loss': 0.27094218134880066,
+ 'entropy_loss': -0.1498369425535202,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 1.5679821968078613,
+ 'total_loss': 1.6890875101089478}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:41,745] After 2561280 frames: loss 3.183393 @ 2300.2 fps. Stats:
+{'baseline_loss': 0.4295719861984253,
+ 'entropy_loss': -0.14943060278892517,
+ 'mean_episode_return': 3.6363637447357178,
+ 'pg_loss': 2.9032514095306396,
+ 'total_loss': 3.1833927631378174}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:46,749] After 2570880 frames: loss -3.206913 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.010384705848991871,
+ 'entropy_loss': -0.15119695663452148,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.066101312637329,
+ 'total_loss': -3.206913471221924}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:51,754] After 2580480 frames: loss 3.008977 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3282865583896637,
+ 'entropy_loss': -0.15070484578609467,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 2.831395387649536,
+ 'total_loss': 3.008977174758911}
+[INFO:28871 torchbeast:258 2020-09-15 22:54:56,759] After 2592000 frames: loss 1.069052 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.21449050307273865,
+ 'entropy_loss': -0.15189647674560547,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 1.0064574480056763,
+ 'total_loss': 1.0690515041351318}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:01,764] After 2601600 frames: loss -1.875573 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.0036263607908040285,
+ 'entropy_loss': -0.15213143825531006,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.7270681858062744,
+ 'total_loss': -1.8755732774734497}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:06,769] After 2611200 frames: loss 4.472909 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.45437926054000854,
+ 'entropy_loss': -0.15207718312740326,
+ 'mean_episode_return': 6.0,
+ 'pg_loss': 4.170607566833496,
+ 'total_loss': 4.472909450531006}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:11,775] After 2622720 frames: loss -0.214069 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.19397827982902527,
+ 'entropy_loss': -0.15322044491767883,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -0.254827082157135,
+ 'total_loss': -0.21406924724578857}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:16,780] After 2632320 frames: loss 0.707189 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2537232041358948,
+ 'entropy_loss': -0.15319009125232697,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 0.6066559553146362,
+ 'total_loss': 0.7071890830993652}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:21,787] After 2641920 frames: loss 4.143372 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.4462810158729553,
+ 'entropy_loss': -0.15379266440868378,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 3.850883960723877,
+ 'total_loss': 4.143372058868408}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:26,793] After 2653440 frames: loss -0.658315 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.14324218034744263,
+ 'entropy_loss': -0.15379326045513153,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': -0.6477640271186829,
+ 'total_loss': -0.658315122127533}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:31,798] After 2663040 frames: loss -0.126896 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.16682596504688263,
+ 'entropy_loss': -0.1553359180688858,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.13838604092597961,
+ 'total_loss': -0.1268959939479828}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:36,806] After 2672640 frames: loss -1.115872 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.10833538323640823,
+ 'entropy_loss': -0.15618015825748444,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': -1.0680267810821533,
+ 'total_loss': -1.115871548652649}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:41,811] After 2684160 frames: loss 1.294826 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.29585981369018555,
+ 'entropy_loss': -0.15514500439167023,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': 1.1541107892990112,
+ 'total_loss': 1.294825553894043}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:46,817] After 2693760 frames: loss 4.893227 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.5147552490234375,
+ 'entropy_loss': -0.15595221519470215,
+ 'mean_episode_return': 4.44444465637207,
+ 'pg_loss': 4.534423828125,
+ 'total_loss': 4.893226623535156}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:51,821] After 2703360 frames: loss -2.398535 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.005183304660022259,
+ 'entropy_loss': -0.1554751992225647,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.248243570327759,
+ 'total_loss': -2.3985354900360107}
+[INFO:28871 torchbeast:258 2020-09-15 22:55:56,826] After 2714880 frames: loss 2.091667 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.31821954250335693,
+ 'entropy_loss': -0.15511982142925262,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 1.9285670518875122,
+ 'total_loss': 2.0916666984558105}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:01,833] After 2724480 frames: loss 1.032114 @ 1917.3 fps. Stats:
+{'baseline_loss': 0.25534990429878235,
+ 'entropy_loss': -0.1542809158563614,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 0.9310445189476013,
+ 'total_loss': 1.0321135520935059}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:06,838] After 2734080 frames: loss 3.105888 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.39604365825653076,
+ 'entropy_loss': -0.15408435463905334,
+ 'mean_episode_return': 3.3333332538604736,
+ 'pg_loss': 2.8639283180236816,
+ 'total_loss': 3.1058876514434814}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:11,843] After 2745600 frames: loss 0.360132 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.2551285922527313,
+ 'entropy_loss': -0.15316110849380493,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 0.25816407799720764,
+ 'total_loss': 0.36013156175613403}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:16,850] After 2755200 frames: loss 2.321382 @ 1917.6 fps. Stats:
+{'baseline_loss': 0.3910890221595764,
+ 'entropy_loss': -0.15277232229709625,
+ 'mean_episode_return': 2.7272727489471436,
+ 'pg_loss': 2.0830655097961426,
+ 'total_loss': 2.3213820457458496}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:21,855] After 2764800 frames: loss -3.838120 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.014224452897906303,
+ 'entropy_loss': -0.15243788063526154,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.69990611076355,
+ 'total_loss': -3.8381195068359375}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:26,860] After 2774400 frames: loss 0.108497 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.18094055354595184,
+ 'entropy_loss': -0.1523151397705078,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': 0.07987149059772491,
+ 'total_loss': 0.10849690437316895}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:31,865] After 2785920 frames: loss 1.680904 @ 2302.1 fps. Stats:
+{'baseline_loss': 0.33455896377563477,
+ 'entropy_loss': -0.15360204875469208,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.4999470710754395,
+ 'total_loss': 1.6809040307998657}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:36,871] After 2795520 frames: loss 2.666511 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.33915185928344727,
+ 'entropy_loss': -0.15478423237800598,
+ 'mean_episode_return': 1.5384615659713745,
+ 'pg_loss': 2.4821434020996094,
+ 'total_loss': 2.666511058807373}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:41,876] After 2805120 frames: loss 4.695802 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.4383460283279419,
+ 'entropy_loss': -0.15469788014888763,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 4.412154197692871,
+ 'total_loss': 4.695802211761475}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:46,884] After 2816640 frames: loss 1.654741 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.22473536431789398,
+ 'entropy_loss': -0.15418878197669983,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.5841946601867676,
+ 'total_loss': 1.6547412872314453}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:51,891] After 2826240 frames: loss 2.189889 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.3400075435638428,
+ 'entropy_loss': -0.1543104648590088,
+ 'mean_episode_return': 2.222222328186035,
+ 'pg_loss': 2.0041918754577637,
+ 'total_loss': 2.1898889541625977}
+[INFO:28871 torchbeast:258 2020-09-15 22:56:56,896] After 2835840 frames: loss -1.807416 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.0029439833015203476,
+ 'entropy_loss': -0.15441972017288208,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.6559399366378784,
+ 'total_loss': -1.8074157238006592}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:01,909] After 2845440 frames: loss 7.361819 @ 1915.1 fps. Stats:
+{'baseline_loss': 0.6009669303894043,
+ 'entropy_loss': -0.15478026866912842,
+ 'mean_episode_return': 7.5,
+ 'pg_loss': 6.915632247924805,
+ 'total_loss': 7.361818790435791}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:06,914] After 2856960 frames: loss 9.644730 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.8081709742546082,
+ 'entropy_loss': -0.15400567650794983,
+ 'mean_episode_return': 10.0,
+ 'pg_loss': 8.990564346313477,
+ 'total_loss': 9.644729614257812}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:11,922] After 2866560 frames: loss 2.602196 @ 1917.2 fps. Stats:
+{'baseline_loss': 0.3766394853591919,
+ 'entropy_loss': -0.15366731584072113,
+ 'mean_episode_return': 7.5,
+ 'pg_loss': 2.379223585128784,
+ 'total_loss': 2.602195978164673}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:16,926] After 2876160 frames: loss 3.062369 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.4401968717575073,
+ 'entropy_loss': -0.15130002796649933,
+ 'mean_episode_return': 3.6363637447357178,
+ 'pg_loss': 2.7734718322753906,
+ 'total_loss': 3.062368869781494}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:21,932] After 2887680 frames: loss -0.323609 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.18466810882091522,
+ 'entropy_loss': -0.1515752524137497,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -0.35670205950737,
+ 'total_loss': -0.32360920310020447}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:26,939] After 2897280 frames: loss -2.236677 @ 1917.3 fps. Stats:
+{'baseline_loss': 0.004196697846055031,
+ 'entropy_loss': -0.1516805738210678,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.089193344116211,
+ 'total_loss': -2.2366771697998047}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:31,944] After 2906880 frames: loss -0.584425 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.09408746659755707,
+ 'entropy_loss': -0.1523667275905609,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.5261458158493042,
+ 'total_loss': -0.5844250917434692}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:36,950] After 2916480 frames: loss 4.035764 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.42551112174987793,
+ 'entropy_loss': -0.15381769835948944,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 3.764070510864258,
+ 'total_loss': 4.035764217376709}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:41,955] After 2928000 frames: loss 2.665889 @ 2301.7 fps. Stats:
+{'baseline_loss': 0.3818780779838562,
+ 'entropy_loss': -0.15262101590633392,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 2.4366321563720703,
+ 'total_loss': 2.665889263153076}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:46,960] After 2937600 frames: loss 2.116555 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.3385230600833893,
+ 'entropy_loss': -0.1515900045633316,
+ 'mean_episode_return': 3.0,
+ 'pg_loss': 1.929621934890747,
+ 'total_loss': 2.1165549755096436}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:51,967] After 2947200 frames: loss -2.636927 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.02854500710964203,
+ 'entropy_loss': -0.15302591025829315,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -2.5124459266662598,
+ 'total_loss': -2.6369268894195557}
+[INFO:28871 torchbeast:258 2020-09-15 22:57:56,972] After 2956800 frames: loss 0.125672 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.21810129284858704,
+ 'entropy_loss': -0.15247046947479248,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 0.060040831565856934,
+ 'total_loss': 0.1256716549396515}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:01,980] After 2968320 frames: loss 0.152180 @ 2300.5 fps. Stats:
+{'baseline_loss': 0.12858206033706665,
+ 'entropy_loss': -0.15193037688732147,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 0.17552796006202698,
+ 'total_loss': 0.15217964351177216}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:06,985] After 2977920 frames: loss -0.666087 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.12189881503582001,
+ 'entropy_loss': -0.15159067511558533,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -0.6363947987556458,
+ 'total_loss': -0.6660866737365723}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:11,990] After 2987520 frames: loss -0.667475 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.20033109188079834,
+ 'entropy_loss': -0.15057797729969025,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.7172282934188843,
+ 'total_loss': -0.667475163936615}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:16,998] After 2997120 frames: loss 1.188616 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.3188457787036896,
+ 'entropy_loss': -0.15190160274505615,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 1.0216718912124634,
+ 'total_loss': 1.1886160373687744}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:22,003] After 3008640 frames: loss -1.908736 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.043878763914108276,
+ 'entropy_loss': -0.15268775820732117,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -1.799926519393921,
+ 'total_loss': -1.9087355136871338}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:27,012] After 3018240 frames: loss 3.162248 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.3806481957435608,
+ 'entropy_loss': -0.15353186428546906,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': 2.9351320266723633,
+ 'total_loss': 3.162248373031616}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:32,017] After 3027840 frames: loss 0.308431 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.28858864307403564,
+ 'entropy_loss': -0.150869682431221,
+ 'mean_episode_return': 3.076923131942749,
+ 'pg_loss': 0.1707119643688202,
+ 'total_loss': 0.30843091011047363}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:37,022] After 3039360 frames: loss 5.120656 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.6158772110939026,
+ 'entropy_loss': -0.14726395905017853,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 4.652043342590332,
+ 'total_loss': 5.120656490325928}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:42,030] After 3048960 frames: loss -1.957584 @ 1917.2 fps. Stats:
+{'baseline_loss': 0.003404925111681223,
+ 'entropy_loss': -0.1478273719549179,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.8131613731384277,
+ 'total_loss': -1.9575837850570679}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:47,036] After 3058560 frames: loss -2.619150 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.007448528427630663,
+ 'entropy_loss': -0.14994780719280243,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.4766502380371094,
+ 'total_loss': -2.619149684906006}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:52,042] After 3068160 frames: loss -1.298239 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.08098357170820236,
+ 'entropy_loss': -0.1502988040447235,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.2289235591888428,
+ 'total_loss': -1.2982388734817505}
+[INFO:28871 torchbeast:258 2020-09-15 22:58:57,051] After 3079680 frames: loss 9.474890 @ 2300.1 fps. Stats:
+{'baseline_loss': 0.8005270957946777,
+ 'entropy_loss': -0.1514722853899002,
+ 'mean_episode_return': 4.615384578704834,
+ 'pg_loss': 8.825834274291992,
+ 'total_loss': 9.474889755249023}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:02,056] After 3089280 frames: loss -0.723924 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.11798299849033356,
+ 'entropy_loss': -0.15135721862316132,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -0.6905496716499329,
+ 'total_loss': -0.723923921585083}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:07,061] After 3098880 frames: loss 1.351396 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2601040005683899,
+ 'entropy_loss': -0.15116548538208008,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.242457389831543,
+ 'total_loss': 1.351395845413208}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:12,067] After 3110400 frames: loss -1.702009 @ 2301.3 fps. Stats:
+{'baseline_loss': 0.002517797751352191,
+ 'entropy_loss': -0.15013669431209564,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.5543899536132812,
+ 'total_loss': -1.702008843421936}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:17,072] After 3120000 frames: loss -0.522567 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.11706656962633133,
+ 'entropy_loss': -0.1506148725748062,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': -0.48901838064193726,
+ 'total_loss': -0.5225666761398315}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:22,078] After 3129600 frames: loss 6.858377 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.6256130933761597,
+ 'entropy_loss': -0.1497536152601242,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 6.382516860961914,
+ 'total_loss': 6.858376502990723}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:27,084] After 3139200 frames: loss 0.575361 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.236439049243927,
+ 'entropy_loss': -0.14810849726200104,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 0.4870307445526123,
+ 'total_loss': 0.5753613114356995}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:32,093] After 3150720 frames: loss 1.607711 @ 2300.0 fps. Stats:
+{'baseline_loss': 0.3051567077636719,
+ 'entropy_loss': -0.14826413989067078,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 1.4508183002471924,
+ 'total_loss': 1.607710838317871}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:37,099] After 3160320 frames: loss -0.038315 @ 1917.7 fps. Stats:
+{'baseline_loss': 0.2885873317718506,
+ 'entropy_loss': -0.1483313888311386,
+ 'mean_episode_return': 2.7272727489471436,
+ 'pg_loss': -0.17857122421264648,
+ 'total_loss': -0.03831528127193451}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:42,108] After 3169920 frames: loss 3.013907 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.4322534501552582,
+ 'entropy_loss': -0.14803476631641388,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 2.7296881675720215,
+ 'total_loss': 3.013906717300415}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:47,113] After 3181440 frames: loss 4.533221 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.5094714760780334,
+ 'entropy_loss': -0.1485273838043213,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 4.172276973724365,
+ 'total_loss': 4.533221244812012}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:52,122] After 3191040 frames: loss 0.274033 @ 1916.7 fps. Stats:
+{'baseline_loss': 0.22648382186889648,
+ 'entropy_loss': -0.14856667816638947,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 0.19611549377441406,
+ 'total_loss': 0.2740326523780823}
+[INFO:28871 torchbeast:258 2020-09-15 22:59:57,127] After 3200640 frames: loss -1.839069 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.0029133884236216545,
+ 'entropy_loss': -0.14942574501037598,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -1.6925565004348755,
+ 'total_loss': -1.83906888961792}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:02,133] After 3210240 frames: loss -2.539728 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.005793941207230091,
+ 'entropy_loss': -0.14879950881004333,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.3967223167419434,
+ 'total_loss': -2.5397276878356934}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:07,138] After 3221760 frames: loss 2.410661 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.3757268190383911,
+ 'entropy_loss': -0.14873576164245605,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 2.1836700439453125,
+ 'total_loss': 2.410660982131958}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:12,143] After 3231360 frames: loss 4.640740 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.5280154943466187,
+ 'entropy_loss': -0.14869467914104462,
+ 'mean_episode_return': 3.0,
+ 'pg_loss': 4.26141881942749,
+ 'total_loss': 4.640739917755127}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:17,151] After 3240960 frames: loss 0.971714 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.3280702829360962,
+ 'entropy_loss': -0.1486728936433792,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.7923170328140259,
+ 'total_loss': 0.971714437007904}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:22,156] After 3252480 frames: loss 0.540938 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.29794949293136597,
+ 'entropy_loss': -0.14853335916996002,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.3915213942527771,
+ 'total_loss': 0.5409375429153442}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:27,161] After 3262080 frames: loss -1.771903 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.10688360780477524,
+ 'entropy_loss': -0.14913807809352875,
+ 'mean_episode_return': 1.1111111640930176,
+ 'pg_loss': -1.7296481132507324,
+ 'total_loss': -1.7719025611877441}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:32,167] After 3271680 frames: loss 1.545092 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.3086332082748413,
+ 'entropy_loss': -0.14855074882507324,
+ 'mean_episode_return': 5.0,
+ 'pg_loss': 1.3850092887878418,
+ 'total_loss': 1.5450917482376099}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:37,172] After 3281280 frames: loss -0.259632 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.19874337315559387,
+ 'entropy_loss': -0.14862775802612305,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.30974727869033813,
+ 'total_loss': -0.2596316635608673}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:42,177] After 3292800 frames: loss -0.940201 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.20909079909324646,
+ 'entropy_loss': -0.14967522025108337,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -0.9996163845062256,
+ 'total_loss': -0.9402008056640625}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:47,182] After 3302400 frames: loss 1.442000 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.27680736780166626,
+ 'entropy_loss': -0.15037408471107483,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 1.3155670166015625,
+ 'total_loss': 1.4420002698898315}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:52,187] After 3312000 frames: loss 1.574365 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.27826228737831116,
+ 'entropy_loss': -0.1520228385925293,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 1.4481258392333984,
+ 'total_loss': 1.574365258216858}
+[INFO:28871 torchbeast:258 2020-09-15 23:00:57,194] After 3323520 frames: loss -0.803056 @ 2301.0 fps. Stats:
+{'baseline_loss': 0.17347563803195953,
+ 'entropy_loss': -0.15046478807926178,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -0.8260663747787476,
+ 'total_loss': -0.8030555248260498}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:02,203] After 3333120 frames: loss -3.256609 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.010491656139492989,
+ 'entropy_loss': -0.14955134689807892,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.1175496578216553,
+ 'total_loss': -3.2566094398498535}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:07,208] After 3342720 frames: loss 1.988955 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.35780471563339233,
+ 'entropy_loss': -0.14855951070785522,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 1.7797093391418457,
+ 'total_loss': 1.9889545440673828}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:12,216] After 3352320 frames: loss -1.642936 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.1138181984424591,
+ 'entropy_loss': -0.1499241590499878,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.6068297624588013,
+ 'total_loss': -1.6429357528686523}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:17,223] After 3363840 frames: loss -0.220964 @ 2300.9 fps. Stats:
+{'baseline_loss': 0.19970718026161194,
+ 'entropy_loss': -0.15016530454158783,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': -0.27050551772117615,
+ 'total_loss': -0.22096364200115204}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:22,228] After 3373440 frames: loss -2.351657 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.006670268252491951,
+ 'entropy_loss': -0.14957448840141296,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.208752393722534,
+ 'total_loss': -2.351656675338745}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:27,233] After 3383040 frames: loss -2.205385 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.0047523146495223045,
+ 'entropy_loss': -0.1500605046749115,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.06007719039917,
+ 'total_loss': -2.205385208129883}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:32,242] After 3394560 frames: loss -0.401564 @ 2300.2 fps. Stats:
+{'baseline_loss': 0.08989192545413971,
+ 'entropy_loss': -0.15044429898262024,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.34101206064224243,
+ 'total_loss': -0.40156444907188416}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:37,246] After 3404160 frames: loss 1.769700 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.2758304476737976,
+ 'entropy_loss': -0.15107041597366333,
+ 'mean_episode_return': 2.857142925262451,
+ 'pg_loss': 1.6449395418167114,
+ 'total_loss': 1.7696995735168457}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:42,253] After 3413760 frames: loss 1.907230 @ 1917.3 fps. Stats:
+{'baseline_loss': 0.27150410413742065,
+ 'entropy_loss': -0.15139730274677277,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.7871230840682983,
+ 'total_loss': 1.9072297811508179}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:47,260] After 3423360 frames: loss 1.163145 @ 1917.4 fps. Stats:
+{'baseline_loss': 0.24371662735939026,
+ 'entropy_loss': -0.15237095952033997,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.0717997550964355,
+ 'total_loss': 1.1631454229354858}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:52,265] After 3434880 frames: loss 0.718372 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.22124871611595154,
+ 'entropy_loss': -0.1527235060930252,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.6498467922210693,
+ 'total_loss': 0.7183720469474792}
+[INFO:28871 torchbeast:258 2020-09-15 23:01:57,270] After 3444480 frames: loss -2.791026 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.007207838818430901,
+ 'entropy_loss': -0.15194837749004364,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.64628529548645,
+ 'total_loss': -2.7910258769989014}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:02,279] After 3454080 frames: loss -0.296792 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.17507176101207733,
+ 'entropy_loss': -0.1519860178232193,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -0.3198776841163635,
+ 'total_loss': -0.2967919409275055}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:07,284] After 3463680 frames: loss -2.285442 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.004650350660085678,
+ 'entropy_loss': -0.1532966047525406,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.1367952823638916,
+ 'total_loss': -2.2854416370391846}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:12,289] After 3475200 frames: loss 0.083791 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.15346455574035645,
+ 'entropy_loss': -0.15183022618293762,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 0.0821569561958313,
+ 'total_loss': 0.08379128575325012}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:17,294] After 3484800 frames: loss 0.118973 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.18671607971191406,
+ 'entropy_loss': -0.15196748077869415,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': 0.08422453701496124,
+ 'total_loss': 0.11897312104701996}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:22,301] After 3494400 frames: loss 0.742631 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.27147722244262695,
+ 'entropy_loss': -0.1518612504005432,
+ 'mean_episode_return': 3.8333334922790527,
+ 'pg_loss': 0.6230149269104004,
+ 'total_loss': 0.7426308989524841}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:27,306] After 3504000 frames: loss -3.383481 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.010205106809735298,
+ 'entropy_loss': -0.15166252851486206,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.2420237064361572,
+ 'total_loss': -3.38348126411438}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:32,314] After 3515520 frames: loss 3.540671 @ 2300.5 fps. Stats:
+{'baseline_loss': 0.4115602374076843,
+ 'entropy_loss': -0.15110419690608978,
+ 'mean_episode_return': 4.0,
+ 'pg_loss': 3.280215263366699,
+ 'total_loss': 3.5406713485717773}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:37,319] After 3525120 frames: loss -1.543518 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.15594446659088135,
+ 'entropy_loss': -0.1506880819797516,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -1.5487747192382812,
+ 'total_loss': -1.543518304824829}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:42,327] After 3534720 frames: loss -1.772281 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.1449003368616104,
+ 'entropy_loss': -0.14989279210567474,
+ 'mean_episode_return': 1.4285714626312256,
+ 'pg_loss': -1.7672889232635498,
+ 'total_loss': -1.7722814083099365}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:47,336] After 3546240 frames: loss -3.077814 @ 2300.3 fps. Stats:
+{'baseline_loss': 0.008771063759922981,
+ 'entropy_loss': -0.15039996802806854,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.936185359954834,
+ 'total_loss': -3.0778141021728516}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:52,343] After 3555840 frames: loss -3.083596 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.008884262293577194,
+ 'entropy_loss': -0.1499175727367401,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.9425628185272217,
+ 'total_loss': -3.0835962295532227}
+[INFO:28871 torchbeast:258 2020-09-15 23:02:57,347] After 3565440 frames: loss -3.281887 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.010748756118118763,
+ 'entropy_loss': -0.14976762235164642,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.1428680419921875,
+ 'total_loss': -3.2818868160247803}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:02,352] After 3575040 frames: loss -2.863026 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.007577167823910713,
+ 'entropy_loss': -0.14970587193965912,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.720897674560547,
+ 'total_loss': -2.8630263805389404}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:07,357] After 3586560 frames: loss -0.455359 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.17622223496437073,
+ 'entropy_loss': -0.14975586533546448,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': -0.4818253517150879,
+ 'total_loss': -0.45535898208618164}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:12,365] After 3596160 frames: loss -2.339668 @ 1917.0 fps. Stats:
+{'baseline_loss': 0.05305398255586624,
+ 'entropy_loss': -0.14956632256507874,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -2.2431552410125732,
+ 'total_loss': -2.339667558670044}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:17,370] After 3605760 frames: loss 7.269321 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.7127019166946411,
+ 'entropy_loss': -0.14960210025310516,
+ 'mean_episode_return': 3.5714287757873535,
+ 'pg_loss': 6.706221580505371,
+ 'total_loss': 7.269321441650391}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:22,378] After 3615360 frames: loss -2.919581 @ 1917.0 fps. Stats:
+{'baseline_loss': 0.008419493213295937,
+ 'entropy_loss': -0.14921565353870392,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.778785228729248,
+ 'total_loss': -2.919581413269043}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:27,383] After 3626880 frames: loss -0.448961 @ 2302.0 fps. Stats:
+{'baseline_loss': 0.18133191764354706,
+ 'entropy_loss': -0.14912915229797363,
+ 'mean_episode_return': 1.0,
+ 'pg_loss': -0.48116347193717957,
+ 'total_loss': -0.44896072149276733}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:32,388] After 3636480 frames: loss -1.052514 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.14889809489250183,
+ 'entropy_loss': -0.14920315146446228,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': -1.0522093772888184,
+ 'total_loss': -1.0525144338607788}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:37,395] After 3646080 frames: loss -0.667962 @ 1917.5 fps. Stats:
+{'baseline_loss': 0.17189879715442657,
+ 'entropy_loss': -0.1490778923034668,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -0.6907831430435181,
+ 'total_loss': -0.6679622530937195}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:42,401] After 3657600 frames: loss 5.518116 @ 2301.2 fps. Stats:
+{'baseline_loss': 0.6256824731826782,
+ 'entropy_loss': -0.15036362409591675,
+ 'mean_episode_return': 3.076923131942749,
+ 'pg_loss': 5.042797088623047,
+ 'total_loss': 5.518115997314453}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:47,406] After 3667200 frames: loss -0.032429 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.19154933094978333,
+ 'entropy_loss': -0.1500667780637741,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.07391180098056793,
+ 'total_loss': -0.032429248094558716}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:52,414] After 3676800 frames: loss -3.064110 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.009303271770477295,
+ 'entropy_loss': -0.15079835057258606,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.9226150512695312,
+ 'total_loss': -3.064110040664673}
+[INFO:28871 torchbeast:258 2020-09-15 23:03:57,423] After 3688320 frames: loss 1.441819 @ 2300.3 fps. Stats:
+{'baseline_loss': 0.2599312663078308,
+ 'entropy_loss': -0.15112324059009552,
+ 'mean_episode_return': 6.6666669845581055,
+ 'pg_loss': 1.3330106735229492,
+ 'total_loss': 1.4418187141418457}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:02,428] After 3697920 frames: loss -1.783874 @ 1918.1 fps. Stats:
+{'baseline_loss': 0.10132870823144913,
+ 'entropy_loss': -0.15146678686141968,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -1.7337361574172974,
+ 'total_loss': -1.783874273300171}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:07,434] After 3707520 frames: loss 2.204942 @ 1917.9 fps. Stats:
+{'baseline_loss': 0.3443443477153778,
+ 'entropy_loss': -0.15124070644378662,
+ 'mean_episode_return': 6.6666669845581055,
+ 'pg_loss': 2.011838674545288,
+ 'total_loss': 2.204942226409912}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:12,442] After 3717120 frames: loss -3.169531 @ 1917.1 fps. Stats:
+{'baseline_loss': 0.00991957075893879,
+ 'entropy_loss': -0.15065112709999084,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -3.028799057006836,
+ 'total_loss': -3.1695306301116943}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:17,446] After 3728640 frames: loss -1.493436 @ 2302.1 fps. Stats:
+{'baseline_loss': 0.14631980657577515,
+ 'entropy_loss': -0.1506921499967575,
+ 'mean_episode_return': 1.6666667461395264,
+ 'pg_loss': -1.4890637397766113,
+ 'total_loss': -1.4934359788894653}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:22,452] After 3738240 frames: loss -1.020023 @ 1918.0 fps. Stats:
+{'baseline_loss': 0.19932496547698975,
+ 'entropy_loss': -0.1507481336593628,
+ 'mean_episode_return': 0.7692307829856873,
+ 'pg_loss': -1.0685999393463135,
+ 'total_loss': -1.0200231075286865}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:27,456] After 3747840 frames: loss -2.928889 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.008025059476494789,
+ 'entropy_loss': -0.15073184669017792,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.7861826419830322,
+ 'total_loss': -2.928889274597168}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:32,461] After 3759360 frames: loss -0.466531 @ 2301.9 fps. Stats:
+{'baseline_loss': 0.18509098887443542,
+ 'entropy_loss': -0.15074655413627625,
+ 'mean_episode_return': 1.3000000715255737,
+ 'pg_loss': -0.500874936580658,
+ 'total_loss': -0.4665305018424988}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:37,466] After 3768960 frames: loss 2.187872 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3906129002571106,
+ 'entropy_loss': -0.15114550292491913,
+ 'mean_episode_return': 4.545454502105713,
+ 'pg_loss': 1.9484049081802368,
+ 'total_loss': 2.1878724098205566}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:42,471] After 3778560 frames: loss 1.967137 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3453345000743866,
+ 'entropy_loss': -0.15130312740802765,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 1.7731051445007324,
+ 'total_loss': 1.9671365022659302}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:47,476] After 3790080 frames: loss -2.239835 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.004338436294347048,
+ 'entropy_loss': -0.1514659970998764,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.092707872390747,
+ 'total_loss': -2.239835262298584}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:52,485] After 3799680 frames: loss 1.804384 @ 1916.8 fps. Stats:
+{'baseline_loss': 0.28669002652168274,
+ 'entropy_loss': -0.15166309475898743,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 1.6693565845489502,
+ 'total_loss': 1.8043835163116455}
+[INFO:28871 torchbeast:258 2020-09-15 23:04:57,489] After 3809280 frames: loss -2.891361 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.00889184046536684,
+ 'entropy_loss': -0.15226037800312042,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.7479920387268066,
+ 'total_loss': -2.8913605213165283}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:02,495] After 3818880 frames: loss -0.505632 @ 1917.8 fps. Stats:
+{'baseline_loss': 0.16996422410011292,
+ 'entropy_loss': -0.15189699828624725,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -0.5236995220184326,
+ 'total_loss': -0.5056322813034058}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:07,500] After 3830400 frames: loss -0.550045 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.14389626681804657,
+ 'entropy_loss': -0.15194986760616302,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.5419913530349731,
+ 'total_loss': -0.5500449538230896}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:12,505] After 3840000 frames: loss -2.723079 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.007444087881594896,
+ 'entropy_loss': -0.15213410556316376,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.5783894062042236,
+ 'total_loss': -2.7230794429779053}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:17,510] After 3849600 frames: loss 0.594240 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.19944150745868683,
+ 'entropy_loss': -0.15235774219036102,
+ 'mean_episode_return': 3.3333334922790527,
+ 'pg_loss': 0.5471563339233398,
+ 'total_loss': 0.5942400693893433}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:22,515] After 3861120 frames: loss 6.724326 @ 2301.8 fps. Stats:
+{'baseline_loss': 0.6421549320220947,
+ 'entropy_loss': -0.1522800624370575,
+ 'mean_episode_return': 3.0,
+ 'pg_loss': 6.234450817108154,
+ 'total_loss': 6.724326133728027}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:27,523] After 3870720 frames: loss 0.998906 @ 1916.9 fps. Stats:
+{'baseline_loss': 0.283805251121521,
+ 'entropy_loss': -0.15224044024944305,
+ 'mean_episode_return': 2.0,
+ 'pg_loss': 0.8673416376113892,
+ 'total_loss': 0.9989064335823059}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:32,528] After 3880320 frames: loss -1.055308 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.1536441594362259,
+ 'entropy_loss': -0.15220680832862854,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -1.056744933128357,
+ 'total_loss': -1.0553076267242432}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:37,534] After 3891840 frames: loss -3.119877 @ 2301.4 fps. Stats:
+{'baseline_loss': 0.008995935320854187,
+ 'entropy_loss': -0.15206792950630188,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.9768052101135254,
+ 'total_loss': -3.1198770999908447}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:42,539] After 3901440 frames: loss 2.014322 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.3451972007751465,
+ 'entropy_loss': -0.152290478348732,
+ 'mean_episode_return': 3.3333332538604736,
+ 'pg_loss': 1.8214154243469238,
+ 'total_loss': 2.01432204246521}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:47,544] After 3911040 frames: loss 0.115721 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.29217636585235596,
+ 'entropy_loss': -0.15254434943199158,
+ 'mean_episode_return': 1.8181818723678589,
+ 'pg_loss': -0.023911386728286743,
+ 'total_loss': 0.11572062969207764}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:52,549] After 3920640 frames: loss 0.717179 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.2462436556816101,
+ 'entropy_loss': -0.15218372642993927,
+ 'mean_episode_return': 6.0,
+ 'pg_loss': 0.6231191158294678,
+ 'total_loss': 0.7171790599822998}
+[INFO:28871 torchbeast:258 2020-09-15 23:05:57,556] After 3932160 frames: loss -0.525041 @ 2300.7 fps. Stats:
+{'baseline_loss': 0.16844093799591064,
+ 'entropy_loss': -0.15214292705059052,
+ 'mean_episode_return': 1.25,
+ 'pg_loss': -0.5413391590118408,
+ 'total_loss': -0.5250411629676819}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:02,561] After 3941760 frames: loss -2.849542 @ 1918.4 fps. Stats:
+{'baseline_loss': 0.007698779460042715,
+ 'entropy_loss': -0.15221649408340454,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.705024242401123,
+ 'total_loss': -2.8495419025421143}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:07,566] After 3951360 frames: loss -3.060612 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.00925513356924057,
+ 'entropy_loss': -0.15218040347099304,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.917686939239502,
+ 'total_loss': -3.060612201690674}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:12,571] After 3960960 frames: loss -2.554596 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.005873320624232292,
+ 'entropy_loss': -0.1521926075220108,
+ 'mean_episode_return': 0.0,
+ 'pg_loss': -2.4082765579223633,
+ 'total_loss': -2.554595947265625}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:17,576] After 3970560 frames: loss 1.928148 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3195362687110901,
+ 'entropy_loss': -0.15214671194553375,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': 1.7607585191726685,
+ 'total_loss': 1.9281481504440308}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:22,583] After 3982080 frames: loss 4.465712 @ 2300.8 fps. Stats:
+{'baseline_loss': 0.5023380517959595,
+ 'entropy_loss': -0.15207898616790771,
+ 'mean_episode_return': 4.285714626312256,
+ 'pg_loss': 4.115452766418457,
+ 'total_loss': 4.46571159362793}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:27,588] After 3991680 frames: loss -0.803271 @ 1918.3 fps. Stats:
+{'baseline_loss': 0.15273237228393555,
+ 'entropy_loss': -0.1522035002708435,
+ 'mean_episode_return': 2.5,
+ 'pg_loss': -0.8037998676300049,
+ 'total_loss': -0.8032709956169128}
+[INFO:28871 torchbeast:258 2020-09-15 23:06:32,593] After 4001280 frames: loss 1.169606 @ 1918.2 fps. Stats:
+{'baseline_loss': 0.3142360746860504,
+ 'entropy_loss': -0.1520787477493286,
+ 'mean_episode_return': 3.75,
+ 'pg_loss': 1.0074489116668701,
+ 'total_loss': 1.1696062088012695}
+[INFO:28871 torchbeast:212 2020-09-15 23:06:36,649] Batch and learn: 
+    lock: 6450.738005ms +- 414.847959ms (86.33%) 
+    dequeue: 937.769923ms +- 91.208183ms (12.55%) 
+    learn: 78.950136ms +- 21.005295ms (1.06%) 
+    batch: 3.427740ms +- 0.796231ms (0.05%) 
+    device: 0.957383ms +- 0.248246ms (0.01%) 
+    enqueue: 0.376223ms +- 0.076221ms (0.01%) 
+Total: 7472.219409ms
+[INFO:28871 torchbeast:265 2020-09-15 23:06:38,507] Learning finished after 4014720 frames.
+[INFO:29402 utils:308 2020-09-15 23:06:40,251] Actor 0: 
+    step: 15.637734ms +- 27.108838ms (79.96%) 
+    model: 3.499175ms +- 5.238772ms (17.89%) 
+    write: 0.420249ms +- 0.901677ms (2.15%) 
+Total: 19.557159ms
