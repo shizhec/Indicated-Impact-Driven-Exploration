@@ -1,4 +1,4 @@
-name: clride1
+name: iride_gpu
 channels:
   - conda-forge
   - anaconda-fusion
@@ -50,5 +50,4 @@ dependencies:
     - virtualenv==20.0.21
     - zipp==3.1.0
     - gym-minigrid==1.0.1
-    - procgen==0.10.4
 
