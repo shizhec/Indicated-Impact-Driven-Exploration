@@ -26,7 +26,7 @@ import src.models as models
 import src.losses as losses
 
 from src.env_utils import FrameStack
-from src.utils import get_batch, log, create_env, create_buffers, act
+from src.utils import get_batch, log, create_env, create_buffers_procgen, act
 
 
 MinigridPolicyNet = models.MinigridPolicyNet
@@ -129,7 +129,7 @@ def train(flags):
     else:
         model = MarioDoomPolicyNet(env.observation_space.shape, env.action_space.n)
 
-    buffers = create_buffers(env.observation_space.shape, model.num_actions, flags)
+    buffers = create_buffers_procgen(env.observation_space.shape, model.num_actions, flags)
     
     model.share_memory()
 
