@@ -144,8 +144,6 @@ def load_slurm_output(path, filename, skip_num=0):
 
     return output_dict
 
-
-# plot_normalized_mean_return(10, 5, "./", "slurm-19719152.out")
 print("caveflyer:")
 # tuning_learning_rate("data/caveflyer/", "caveflyer")
 # tuning_batch_size("data/caveflyer/", "caveflyer")

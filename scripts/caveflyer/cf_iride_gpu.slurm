@@ -46,6 +46,6 @@ source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/a
 conda activate iride_gpu
 
 # The job command(s):
-OMP_NUM_THREADS=1 python ../../main.py --model clride --env procgen --game caveflyer --num_threads 8 --disable_background \
+OMP_NUM_THREADS=1 python ../../main.py --model iride --env procgen --game caveflyer --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --unroll_length 60 --intrinsic_reward_coef 0.5 \
 --entropy_cost 0.001 --total_frames 4000000 --disable_checkpoint

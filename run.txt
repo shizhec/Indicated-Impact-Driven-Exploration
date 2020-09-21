@@ -22,7 +22,7 @@ parameters
 
 sacct -j 19467456 --format workdir,jobname,maxrss,alloctres,user -p
 
-# parameters of env (ride)
+# parameters of env (ride, vanilla(with on intrinsic reward coef), iride)
 caveflyer
 lr-0.0005 batch_size-32 unroll_length-60 intrinsic_reward_coef-0.5 entropy_cost-0.001
 climber

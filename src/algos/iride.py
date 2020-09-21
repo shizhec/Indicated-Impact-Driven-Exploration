@@ -35,7 +35,7 @@ ProcGenInverseDynamicsNet = models.ProcGenInverseDynamicsNet
 ProcGenPolicyNet = models.ProcGenPolicyNet
 Indicator = models.Indicator
 
-def encode(T, B, state_embedding, next_state_embedding, batch):
+def encode(T, B, state_embedding, next_state_embedding, batch, flags):
     dones = batch['done'][1:]
     rewards = batch['reward'][1:]
 
@@ -57,7 +57,7 @@ def encode(T, B, state_embedding, next_state_embedding, batch):
         # if done and haven't receive any rewards yet
         if dones[index] == 1 and rewards[index] == 0 or index == T*B - 1:
             # encode 0.501 probability of getting rewards to encourage exploration
-            partial = torch.full([len(current_index)], 0.999, dtype=torch.float32)
+            partial = torch.full([len(current_index)], flags.encoder_coef, dtype=torch.float32)
             encoded = torch.cat([encoded, partial])
 
             # reset current index list
@@ -126,7 +126,11 @@ def learn(actor_model,
 
         control_rewards = torch.norm(next_state_emb - state_emb, dim=2, p=2)
 
-        corrected_rewards = control_rewards * state_indicates
+        if flags.discount:
+            corrected_rewards = control_rewards * state_indicates
+        else:
+            state_indicates += 0.5
+            corrected_rewards = control_rewards * state_indicates
 
         intrinsic_rewards = count_rewards * corrected_rewards
 
@@ -139,7 +143,7 @@ def learn(actor_model,
         inverse_dynamics_loss = flags.inverse_loss_coef * \
                                 losses.compute_inverse_dynamics_loss(pred_actions, batch['action'][1:])
 
-        encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch) \
+        encoded_state_indicates = encode(flags.unroll_length, flags.batch_size, state_emb, next_state_emb, batch, flags) \
                                   .to(device=flags.device)
 
         indicator_loss = flags.indicator_loss_coef * \

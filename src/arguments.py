@@ -124,4 +124,8 @@ parser.add_argument('--restrict_themes', action='store_true')
 parser.add_argument('--use_monochrome_assets', action='store_true')
 
 # for iride
-parser.add_argument('--indicator_loss_coef', default=0.5, type=float)
+parser.add_argument('--indicator_loss_coef', default=0.5, type=float,
+                    help='loss coefficient of the indicator')
+parser.add_argument('--discount', action='store_true',
+                    help='use the default discount method rather than hand-made discount')
+parser.add_argument('--encoder_coef', default=0.999, type=float)
