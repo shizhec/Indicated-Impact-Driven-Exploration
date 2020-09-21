@@ -129,8 +129,8 @@ def learn(actor_model,
         if flags.discount:
             corrected_rewards = control_rewards * state_indicates
         else:
-            state_indicates += 0.5
-            corrected_rewards = control_rewards * state_indicates
+            modified_state_indicates = state_indicates +  0.5
+            corrected_rewards = control_rewards * modified_state_indicates
 
         intrinsic_rewards = count_rewards * corrected_rewards
 

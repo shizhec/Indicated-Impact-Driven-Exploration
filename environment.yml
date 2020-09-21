@@ -4,7 +4,7 @@ channels:
   - anaconda-fusion
   - defaults
 dependencies:
-  - python=3.7.3
+  - python=3.7.4
   # https://www.anaconda.com/utilizing-the-new-compilers-in-anaconda-distribution-5/
   - c-compiler=1.0.4
   - gxx_linux-64
