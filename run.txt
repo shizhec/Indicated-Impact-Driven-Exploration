@@ -1,7 +1,21 @@
-OMP_NUM_THREADS=1 python main.py --model clride --env procgen --game coinrun
-OMP_NUM_THREADS=1 python main.py --model ride --env MiniGrid-ObstructedMaze-2Dlh-v0 --num_actors 1
+OMP_NUM_THREADS=1 python main.py --model iride --env procgen --game coinrun --num_threads 8 --restrict_themes --use_monochrome_assets
 
 scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/coinrun.out data
+module load web_proxy
+module load foss/2019b anaconda3/2020.07 mesa/19.2.1
+
+conda env update --file environment.yml
+
+source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
+conda activate iride_gpu
+
+nano /home/shizhec/.conda/envs/iride_gpu/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake
+"/usr/local/easybuild-2019/easybuild/software/compiler/gcccore/8.3.0/mesa/19.2.1/include"
+
+python-dateutil
+pytz
+gym
+gym_minigrid
 
 parameters
 --learning_rate
