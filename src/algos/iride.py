@@ -55,7 +55,7 @@ def encode(T, B, state_embedding, next_state_embedding, batch, flags):
         current_index.append(index)
    
         # if done and haven't receive any rewards yet
-        if dones[index] == 1 and rewards[index] == 0 or index == T*B - 1:
+        if (dones[index] == 1 or index == T*B - 1) and rewards[index] == 0:
             # encode 0.501 probability of getting rewards to encourage exploration
             partial = torch.full([len(current_index)], flags.encoder_coef, dtype=torch.float32)
             encoded = torch.cat([encoded, partial])

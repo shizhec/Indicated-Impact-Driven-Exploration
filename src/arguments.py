@@ -128,4 +128,4 @@ parser.add_argument('--indicator_loss_coef', default=0.5, type=float,
                     help='loss coefficient of the indicator')
 parser.add_argument('--discount', action='store_true',
                     help='use the default discount method rather than hand-made discount')
-parser.add_argument('--encoder_coef', default=0.999, type=float)
+parser.add_argument('--encoder_coef', default=0.5, type=float)

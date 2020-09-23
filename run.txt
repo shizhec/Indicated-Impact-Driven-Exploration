@@ -33,6 +33,11 @@ parameters
 --entropy_cost
 [0.01, 0.005, 0.001, 0.0005, 0.0001]
 
+--indicator_loss_coef
+[0.1, 0.5, 1, 5, 10]
+
+--encoder_coef
+[0.01, 0.25, 0.5, 0.75, 0.99]
 
 sacct -j 19467456 --format workdir,jobname,maxrss,alloctres,user -p
 
@@ -49,3 +54,4 @@ leaper
 lr-0.005 batch_size-8 unroll_length-20 intrinsic_reward_coef-0.05 entropy_cost-0.0005
 ninja
 lr-0.0005 batch_size-32 unroll_length-100 intrinsic_reward_coef-0.001 entropy_cost-0.0001
+
