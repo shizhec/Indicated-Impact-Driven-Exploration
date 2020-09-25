@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=gpgpu
+#SBATCH --partition=shortgpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1
@@ -10,7 +10,7 @@
 #SBATCH --job-name="caveflyer_ec"
 
 # The name of the output
-#SBATCH --output="caveflyer_ec_001_5.out"
+#SBATCH --output="caveflyer_gpu.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -43,7 +43,7 @@ module load cudnn/7.6.4.38
 
 # activate the conda environment
 source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
-conda activate clride
+conda activate iride_gpu
 
 # The job command(s):
 OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game caveflyer --num_threads 8 --disable_background \
