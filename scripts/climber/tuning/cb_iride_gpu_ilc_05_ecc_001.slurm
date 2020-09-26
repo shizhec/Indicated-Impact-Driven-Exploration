@@ -43,7 +43,7 @@ module load cudnn/7.6.4.38
 
 # activate the conda environment
 source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
-conda activate clride
+conda activate iride_gpu
 
 # The job command(s):
 OMP_NUM_THREADS=1 python ../../main.py --model iride --env procgen --game climber --num_threads 8 --disable_background \
