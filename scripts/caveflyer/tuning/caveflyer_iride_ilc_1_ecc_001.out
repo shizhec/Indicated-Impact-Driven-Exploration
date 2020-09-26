@@ -1,0 +1,37 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7     2) fftw/3.3.8     3) openmpi/3.1.4     4) scalapack/2.0.2
+
+Creating log directory: ./torchbeast-20200925-234249
+Saving arguments to ./torchbeast-20200925-234249/meta.json
+Saving messages to ./torchbeast-20200925-234249/out.log
+Saving logs data to ./torchbeast-20200925-234249/logs.csv
+Saving logs' fields to ./torchbeast-20200925-234249/fields.csv
+[INFO:22413 iride:270 2020-09-25 23:42:50,602] Using CUDA.
+building procgen...RUN FAILED ['cmake', '--build', '.', '--config', 'relwithdebinfo']:
+[  3%] Building CXX object CMakeFiles/env.dir/src/vecoptions.cpp.o
+[  6%] Linking CXX shared library libenv.so
+/home/shizhec/.conda/envs/iride_gpu/bin/../lib/gcc/x86_64-conda-linux-gnu/7.5.0/../../../../x86_64-conda-linux-gnu/bin/ld: cannot find CMakeFiles/env.dir/src/vecoptions.cpp.o: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [libenv.so] Error 1
+gmake[1]: *** [CMakeFiles/env.dir/all] Error 2
+gmake: *** [all] Error 2
+
+Traceback (most recent call last):
+  File "../../../main.py", line 42, in <module>
+    main(flags)
+  File "../../../main.py", line 34, in main
+    train_iride(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/iride.py", line 275, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 96, in __init__
+    lib_dir = build(debug=debug)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 135, in build
+    check(run(build_cmd), verbose=package)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/build.py", line 47, in check
+    raise RunFailure("failed to build procgen from source")
+procgen.build.RunFailure: failed to build procgen from source
