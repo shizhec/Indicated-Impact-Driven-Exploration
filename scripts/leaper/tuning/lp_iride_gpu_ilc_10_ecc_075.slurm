@@ -10,7 +10,7 @@
 #SBATCH --job-name="leaper_iride_parameter_tuning"
 
 # The name of the output
-#SBATCH --output="lp_ride_gpu_ilc_10_ecc_075.out"
+#SBATCH --output="lp_iride_gpu_ilc_10_ecc_075.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
