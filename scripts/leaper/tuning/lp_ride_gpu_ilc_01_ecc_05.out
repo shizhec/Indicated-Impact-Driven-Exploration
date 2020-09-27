@@ -1,0 +1,13 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) expat/2.2.7     2) fftw/3.3.8     3) openmpi/3.1.4     4) scalapack/2.0.2
+
+Found log directory: ./torchbeast-20200926-224712
+Saving arguments to ./torchbeast-20200926-224712/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20200926-224712/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20200926-224712/logs.csv
+Saving logs' fields to ./torchbeast-20200926-224712/fields.csv
+[INFO:10014 iride:270 2020-09-26 22:47:12,703] Using CUDA.
+building procgen.../var/spool/slurm/job20287142/slurm_script: line 51: 10014 Illegal instruction     OMP_NUM_THREADS=1 python ../../../main.py --model iride --env procgen --game leaper --num_threads 8 --disable_background --restrict_themes --use_monochrome_assets --learning_rate 0.005 --batch_size 8 --unroll_length 20 --intrinsic_reward_coef 0.05 --entropy_cost 0.0005 --indicator_loss_coef 0.1 --encoder_coef 0.5 --total_frames 4000000 --disable_checkpoint

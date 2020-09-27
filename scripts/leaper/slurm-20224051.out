@@ -1,0 +1,31 @@
+Found log directory: ./torchbeast-20200926-112100
+Saving arguments to ./torchbeast-20200926-112100/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20200926-112100/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20200926-112100/logs.csv
+Saving logs' fields to ./torchbeast-20200926-112100/fields.csv
+[INFO:240910 torchbeast:119 2020-09-26 11:21:01,552] Not using CUDA.
+building procgen...done
+Traceback (most recent call last):
+  File "../../main.py", line 42, in <module>
+    main(flags)
+  File "../../main.py", line 20, in main
+    train_vanilla(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/torchbeast.py", line 121, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 134, in __init__
+    "void set_state(libenv_env *, int, char *, int);",
+  File "/home/shizhec/.local/lib/python3.7/site-packages/gym3/libenv.py", line 111, in __init__
+    self._c_lib = self._ffi.dlopen(name=self._lib_path, flags=dlopen_flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 146, in dlopen
+    lib, function_cache = _make_ffi_library(self, name, flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 828, in _make_ffi_library
+    backendlib = _load_backend_lib(backend, libname, flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 824, in _load_backend_lib
+    return backend.load_library(path, flags)
+OSError: cannot load library '/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/.build/relwithdebinfo/libenv.so': /data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/.build/relwithdebinfo/libenv.so: file too short
