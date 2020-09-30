@@ -47,7 +47,7 @@ def compute_inverse_dynamics_loss(pred_actions, true_actions):
 
 
 def compute_indicator_loss(pre_indicates, encoded_indicates):
-    bceloss = nn.BCELoss()
+    bceloss = nn.BCELoss(reduction='sum')
     loss = bceloss(pre_indicates, encoded_indicates)
     return loss
 
