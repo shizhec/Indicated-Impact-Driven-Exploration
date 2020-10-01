@@ -115,6 +115,22 @@ def tuning_ec(path, game):
     print("mean_return_ec_0001: ", np.mean(mean_episode_return4))
     print("mean_return_ec_0005: ", np.mean(mean_episode_return5))
 
+def tuning_iride(path, game):
+    output = [np.array([[get_mean_return_from_dict(load_slurm_output(path + "round1/", game + "_iride_ilc_" + j + "_ecc_" + z + ".out"))
+                for z in ["001", "05", "025", "075", "099"]]
+               for j in ["1", "01", "5", "05", "10"]])
+              for i in range(1, 4)]
+
+    average_output = (output[0] + output[1] + output[2])/3
+    print(average_output)
+
+    label = np.array([[a + " " + b for a in ["001", "05", "025", "075", "099"]] for b in ["1", "01", "5", "05", "10"]])
+    print(label)
+
+def get_mean_return_from_dict(dicts):
+    return np.mean(np.array([x.get("mean_episode_return", 0.0) for x in dicts.values()]))
+
+
 def load_slurm_output(path, filename, skip_num=0):
     output_dict = OrderedDict()
     with open(path+filename, "r") as file:
@@ -143,6 +159,7 @@ def load_slurm_output(path, filename, skip_num=0):
                     lines += line
 
     return output_dict
+tuning_iride("data/caveflyer/iride/parameter/", "caveflyer")
 
 print("caveflyer:")
 # tuning_learning_rate("data/caveflyer/", "caveflyer")

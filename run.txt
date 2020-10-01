@@ -41,7 +41,7 @@ parameters
 
 sacct -j 19467456 --format workdir,jobname,maxrss,alloctres,user -p
 
-# parameters of env (ride, vanilla(with on intrinsic reward coef), iride)
+# parameters of env (ride, vanilla(with no intrinsic reward coef))
 caveflyer
 lr-0.0005 batch_size-32 unroll_length-60 intrinsic_reward_coef-0.5 entropy_cost-0.001
 climber
@@ -55,3 +55,6 @@ lr-0.005 batch_size-8 unroll_length-20 intrinsic_reward_coef-0.05 entropy_cost-0
 ninja
 lr-0.0005 batch_size-32 unroll_length-100 intrinsic_reward_coef-0.001 entropy_cost-0.0001
 
+# iride parameter
+caveflyer
+--indicator_loss_coef 5, --encoder_coef 0.99

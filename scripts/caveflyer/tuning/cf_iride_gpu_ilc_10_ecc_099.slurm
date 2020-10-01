@@ -10,7 +10,7 @@
 #SBATCH --job-name="caveflyer_iride_parameter_tuning"
 
 # The name of the output
-#SBATCH --output="caveflyer_iride_ilc_10_ecc_001.out"
+#SBATCH --output="caveflyer_iride_ilc_10_ecc_099.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
