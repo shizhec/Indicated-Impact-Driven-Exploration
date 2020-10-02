@@ -116,13 +116,16 @@ def tuning_ec(path, game):
     print("mean_return_ec_0005: ", np.mean(mean_episode_return5))
 
 def tuning_iride(path, game):
-    output = [np.array([[get_mean_return_from_dict(load_slurm_output(path + "round1/", game + "_iride_ilc_" + j + "_ecc_" + z + ".out"))
+    output = [np.array([[get_mean_return_from_dict(load_slurm_output(path + "round" + str(i) + "/", game + "_iride_ilc_" + j + "_ecc_" + z + ".out"))
                 for z in ["001", "05", "025", "075", "099"]]
                for j in ["1", "01", "5", "05", "10"]])
               for i in range(1, 4)]
 
     average_output = (output[0] + output[1] + output[2])/3
     print(average_output)
+    # print(output[0])
+    # print(output[1])
+    # print(output[2])
 
     label = np.array([[a + " " + b for a in ["001", "05", "025", "075", "099"]] for b in ["1", "01", "5", "05", "10"]])
     print(label)
@@ -159,7 +162,8 @@ def load_slurm_output(path, filename, skip_num=0):
                     lines += line
 
     return output_dict
-tuning_iride("data/caveflyer/iride/parameter/", "caveflyer")
+
+
 
 print("caveflyer:")
 # tuning_learning_rate("data/caveflyer/", "caveflyer")
@@ -167,12 +171,14 @@ print("caveflyer:")
 # tuning_unroll_length("data/caveflyer/", "caveflyer")
 # tuning_irc("data/caveflyer/", "caveflyer")
 # tuning_ec("data/caveflyer/", "caveflyer")
+tuning_iride("data/caveflyer/iride/parameter/", "caveflyer")
 print("climber:")
 # tuning_learning_rate("data/climber/", "climber")
 # tuning_batch_size("data/climber/", "climber")
 # tuning_unroll_length("data/climber/", "climber")
 # tuning_irc("data/climber/", "climber")
 # tuning_ec("data/climber/", "climber")
+# tuning_iride("data/climber/iride/parameter/", "cb")
 print("coinrun:")
 # tuning_learning_rate("data/coinrun/", "coinrun")
 # tuning_batch_size("data/coinrun/", "coinrun")
