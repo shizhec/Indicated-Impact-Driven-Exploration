@@ -59,6 +59,11 @@ lr-0.0005 batch_size-32 unroll_length-100 intrinsic_reward_coef-0.001 entropy_co
 # iride parameter
 caveflyer
 --indicator_loss_coef 1, --encoder_coef 0.25
-
 climber
 --indicator_loss_coef 10, --encoder_coef 0.01
+coinrun
+--indicator_loss_coef 1, --encoder_coef 0.75
+jumper
+--indicator_loss_coef 10, --encoder_coef 0.5
+leaper
+--indicator_loss_coef 5, --encoder_coef 0.25
