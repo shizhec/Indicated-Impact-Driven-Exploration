@@ -55,6 +55,7 @@ lr-0.005 batch_size-8 unroll_length-20 intrinsic_reward_coef-0.05 entropy_cost-0
 ninja
 lr-0.0005 batch_size-32 unroll_length-100 intrinsic_reward_coef-0.001 entropy_cost-0.0001
 
+
 # iride parameter
 caveflyer
 --indicator_loss_coef 1, --encoder_coef 0.25
