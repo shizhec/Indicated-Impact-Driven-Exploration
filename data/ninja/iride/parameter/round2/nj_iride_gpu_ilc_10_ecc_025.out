@@ -49,8 +49,6 @@ building procgen...done
 [INFO:28957 utils:204 2020-09-30 08:15:58,387] Actor 37 started.
 [INFO:28962 utils:204 2020-09-30 08:15:58,395] Actor 38 started.
 [INFO:28967 utils:204 2020-09-30 08:15:58,402] Actor 39 started.
-[INFO:28418 iride:445 2020-09-30 08:16:06,232] After 0 frames: loss inf @ 0.0 fps. Stats:
-{}
 Updated log fields: ['_tick', '_time', 'frames', 'total_loss', 'mean_episode_return', 'pg_loss', 'baseline_loss', 'entropy_loss', 'mean_rewards', 'mean_intrinsic_rewards', 'mean_total_rewards', 'mean_control_rewards', 'mean_count_rewards', 'forward_dynamics_loss', 'inverse_dynamics_loss', 'indicator_loss']
 [INFO:28418 iride:445 2020-09-30 08:16:11,237] After 9600 frames: loss 2280.165527 @ 1918.3 fps. Stats:
 {'baseline_loss': 10.337809562683105,

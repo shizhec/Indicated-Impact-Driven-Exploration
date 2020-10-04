@@ -72,3 +72,5 @@ jumper
 --indicator_loss_coef 10, --encoder_coef 0.5
 leaper
 --indicator_loss_coef 5, --encoder_coef 0.25
+ninja
+--indicator_loss_coef 0.1, --encoder_coef 0.99
