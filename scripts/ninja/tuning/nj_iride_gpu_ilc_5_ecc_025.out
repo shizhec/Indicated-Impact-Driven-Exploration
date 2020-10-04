@@ -2,10 +2,34 @@
 Due to MODULEPATH changes, the following have been reloaded:
   1) expat/2.2.7     2) fftw/3.3.8     3) openmpi/3.1.4     4) scalapack/2.0.2
 
-Creating log directory: ./torchbeast-20201004-005020
-Saving arguments to ./torchbeast-20201004-005020/meta.json
-Saving messages to ./torchbeast-20201004-005020/out.log
-Saving logs data to ./torchbeast-20201004-005020/logs.csv
-Saving logs' fields to ./torchbeast-20201004-005020/fields.csv
-[INFO:23986 iride:270 2020-10-04 00:50:20,542] Using CUDA.
-building procgen.../var/spool/slurm/job20420102/slurm_script: line 51: 23986 Illegal instruction     OMP_NUM_THREADS=1 python ../../../main.py --model iride --env procgen --game ninja --num_threads 8 --disable_background --restrict_themes --use_monochrome_assets --learning_rate 0.0005 --batch_size 32 --unroll_length 100 --intrinsic_reward_coef 0.001 --entropy_cost 0.0001 --indicator_loss_coef 5.0 --encoder_coef 0.25 --total_frames 4000000 --disable_checkpoint
+Found log directory: ./torchbeast-20201004-140029
+Saving arguments to ./torchbeast-20201004-140029/meta.json
+Path to meta file already exists. Not overriding meta.
+Saving messages to ./torchbeast-20201004-140029/out.log
+Path to message file already exists. New data will be appended.
+Saving logs data to ./torchbeast-20201004-140029/logs.csv
+Saving logs' fields to ./torchbeast-20201004-140029/fields.csv
+[INFO:27435 iride:270 2020-10-04 14:00:29,495] Using CUDA.
+building procgen...done
+Traceback (most recent call last):
+  File "../../../main.py", line 42, in <module>
+    main(flags)
+  File "../../../main.py", line 34, in main
+    train_iride(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/algos/iride.py", line 275, in train
+    env = create_env(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/utils.py", line 80, in create_env
+    use_monochrome_assets=flags.use_monochrome_assets
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 246, in __init__
+    super().__init__(num, env_name, options, **kwargs)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/env.py", line 134, in __init__
+    "void set_state(libenv_env *, int, char *, int);",
+  File "/home/shizhec/.local/lib/python3.7/site-packages/gym3/libenv.py", line 111, in __init__
+    self._c_lib = self._ffi.dlopen(name=self._lib_path, flags=dlopen_flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 146, in dlopen
+    lib, function_cache = _make_ffi_library(self, name, flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 828, in _make_ffi_library
+    backendlib = _load_backend_lib(backend, libname, flags)
+  File "/home/shizhec/.local/lib/python3.7/site-packages/cffi/api.py", line 824, in _load_backend_lib
+    return backend.load_library(path, flags)
+OSError: cannot load library '/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/.build/relwithdebinfo/libenv.so': /data/gpfs/projects/punim1126/CL-RIDE-master-project/src/procgen/procgen/.build/relwithdebinfo/libenv.so: file too short
