@@ -1,7 +1,12 @@
 OMP_NUM_THREADS=1 python main.py --model iride --env procgen --game coinrun --num_threads 8 --restrict_themes --use_monochrome_assets
 
 scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/coinrun.out data
+
+
+sinteractive -p shortgpgpu --time=01:00:00 --mem=100000 --gres=gpu:1
+
 module load web_proxy
+module load gcccore/8.3.0
 module load foss/2019b anaconda3/2020.07 mesa/19.2.1
 
 conda env update --file environment.yml
