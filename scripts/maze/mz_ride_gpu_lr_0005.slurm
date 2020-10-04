@@ -10,7 +10,7 @@
 #SBATCH --job-name="maze_lr"
 
 # The name of the output
-#SBATCH --output="maze_lr_0005_1.out"
+#SBATCH --output="maze_lr_0005_2.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"

@@ -10,7 +10,7 @@
 #SBATCH --job-name="chaser_lr"
 
 # The name of the output
-#SBATCH --output="chaser_lr_005_1.out"
+#SBATCH --output="chaser_lr_005_2.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
