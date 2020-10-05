@@ -8,6 +8,7 @@ import logging
 import os
 import threading
 import time
+from datetime import datetime
 import timeit
 import pprint
 
@@ -252,7 +253,7 @@ def learn(actor_model,
 
 def train(flags):
     if flags.xpid is None:
-        flags.xpid = 'torchbeast-%s' % time.strftime('%Y%m%d-%H%M%S')
+        flags.xpid = 'iride-%s' % datetime.utcnow().strftime('%Y%m%d-%H%M%S%f')
     plogger = file_writer.FileWriter(
         xpid=flags.xpid,
         xp_args=flags.__dict__,
@@ -416,8 +417,15 @@ def train(flags):
         log.info('Saving checkpoint to %s', checkpointpath)
         torch.save({
             'model_state_dict': model.state_dict(),
+            'state_embedding_model_state_dict': state_embedding_model.state_dict(),
+            'forward_dynamics_model_state_dict': forward_dynamics_model.state_dict(),
+            'inverse_dynamics_model_state_dict': inverse_dynamics_model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
+            'state_embedding_optimizer_state_dict': state_embedding_optimizer.state_dict(),
+            'forward_dynamics_optimizer_state_dict': forward_dynamics_optimizer.state_dict(),
+            'inverse_dynamics_optimizer_state_dict': inverse_dynamics_optimizer.state_dict(),
             'scheduler_state_dict': scheduler.state_dict(),
+            'indicator_state_dict': indicator.state_dict(),
             'flags': vars(flags),
         }, checkpointpath)
 

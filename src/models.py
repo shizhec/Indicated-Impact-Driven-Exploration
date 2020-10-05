@@ -603,10 +603,11 @@ class MarioDoomInverseDynamicsNet(nn.Module):
 
 
 class ProcGenPolicyNet(nn.Module):
-    def __init__(self, observation_shape, num_actions):
+    def __init__(self, observation_shape, num_actions, flags=None):
         super(ProcGenPolicyNet, self).__init__()
         self.observation_shape = observation_shape
         self.num_actions = num_actions
+        self.flags = flags
 
         init_ = lambda m: init(m, nn.init.orthogonal_,
                 lambda x: nn.init.constant_(x, 0),
@@ -646,12 +647,15 @@ class ProcGenPolicyNet(nn.Module):
         return tuple()
 
     def forward(self, inputs, core_state=()):
-        x = inputs["frame"]
-        # time x batch x 64 x 64 x 3
+        if self.flags.testing:
+            x = inputs
+        else:
+            x = inputs["frame"]
+        # time x batch x 32 x 32 x 3
         T, B, *_ = x.shape
 
         # merge time and batch
-        # [T*B x 64 x 64 x 3]
+        # [T*B x 32 x 32 x 3]
         x = torch.flatten(x, 0, 1)
 
         x = x.float()

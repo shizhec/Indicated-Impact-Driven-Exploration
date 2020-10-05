@@ -77,7 +77,8 @@ def create_env(flags):
                              distribution_mode=flags.distribution_mode,
                              use_backgrounds=flags.disable_background,
                              restrict_themes=flags.restrict_themes,
-                             use_monochrome_assets=flags.use_monochrome_assets
+                             use_monochrome_assets=flags.use_monochrome_assets,
+                             use_sequential_levels=flags.use_sequential_levels
                              )
         return Procgen2RGB(env)
     else:

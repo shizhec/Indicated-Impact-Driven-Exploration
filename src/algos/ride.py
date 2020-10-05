@@ -8,6 +8,7 @@ import logging
 import os
 import threading
 import time
+from datetime import datetime
 import timeit
 import pprint
 
@@ -191,7 +192,7 @@ def learn(actor_model,
 
 def train(flags):         
     if flags.xpid is None:
-        flags.xpid = 'torchbeast-%s' % time.strftime('%Y%m%d-%H%M%S')
+        flags.xpid = 'ride-%s' % datetime.utcnow().strftime('%Y%m%d-%H%M%S%f')
     plogger = file_writer.FileWriter(
         xpid=flags.xpid,
         xp_args=flags.__dict__,

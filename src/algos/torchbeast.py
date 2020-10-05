@@ -8,6 +8,7 @@ import logging
 import os
 import threading
 import time
+from datetime import datetime
 import timeit
 import pprint
 
@@ -36,7 +37,7 @@ ProcGenPolicyNet = models.ProcGenPolicyNet
 def learn(actor_model,
           model,
           batch,
-          initial_agent_state, 
+           initial_agent_state,
           optimizer,
           scheduler,
           flags,
@@ -98,7 +99,7 @@ def learn(actor_model,
 
 def train(flags):  
     if flags.xpid is None:
-        flags.xpid = 'torchbeast-%s' % time.strftime('%Y%m%d-%H%M%S')
+        flags.xpid = 'torchbeast-%s' % datetime.utcnow().strftime('%Y%m%d-%H%M%S%f')
     plogger = file_writer.FileWriter(
         xpid=flags.xpid,
         xp_args=flags.__dict__,

@@ -15,9 +15,14 @@ from src.algos.no_episodic_counts import train as train_no_episodic_counts
 from src.algos.only_episodic_counts import train as train_only_episodic_counts
 from src.algos.iride import train as train_iride
 
+from src.test_model import test
+
 def main(flags):
     if flags.model == 'vanilla':
-        train_vanilla(flags)
+        if flags.testing:
+            test(flags)
+        else:
+            train_vanilla(flags)
     elif flags.model == 'count':
         train_count(flags)
     elif flags.model == 'curiosity':
@@ -25,16 +30,22 @@ def main(flags):
     elif flags.model == 'rnd':
         train_rnd(flags)
     elif flags.model == 'ride':
-        train_ride(flags)
+        if flags.testing:
+            test(flags)
+        else:
+            train_ride(flags)
     elif flags.model == 'no-episodic-counts':
         train_no_episodic_counts(flags)
     elif flags.model == 'only-episodic-counts':
         train_only_episodic_counts(flags)
     elif flags.model == "iride":
-        train_iride(flags)
+        if flags.testing:
+            test(flags)
+        else:
+            train_iride(flags)
     else:
         raise NotImplementedError("This model has not been implemented. "\
-        "The available options are: vanilla, count, curiosity, rnd, ride, \
+        "The available options are: vanilla, count, curiosity, rnd, ride, iride\
         no-episodic-counts, and only-episodic-count.")
 
 if __name__ == '__main__':
