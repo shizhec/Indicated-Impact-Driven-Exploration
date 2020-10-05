@@ -192,7 +192,8 @@ def learn(actor_model,
 
 def train(flags):         
     if flags.xpid is None:
-        flags.xpid = 'ride-%s' % datetime.utcnow().strftime('%Y%m%d-%H%M%S%f')
+        flags.xpid = 'ride-%s-lvl%s-st%s' % (datetime.utcnow().strftime('%Y%m%d-%H%M%S%f'),
+                                              flags.num_levels , flags.start_level)
     plogger = file_writer.FileWriter(
         xpid=flags.xpid,
         xp_args=flags.__dict__,

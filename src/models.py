@@ -647,7 +647,7 @@ class ProcGenPolicyNet(nn.Module):
         return tuple()
 
     def forward(self, inputs, core_state=()):
-        if self.flags.testing:
+        if self.flags is not None and self.flags.testing:
             x = inputs
         else:
             x = inputs["frame"]
