@@ -48,5 +48,5 @@ def dict_to_csv(path, filename, skip_num=0):
             writer.writerow(data)
 
 
-# for i in range(1, 11):
-#     dict_to_csv("data/ninja/vanilla/", str(i), 49)
+for i in range(1, 11):
+    dict_to_csv("data/ninja/iride/sample-efficiency/", str(i), 49)

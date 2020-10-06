@@ -10,7 +10,7 @@
 #SBATCH --job-name="chaser_lr"
 
 # The name of the output
-#SBATCH --output="chaser_lr_005_2.out"
+#SBATCH --output="chaser_lr_005.out"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim1126"
@@ -48,4 +48,4 @@ conda activate iride_gpu
 # The job command(s):
 OMP_NUM_THREADS=1 python ../../main.py --model ride --env procgen --game chaser --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.005 --batch_size 32 --unroll_length 100 \
---total_frames 4000000 --disable_checkpoint
+--num_levels 100 --start_level 0 --use_sequential_levels --total_frames 4000000 --disable_checkpoint
