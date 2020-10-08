@@ -1,0 +1,15 @@
+sbatch lvl100_1.slurm
+sbatch lvl100_2.slurm
+sbatch lvl100_3.slurm
+sbatch lvl500_1.slurm
+sbatch lvl500_2.slurm
+sbatch lvl500_3.slurm
+sbatch lvl1000_1.slurm
+sbatch lvl1000_2.slurm
+sbatch lvl1000_3.slurm
+sbatch lvl5000_1.slurm
+sbatch lvl5000_2.slurm
+sbatch lvl5000_3.slurm
+sbatch lvl10000_1.slurm
+sbatch lvl10000_2.slurm
+sbatch lvl10000_3.slurm
