@@ -20,4 +20,4 @@ conda activate clride
 
 OMP_NUM_THREADS=1 python ../../../../main.py --model iride --env procgen --game coinrun --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.001 --batch_size 32 --unroll_length 60 --intrinsic_reward_coef 1.0 \
---entropy_cost 0.001 --indicator_loss_coef 1 --encoder_coef 0.75 --num_levels 1000 --start_level 200 --total_frames 10000000
+--entropy_cost 0.001 --indicator_loss_coef 1 --encoder_coef 0.75 --num_levels 1000 --start_level 200 --distribution_mode easy --total_frames 10000000

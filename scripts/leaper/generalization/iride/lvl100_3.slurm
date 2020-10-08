@@ -20,4 +20,4 @@ conda activate clride
 
 OMP_NUM_THREADS=1 python ../../../../main.py --model iride --env procgen --game leaper --num_threads 8 --disable_background \
 --restrict_themes --use_monochrome_assets --learning_rate 0.005 --batch_size 8 --unroll_length 20 --intrinsic_reward_coef 0.05 \
---entropy_cost 0.0005 --indicator_loss_coef 5 --encoder_coef 0.25 --num_levels 100 --start_level 200 --total_frames 10000000
+--entropy_cost 0.0005 --indicator_loss_coef 5 --encoder_coef 0.25 --num_levels 100 --start_level 200 --distribution_mode easy --total_frames 10000000
