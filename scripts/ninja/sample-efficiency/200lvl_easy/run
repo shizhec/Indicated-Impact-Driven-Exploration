@@ -1,0 +1,9 @@
+sbatch nj_iride_cpu_1.slurm
+sbatch nj_iride_cpu_2.slurm
+sbatch nj_iride_cpu_3.slurm
+sbatch nj_ride_cpu_1.slurm
+sbatch nj_ride_cpu_2.slurm
+sbatch nj_ride_cpu_3.slurm
+sbatch nj_vanilla_cpu_1.slurm
+sbatch nj_vanilla_cpu_2.slurm
+sbatch nj_vanilla_cpu_3.slurm

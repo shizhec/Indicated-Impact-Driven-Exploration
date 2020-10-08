@@ -1,0 +1,9 @@
+sbatch cr_iride_cpu_1.slurm
+sbatch cr_iride_cpu_2.slurm
+sbatch cr_iride_cpu_3.slurm
+sbatch cr_ride_cpu_1.slurm
+sbatch cr_ride_cpu_2.slurm
+sbatch cr_ride_cpu_3.slurm
+sbatch cr_vanilla_cpu_1.slurm
+sbatch cr_vanilla_cpu_2.slurm
+sbatch cr_vanilla_cpu_3.slurm

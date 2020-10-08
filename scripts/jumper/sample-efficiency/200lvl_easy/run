@@ -1,0 +1,9 @@
+sbatch jp_iride_cpu_1.slurm
+sbatch jp_iride_cpu_2.slurm
+sbatch jp_iride_cpu_3.slurm
+sbatch jp_ride_cpu_1.slurm
+sbatch jp_ride_cpu_2.slurm
+sbatch jp_ride_cpu_3.slurm
+sbatch jp_vanilla_cpu_1.slurm
+sbatch jp_vanilla_cpu_2.slurm
+sbatch jp_vanilla_cpu_3.slurm
