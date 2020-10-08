@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Partition for the job:
-#SBATCH --partition=shortgpgpu
+#SBATCH --partition=gpgpu
 
 # Multithreaded (SMP) job: must run on one node
 #SBATCH --nodes=1

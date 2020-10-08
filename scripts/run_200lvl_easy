@@ -1,0 +1,59 @@
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_iride_cpu_1.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_iride_cpu_2.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_iride_cpu_3.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_ride_cpu_1.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_ride_cpu_2.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_ride_cpu_3.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_vanilla_cpu_1.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_vanilla_cpu_2.slurm
+sbatch caveflyer/sample-efficiency/200lvl_easy/cf_vanilla_cpu_3.slurm
+
+sbatch climber/sample-efficiency/200lvl_easy/cb_iride_cpu_1.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_iride_cpu_2.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_iride_cpu_3.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_ride_cpu_1.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_ride_cpu_2.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_ride_cpu_3.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_vanilla_cpu_1.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_vanilla_cpu_2.slurm
+sbatch climber/sample-efficiency/200lvl_easy/cb_vanilla_cpu_3.slurm
+
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_iride_cpu_1.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_iride_cpu_2.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_iride_cpu_3.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_ride_cpu_1.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_ride_cpu_2.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_ride_cpu_3.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_vanilla_cpu_1.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_vanilla_cpu_2.slurm
+sbatch coinrun/sample-efficiency/200lvl_easy/cr_vanilla_cpu_3.slurm
+
+sbatch jumper/sample-efficiency/200lvl_easy/jp_iride_cpu_1.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_iride_cpu_2.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_iride_cpu_3.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_ride_cpu_1.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_ride_cpu_2.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_ride_cpu_3.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_vanilla_cpu_1.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_vanilla_cpu_2.slurm
+sbatch jumper/sample-efficiency/200lvl_easy/jp_vanilla_cpu_3.slurm
+
+sbatch leaper/sample-efficiency/200lvl_easy/lp_iride_cpu_1.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_iride_cpu_2.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_iride_cpu_3.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_ride_cpu_1.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_ride_cpu_2.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_ride_cpu_3.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_vanilla_cpu_1.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_vanilla_cpu_2.slurm
+sbatch leaper/sample-efficiency/200lvl_easy/lp_vanilla_cpu_3.slurm
+
+sbatch ninja/sample-efficiency/200lvl_easy/nj_iride_cpu_1.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_iride_cpu_2.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_iride_cpu_3.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_ride_cpu_1.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_ride_cpu_2.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_ride_cpu_3.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_vanilla_cpu_1.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_vanilla_cpu_2.slurm
+sbatch ninja/sample-efficiency/200lvl_easy/nj_vanilla_cpu_3.slurm
