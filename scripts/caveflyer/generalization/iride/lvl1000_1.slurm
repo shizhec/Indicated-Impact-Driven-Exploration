@@ -9,8 +9,8 @@
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --time=0-10:00:00
-#SBATCH --mem=400000
+#SBATCH --time=0-05:00:00
+#SBATCH --mem=250000
 
 module load gcccore/8.3.0
 module load foss/2019b anaconda3/2020.07 mesa/19.2.1
