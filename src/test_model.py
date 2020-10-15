@@ -5,6 +5,7 @@ from src.env_utils import ProcGenEnvironment
 import pickle
 from src import models
 import numpy as np
+from datetime import datetime
 
 ProcGenStateEmbeddingNet = models.ProcGenStateEmbeddingNet
 ProcGenForwardDynamicsNet = models.ProcGenForwardDynamicsNet
@@ -29,7 +30,10 @@ def test(flags):
     current_step = 0
     episode_reward = []
     current_episode_reward = 0
+    print("start time: ", datetime.now())
     while current_step < flags.total_frames:
+        if current_step % 10000 == 0:
+            print(current_step)
         obs, reward, done, _ = env.step(action)
 
         current_episode_reward += reward
@@ -44,8 +48,10 @@ def test(flags):
 
         current_step += 1
 
-    with open(flags.test_out_file + ".pkl", "wb") as fp:
+    with open(flags.savedir+flags.modelpath+flags.test_out_file + ".pkl", "wb") as fp:
         pickle.dump(episode_reward, fp)
+
+    print("end time: ", datetime.now())
 
     # with open("test_output.pkl", "rb") as fp:
     #     rewards = pickle.load(fp)

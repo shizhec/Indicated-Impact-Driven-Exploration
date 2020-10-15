@@ -2,7 +2,8 @@ OMP_NUM_THREADS=1 python main.py --model iride --env procgen --game coinrun --nu
 python -c "from procgen import ProcgenGym3Env; ProcgenGym3Env(num=1, env_name='coinrun')"
 scp shizhec@spartan.hpc.unimelb.edu.au:CL-RIDE-master-project/data/coinrun.out data
 
-OMP_NUM_THREADS=1 python main.py --model vanilla --env procgen --game caveflyer --num_threads 8 --modelpath scripts/caveflyer/test --testing
+OMP_NUM_THREADS=1 python main.py --model iride --env procgen --game caveflyer --num_threads 8 \
+--modelpath data/caveflyer/iride/generalization/iride-lvl100-st0/ --testing --total_frames 10000000
 
 
 sinteractive -p shortgpgpu --time=01:00:00 --mem=100000 --gres=gpu:1
@@ -47,7 +48,7 @@ parameters
 [0.01, 0.25, 0.5, 0.75, 0.99]
 
 # check job usages
-sacct -j 20578525 --format workdir,jobname,maxrss,alloctres,user -p
+sacct -j 20641544 --format workdir,jobname,maxrss,alloctres,user -p
 
 # check priority
 sprio -p physical -S "-y" -l > priority.txt

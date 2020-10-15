@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH -q normal
+#SBATCH -p physical
+
+#SBATCH --ntasks=1
+
+module load gcccore/8.3.0
+module load foss/2019b anaconda3/2020.07 mesa/19.2.1
+
+source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
+conda activate clride
+
+OMP_NUM_THREADS=1 python main.py --model iride --env procgen --game caveflyer \
+--modelpath data/caveflyer/iride/generalization/iride-lvl100-st0/ --testing --total_frames 10000000

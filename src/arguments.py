@@ -126,7 +126,7 @@ parser.add_argument('--use_sequential_levels', action='store_true')
 parser.add_argument('--testing', action='store_true',
                     help='indicate whether we are testing the model')
 parser.add_argument('--modelpath', type=str)
-parser.add_argument('--test_out_file', type=str, default="test_output")
+parser.add_argument('--test_out_file', type=str, default="test")
 
 # for iride
 parser.add_argument('--indicator_loss_coef', default=0.5, type=float,
