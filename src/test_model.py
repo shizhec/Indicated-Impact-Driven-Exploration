@@ -15,7 +15,8 @@ ProcGenPolicyNet = models.ProcGenPolicyNet
 
 def test(flags):
     checkpointpath = os.path.expandvars(os.path.expanduser(
-        '%s/%s/%s' % (flags.savedir, flags.modelpath, 'model.tar')))
+        '%s%s%s' % (flags.savedir, flags.modelpath, 'model.tar')))
+    print(checkpointpath)
     checkpoint = torch.load(checkpointpath)
 
     env = create_env(flags)
