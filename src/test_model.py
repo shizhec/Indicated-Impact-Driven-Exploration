@@ -30,10 +30,10 @@ def test(flags):
     current_step = 0
     episode_reward = []
     current_episode_reward = 0
-    print("start time: ", datetime.now())
+    print("start time: ", datetime.now(), flush=True)
     while current_step < flags.total_frames:
-        if current_step % 10000 == 0:
-            print(current_step)
+        if current_step % 100000 == 0:
+            print(current_step, " ", np.mean(episode_reward), flush=True)
         obs, reward, done, _ = env.step(action)
 
         current_episode_reward += reward
@@ -51,7 +51,7 @@ def test(flags):
     with open(flags.savedir+flags.modelpath+flags.test_out_file + ".pkl", "wb") as fp:
         pickle.dump(episode_reward, fp)
 
-    print("end time: ", datetime.now())
+    print("end time: ", datetime.now(), flush=True)
 
     # with open("test_output.pkl", "rb") as fp:
     #     rewards = pickle.load(fp)
