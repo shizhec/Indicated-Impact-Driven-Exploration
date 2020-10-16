@@ -12,5 +12,4 @@ module load foss/2019b anaconda3/2020.07 mesa/19.2.1
 source /usr/local/easybuild-2019/easybuild/software/core/anaconda3/2020.07/bin/activate
 conda activate clride
 
-OMP_NUM_THREADS=1 python ../../../../../main.py --model iride --env procgen --game coinrun \
---modelpath data/coinrun/iride/generalization/iride-lvl500-st0/ --testing --total_frames 10000000
+python main.py --model iride --env procgen --game coinrun --modelpath lvl5000-st0 --testing --total_frames 10000000

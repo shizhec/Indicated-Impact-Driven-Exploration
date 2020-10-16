@@ -1,0 +1,11 @@
+sbatch iride_test_lvl100_1.slurm
+sbatch iride_test_lvl500_1.slurm
+sbatch iride_test_lvl1000_1.slurm
+sbatch iride_test_lvl5000_1.slurm
+sbatch iride_test_lvl10000_1.slurm
+
+sbatch ride_test_lvl100_1.slurm
+sbatch ride_test_lvl500_1.slurm
+sbatch ride_test_lvl1000_1.slurm
+sbatch ride_test_lvl5000_1.slurm
+sbatch ride_test_lvl10000_1.slurm
