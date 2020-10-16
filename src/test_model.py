@@ -15,10 +15,11 @@ ProcGenPolicyNet = models.ProcGenPolicyNet
 
 def test(flags):
     checkpointpath = os.path.expandvars(os.path.expanduser(
-        '%s%s%s/%s' % (flags.savedir, 'data/'+flags.game+'/'+flags.model+'/generalization/'+flags.model+'-',
-                       flags.modelpath, 'model.tar')))
+        '%s%s%s/' % (flags.savedir, 'data/'+flags.game+'/'+flags.model+'/generalization/'+flags.model+'-',
+                       flags.modelpath)))
     print(checkpointpath)
-    checkpoint = torch.load(checkpointpath)
+
+    checkpoint = torch.load(checkpointpath+'model.tar')
 
     env = create_env(flags)
     model = ProcGenPolicyNet(env.observation_space.shape, env.action_space.n, flags)
@@ -50,7 +51,9 @@ def test(flags):
 
         current_step += 1
 
-    with open(flags.savedir+flags.modelpath+flags.test_out_file + ".pkl", "wb") as fp:
+    outputpath = checkpointpath+flags.test_out_file + ".pkl"
+    print(outputpath)
+    with open(outputpath, "wb") as fp:
         pickle.dump(episode_reward, fp)
 
     print("end time: ", datetime.now(), flush=True)
