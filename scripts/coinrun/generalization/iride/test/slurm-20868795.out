@@ -1,0 +1,11 @@
+./data/coinrun/iride/generalization/iride-lvl10000-st0/model.tar
+Traceback (most recent call last):
+  File "../../../../../main.py", line 53, in <module>
+    main(flags)
+  File "../../../../../main.py", line 43, in main
+    test(flags)
+  File "/data/gpfs/projects/punim1126/CL-RIDE-master-project/src/test_model.py", line 20, in test
+    checkpoint = torch.load(checkpointpath)
+  File "/home/shizhec/.conda/envs/clride/lib/python3.7/site-packages/torch/serialization.py", line 382, in load
+    f = open(f, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: './data/coinrun/iride/generalization/iride-lvl10000-st0/model.tar'
