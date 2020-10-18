@@ -58,10 +58,6 @@ def test(flags):
 
     print("end time: ", datetime.now(), flush=True)
 
-    # with open("test_output.pkl", "rb") as fp:
-    #     rewards = pickle.load(fp)
-    #     print(np.sum(np.array(rewards)))
-
 def batch_frame(observation):
     batch = torch.tensor([[observation]])
     return batch
